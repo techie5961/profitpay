@@ -1,0 +1,178 @@
+@extends('layout.users.app')
+@section('title')
+    Dashboard
+@endsection
+@section('main')
+    <section class="column p-10 w-full g-10">
+       <div class="cont bg-secondary-dark w-full column p-top-50 br-10">
+        <div class="column wallets-house primary-text pos-relative bg-primary p-10 g-10 w-full br-10">
+            <div class="row space-between align-center g-10 w-full">
+                <span class="font-weight-900">👋 Welcome Back</span>
+                <div class="p-5 border-1 border-color-secondary bg-dim br-5 row align-center g-10">
+                    <span>USD</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.43056 8.51192C4.70012 8.19743 5.1736 8.161 5.48809 8.43057L12 14.0122L18.5119 8.43057C18.8264 8.16101 19.2999 8.19743 19.5694 8.51192C19.839 8.82642 19.8026 9.29989 19.4881 9.56946L12.4881 15.5695C12.2072 15.8102 11.7928 15.8102 11.5119 15.5695L4.5119 9.56946C4.19741 9.29989 4.16099 8.82641 4.43056 8.51192Z" fill="CurrentColor"></path>
+</svg>
+
+                </div>
+            </div>
+            <div class="row w-full align-center g-10">
+                <div class="h-40 font-weight-900 desc w-40 circle no-shrink bg-dim column justify-center">{{ ucfirst(Auth::guard('users')->user()->username[0]) }}</div>
+                <div class="column g-5">
+                     <strong class="desc font-weight-900">{{ ucfirst(Auth::guard('users')->user()->username) }}</strong>
+                     <div class="w-full w-fit secondary-text font-weight-900 br-5 clip-5 bg-secondary p-5">
+                Alpha Package
+            </div>
+                </div>
+               
+            </div>
+            <div class="balance-div">
+                <div onclick="
+                   try{
+                    this.outerHTML=document.querySelector('template.balances section.affiliate').innerHTML;
+                   }catch(error){
+                   alert(error.stack);
+                   }
+                    " style="background: linear-gradient(to top right,navy,blue);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full average br-10 p-10 column g-5">
+            <div class="w-full row align-center space-between g-10">
+               <span> Activities Balance</span>
+               <svg width="30" height="30" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M7.20468 7.56232C7.51523 7.28822 7.54478 6.81427 7.27069 6.50371C6.99659 6.19316 6.52264 6.1636 6.21208 6.4377C4.39676 8.03992 3.25 10.3865 3.25 13C3.25 13.4142 3.58579 13.75 4 13.75C4.41421 13.75 4.75 13.4142 4.75 13C4.75 10.8347 5.69828 8.89188 7.20468 7.56232Z" fill="CurrentColor"></path>
+<path d="M17.7879 6.4377C17.4774 6.1636 17.0034 6.19316 16.7293 6.50371C16.4552 6.81427 16.4848 7.28822 16.7953 7.56232C18.3017 8.89188 19.25 10.8347 19.25 13C19.25 13.4142 19.5858 13.75 20 13.75C20.4142 13.75 20.75 13.4142 20.75 13C20.75 10.3865 19.6032 8.03992 17.7879 6.4377Z" fill="CurrentColor"></path>
+<path d="M10.1869 20.0217C9.7858 19.9184 9.37692 20.1599 9.27367 20.5611C9.17043 20.9622 9.41192 21.3711 9.81306 21.4743C10.5129 21.6544 11.2458 21.75 12 21.75C12.7542 21.75 13.4871 21.6544 14.1869 21.4743C14.5881 21.3711 14.8296 20.9622 14.7263 20.5611C14.6231 20.1599 14.2142 19.9184 13.8131 20.0217C13.2344 20.1706 12.627 20.25 12 20.25C11.373 20.25 10.7656 20.1706 10.1869 20.0217Z" fill="CurrentColor"></path>
+</g>
+<path d="M9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3C10.3431 3 9 4.34315 9 6Z" fill="CurrentColor"></path>
+<path d="M2.5 18C2.5 19.6569 3.84315 21 5.5 21C7.15685 21 8.5 19.6569 8.5 18C8.5 16.3431 7.15685 15 5.5 15C3.84315 15 2.5 16.3431 2.5 18Z" fill="CurrentColor"></path>
+<path d="M18.5 21C16.8431 21 15.5 19.6569 15.5 18C15.5 16.3431 16.8431 15 18.5 15C20.1569 15 21.5 16.3431 21.5 18C21.5 19.6569 20.1569 21 18.5 21Z" fill="CurrentColor"></path>
+</svg>
+
+            </div>
+            <strong class="desc font-weight-900">
+                &#8358;{{ number_format(Auth::guard('users')->user()->activities_balance) }}
+            </strong>
+            <span>Your earnings from direct activities</span>
+            <button class="clip5 br-5 btn-green-3d c-white">Withdraw</button>
+
+            </div>
+            </div>
+            <div class="w-full bottom-0 left-0 stacks right-0 pos-absolute p-10">
+                <div style="transform:translateY(40%) translateX(-50%) scale(0.9);z-index:500;left:50%;width:calc(100% - 20px);" class="h-100 br-10 pos-absolute  bg-red bottom-0"></div>
+                 <div style="transform:translateY(50%) translateX(-50%) scale(0.8);z-index:400;left:50%;width:calc(100% - 20px);" class="h-100 br-10 pos-absolute bg-green bottom-0"></div>
+                 <div style="transform:translateY(60%) translateX(-50%) scale(0.7);z-index:300;left:50%;width:calc(100% - 20px);" class="h-100 br-10 pos-absolute bg-purple bottom-0"></div>
+            </div>
+
+           
+        </div>
+       </div>
+       {{-- BALANCES DIVS LOOP START--}}
+
+       <template class="balances">
+        
+
+
+        <section class="affiliate">
+                <div class="balance-div">
+                <div style="background: linear-gradient(to top right,red,coral);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full average br-10 p-10 column g-5">
+            <div class="w-full row align-center space-between g-10">
+               <span> Affiliate Balance</span>
+               <svg width="30" height="30" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M7.20468 7.56232C7.51523 7.28822 7.54478 6.81427 7.27069 6.50371C6.99659 6.19316 6.52264 6.1636 6.21208 6.4377C4.39676 8.03992 3.25 10.3865 3.25 13C3.25 13.4142 3.58579 13.75 4 13.75C4.41421 13.75 4.75 13.4142 4.75 13C4.75 10.8347 5.69828 8.89188 7.20468 7.56232Z" fill="CurrentColor"></path>
+<path d="M17.7879 6.4377C17.4774 6.1636 17.0034 6.19316 16.7293 6.50371C16.4552 6.81427 16.4848 7.28822 16.7953 7.56232C18.3017 8.89188 19.25 10.8347 19.25 13C19.25 13.4142 19.5858 13.75 20 13.75C20.4142 13.75 20.75 13.4142 20.75 13C20.75 10.3865 19.6032 8.03992 17.7879 6.4377Z" fill="CurrentColor"></path>
+<path d="M10.1869 20.0217C9.7858 19.9184 9.37692 20.1599 9.27367 20.5611C9.17043 20.9622 9.41192 21.3711 9.81306 21.4743C10.5129 21.6544 11.2458 21.75 12 21.75C12.7542 21.75 13.4871 21.6544 14.1869 21.4743C14.5881 21.3711 14.8296 20.9622 14.7263 20.5611C14.6231 20.1599 14.2142 19.9184 13.8131 20.0217C13.2344 20.1706 12.627 20.25 12 20.25C11.373 20.25 10.7656 20.1706 10.1869 20.0217Z" fill="CurrentColor"></path>
+</g>
+<path d="M9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3C10.3431 3 9 4.34315 9 6Z" fill="CurrentColor"></path>
+<path d="M2.5 18C2.5 19.6569 3.84315 21 5.5 21C7.15685 21 8.5 19.6569 8.5 18C8.5 16.3431 7.15685 15 5.5 15C3.84315 15 2.5 16.3431 2.5 18Z" fill="CurrentColor"></path>
+<path d="M18.5 21C16.8431 21 15.5 19.6569 15.5 18C15.5 16.3431 16.8431 15 18.5 15C20.1569 15 21.5 16.3431 21.5 18C21.5 19.6569 20.1569 21 18.5 21Z" fill="CurrentColor"></path>
+</svg>
+
+            </div>
+            <strong class="desc font-weight-900">
+                &#8358;{{ number_format(Auth::guard('users')->user()->activities_balance) }}
+            </strong>
+            <span>Your earnings from direct activities</span>
+            <button class="clip5 br-5 btn-green-3d c-white">Withdraw</button>
+
+            </div>
+            </div>
+            <div class="w-full bottom-0 left-0 stacks right-0 pos-absolute p-10">
+                <div style="transform:translateY(40%) translateX(-50%) scale(0.9);z-index:500;left:50%;width:calc(100% - 20px);" class="h-100 br-10 pos-absolute  bg-red bottom-0"></div>
+                 <div style="transform:translateY(50%) translateX(-50%) scale(0.8);z-index:400;left:50%;width:calc(100% - 20px);" class="h-100 br-10 pos-absolute bg-green bottom-0"></div>
+                 <div style="transform:translateY(60%) translateX(-50%) scale(0.7);z-index:300;left:50%;width:calc(100% - 20px);" class="h-100 br-10 pos-absolute bg-purple bottom-0"></div>
+            </div>
+
+        </section>
+
+
+
+
+       </template>
+
+
+       {{-- BALANCES DIV LOOP END --}}
+        <div class="grid grid-2 w-full pc-grid-4 g-10">
+            <div class="bg-light box-shadow secondary-text w-full br-10 p-10 g-5 column align-center">
+                <strong>Affiliate Balance</strong>
+                <strong class="desc">&#8358;{{ number_format(Auth::guard('users')->user()->affiliate_balance ?? 0,2) }}</strong>
+            </div>
+              <div class="bg-light box-shadow secondary-text w-full br-10 p-10 g-5 column align-center">
+                <strong>Activities Balance</strong>
+                <strong class="desc">&#8358;{{ number_format(Auth::guard('users')->user()->activities_balance ?? 0,2) }}</strong>
+            </div>
+             <div class="bg-light box-shadow secondary-text w-full br-10 p-10 g-5 column align-center">
+                <strong>{{ config('app.name') }} Games</strong>
+               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="CurrentColor" viewBox="0 0 256 256"><path d="M247.44,173.75a.68.68,0,0,0,0-.14L231.05,89.44c0-.06,0-.12,0-.18A60.08,60.08,0,0,0,172,40H83.89a59.88,59.88,0,0,0-59,49.52L8.58,173.61a.68.68,0,0,0,0,.14,36,36,0,0,0,60.9,31.71l.35-.37L109.52,160h37l39.71,45.09c.11.13.23.25.35.37A36.08,36.08,0,0,0,212,216a36,36,0,0,0,35.43-42.25ZM104,112H96v8a8,8,0,0,1-16,0v-8H72a8,8,0,0,1,0-16h8V88a8,8,0,0,1,16,0v8h8a8,8,0,0,1,0,16Zm40-8a8,8,0,0,1,8-8h24a8,8,0,0,1,0,16H152A8,8,0,0,1,144,104Zm84.37,87.47a19.84,19.84,0,0,1-12.9,8.23A20.09,20.09,0,0,1,198,194.31L167.8,160H172a60,60,0,0,0,51-28.38l8.74,45A19.82,19.82,0,0,1,228.37,191.47Z"></path></svg>
+            </div>
+              <div class="bg-light box-shadow secondary-text w-full br-10 p-10 g-5 column align-center">
+                <strong>Stream & Earn</strong>
+               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="CurrentColor" viewBox="0 0 256 256"><path d="M80,96a8,8,0,0,1-8,8H24a8,8,0,0,1,0-16H72A8,8,0,0,1,80,96Zm72,24H104a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm32-48h48a8,8,0,0,0,0-16H184a8,8,0,0,0,0,16ZM72,120H24a8,8,0,0,0-8,8v64a8,8,0,0,0,8,8H72a8,8,0,0,0,8-8V128A8,8,0,0,0,72,120ZM232,88H184a8,8,0,0,0-8,8v96a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V96A8,8,0,0,0,232,88Zm-80,64H104a8,8,0,0,0-8,8v32a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V160A8,8,0,0,0,152,152Z"></path></svg>
+             </div>
+        </div>
+        <div class="w-full bg-secondary-dark g-5 secondary-text br-10 p-10 row space-between align-center">
+            <div class="w-full h-40 no-scrollbar align-center row ws-nowrap overflow-auto p-5 br-10 bg-secondary-transparent">{{ url('register/ref/'.Auth::guard('users')->user()->username.'') }}</div>
+            <div onclick="copy('{{ url('register/ref/'.Auth::guard('users')->user()->username.'') }}')" class="h-40 perfect-square column  bg-secondary  br-10 justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32Zm-8,128H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
+
+            </div>
+        </div>
+        <div class="w-full m-x-auto align-center p-20 column g-5 bg-primary primary-text br-10 p-10">
+            <strong class="font-1">Join our Community to get latest updates and connect with other users.</strong>
+       <div class="grid grid-2 place-center m-left-auto w-full g-10 align-center">
+        <div class="bg-green pc-max-w-half c-white row justify-center h-50 p-10 bold w-full br-1000">Join Whatsapp
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="CurrentColor" viewBox="0 0 256 256"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"></path></svg>
+
+        </div>
+         <div class="bg-navy pc-max-w-half m-right-auto c-white row justify-center h-50 p-10 bold w-full br-1000">Join Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="CurrentColor" viewBox="0 0 256 256"><path d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19ZM175.53,208,92.85,135.5l119-85.29Z"></path></svg>
+
+        </div>
+       </div>
+        </div>
+    </section>
+@endsection
+@section('js')
+    <script class="js">
+        window.MyFunc ={
+           Style : function(){
+           try{
+             Array.from(document.querySelector('.stacks').children).forEach((child)=>{
+                child.style.height=document.querySelector('.balance-div').offsetHeight + 'px';
+            });
+            let max_bottom=document.querySelector('.wallets-house').getBoundingClientRect().bottom;
+            Array.from(document.querySelector('.wallets-house .stacks').children).forEach((child)=>{
+                if(child.getBoundingClientRect().bottom > max_bottom){
+                    max_bottom=child.getBoundingClientRect().bottom;
+                }
+            });
+            document.querySelector('.wallets-house').style.marginBottom=max_bottom - document.querySelector('.wallets-house').getBoundingClientRect().bottom + 10 + 'px';
+
+
+           }catch(error){
+            alert(error.stack);
+           }
+           } 
+        }
+        MyFunc.Style();
+    </script>
+@endsection
