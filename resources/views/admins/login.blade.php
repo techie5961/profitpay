@@ -18,7 +18,7 @@
                 <input type="password" placeholder="Enter Account Password" name="password" class="inp input required w-full h-full no-border bg-transparent br-10">
             </div>
             
-            <button class="post w-full bold"><span>Login Safely</span></button>
+            <button class="post bg-secondary secondary-text w-full bold"><span>Login Safely</span></button>
             
         </form>
     </section>

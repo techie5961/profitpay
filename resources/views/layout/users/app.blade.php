@@ -16,8 +16,7 @@
       .nav-profile{
         background-color: var(--bg);
 background-color: #cccccc;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 1200'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='100%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f5f5f5'/%3E%3Cstop offset='0.02' stop-color='%23cccccc'/%3E%3Cstop offset='0.02' stop-color='%23c3c3c3'/%3E%3Cstop offset='0.032' stop-color='%23cccccc'/%3E%3Cstop offset='0.032' stop-color='%23bbbbbb'/%3E%3Cstop offset='0.056' stop-color='%23cccccc'/%3E%3Cstop offset='0.056' stop-color='%23c7c7c7'/%3E%3Cstop offset='0.07' stop-color='%23cccccc'/%3E%3Cstop offset='0.07' stop-color='%23a0a0a0'/%3E%3Cstop offset='0.1' stop-color='%23cccccc'/%3E%3Cstop offset='0.1' stop-color='%23e7e7e7'/%3E%3Cstop offset='0.126' stop-color='%23cccccc'/%3E%3Cstop offset='0.126' stop-color='%23bababa'/%3E%3Cstop offset='0.142' stop-color='%23cccccc'/%3E%3Cstop offset='0.142' stop-color='%23c8c8c8'/%3E%3Cstop offset='0.159' stop-color='%23cccccc'/%3E%3Cstop offset='0.159' stop-color='%23b0b0b0'/%3E%3Cstop offset='0.17' stop-color='%23cccccc'/%3E%3Cstop offset='0.17' stop-color='%23cdcdcd'/%3E%3Cstop offset='0.197' stop-color='%23cccccc'/%3E%3Cstop offset='0.197' stop-color='%23b5b5b5'/%3E%3Cstop offset='0.218' stop-color='%23cccccc'/%3E%3Cstop offset='0.218' stop-color='%23c7c7c7'/%3E%3Cstop offset='0.239' stop-color='%23cccccc'/%3E%3Cstop offset='0.239' stop-color='%23cecece'/%3E%3Cstop offset='0.254' stop-color='%23cccccc'/%3E%3Cstop offset='0.254' stop-color='%23cecece'/%3E%3Cstop offset='0.283' stop-color='%23cccccc'/%3E%3Cstop offset='0.283' stop-color='%23cccccc'/%3E%3Cstop offset='0.294' stop-color='%23cccccc'/%3E%3Cstop offset='0.294' stop-color='%23c9c9c9'/%3E%3Cstop offset='0.305' stop-color='%23cccccc'/%3E%3Cstop offset='0.305' stop-color='%234e4e4e'/%3E%3Cstop offset='0.332' stop-color='%23cccccc'/%3E%3Cstop offset='0.332' stop-color='%23909090'/%3E%3Cstop offset='0.346' stop-color='%23cccccc'/%3E%3Cstop offset='0.346' stop-color='%23c5c5c5'/%3E%3Cstop offset='0.362' stop-color='%23cccccc'/%3E%3Cstop offset='0.362' stop-color='%23979797'/%3E%3Cstop offset='0.381' stop-color='%23cccccc'/%3E%3Cstop offset='0.381' stop-color='%23c2c2c2'/%3E%3Cstop offset='0.415' stop-color='%23cccccc'/%3E%3Cstop offset='0.415' stop-color='%23a8a8a8'/%3E%3Cstop offset='0.428' stop-color='%23cccccc'/%3E%3Cstop offset='0.428' stop-color='%23525252'/%3E%3Cstop offset='0.442' stop-color='%23cccccc'/%3E%3Cstop offset='0.442' stop-color='%23c8c8c8'/%3E%3Cstop offset='0.456' stop-color='%23cccccc'/%3E%3Cstop offset='0.456' stop-color='%23a9a9a9'/%3E%3Cstop offset='0.498' stop-color='%23cccccc'/%3E%3Cstop offset='0.498' stop-color='%23dfdfdf'/%3E%3Cstop offset='0.511' stop-color='%23cccccc'/%3E%3Cstop offset='0.511' stop-color='%23cecece'/%3E%3Cstop offset='0.532' stop-color='%23cccccc'/%3E%3Cstop offset='0.532' stop-color='%23cecece'/%3E%3Cstop offset='0.541' stop-color='%23cccccc'/%3E%3Cstop offset='0.541' stop-color='%23bababa'/%3E%3Cstop offset='0.56' stop-color='%23cccccc'/%3E%3Cstop offset='0.56' stop-color='%23f0f0f0'/%3E%3Cstop offset='0.581' stop-color='%23cccccc'/%3E%3Cstop offset='0.581' stop-color='%23aaaaaa'/%3E%3Cstop offset='0.6' stop-color='%23cccccc'/%3E%3Cstop offset='0.6' stop-color='%23d7d7d7'/%3E%3Cstop offset='0.618' stop-color='%23cccccc'/%3E%3Cstop offset='0.618' stop-color='%23cacaca'/%3E%3Cstop offset='0.656' stop-color='%23cccccc'/%3E%3Cstop offset='0.656' stop-color='%23cccccc'/%3E%3Cstop offset='0.679' stop-color='%23cccccc'/%3E%3Cstop offset='0.679' stop-color='%23ababab'/%3E%3Cstop offset='0.689' stop-color='%23cccccc'/%3E%3Cstop offset='0.689' stop-color='%23d1d1d1'/%3E%3Cstop offset='0.720' stop-color='%23cccccc'/%3E%3Cstop offset='0.720' stop-color='%23bbbbbb'/%3E%3Cstop offset='0.734' stop-color='%23cccccc'/%3E%3Cstop offset='0.734' stop-color='%23cbcbcb'/%3E%3Cstop offset='0.748' stop-color='%23cccccc'/%3E%3Cstop offset='0.748' stop-color='%236b6b6b'/%3E%3Cstop offset='0.764' stop-color='%23cccccc'/%3E%3Cstop offset='0.764' stop-color='%23989898'/%3E%3Cstop offset='0.788' stop-color='%23cccccc'/%3E%3Cstop offset='0.788' stop-color='%23dcdcdc'/%3E%3Cstop offset='0.808' stop-color='%23cccccc'/%3E%3Cstop offset='0.808' stop-color='%238f8f8f'/%3E%3Cstop offset='0.831' stop-color='%23cccccc'/%3E%3Cstop offset='0.831' stop-color='%23cbcbcb'/%3E%3Cstop offset='0.856' stop-color='%23cccccc'/%3E%3Cstop offset='0.856' stop-color='%23dbdbdb'/%3E%3Cstop offset='0.872' stop-color='%23cccccc'/%3E%3Cstop offset='0.872' stop-color='%23c7c7c7'/%3E%3Cstop offset='0.894' stop-color='%23cccccc'/%3E%3Cstop offset='0.894' stop-color='%23c8c8c8'/%3E%3Cstop offset='0.914' stop-color='%23cccccc'/%3E%3Cstop offset='0.914' stop-color='%23c0c0c0'/%3E%3Cstop offset='0.942' stop-color='%23cccccc'/%3E%3Cstop offset='0.942' stop-color='%23cdcdcd'/%3E%3Cstop offset='0.957' stop-color='%23cccccc'/%3E%3Cstop offset='0.957' stop-color='%237f7f7f'/%3E%3Cstop offset='0.973' stop-color='%23cccccc'/%3E%3Cstop offset='0.973' stop-color='%23cdcdcd'/%3E%3Cstop offset='1' stop-color='%23cccccc'/%3E%3Cstop offset='1' stop-color='%23e6e6e6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' x='0' y='0' width='100%25' height='100%25'/%3E%3C/svg%3E");
-background-attachment: fixed;
+background-image: url("{{ asset('images/depth.jpg') }}");
 background-size: cover;
 color:black;
 
@@ -58,29 +57,32 @@ background-position:center;
         <div onclick="
             document.querySelector('nav').classList.remove('mobile-display-none');
              document.querySelector('nav section.nav').classList.add('animation-trans-in-from-left');
+             document.body.classList.add('overflow-hidden');
             
 
-            " class="h-40 w-40 column pc-display-none justify-center c-bg br-10 p-10 bg-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="CurrentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"></path></svg>
-            
+            " class="h-40 w-40 column pc-display-none justify-center c-bg br-10 p-10 bg-dim c-white">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 7C3.25 6.58579 3.58579 6.25 4 6.25H20C20.4142 6.25 20.75 6.58579 20.75 7C20.75 7.41421 20.4142 7.75 20 7.75H4C3.58579 7.75 3.25 7.41421 3.25 7ZM3.25 12C3.25 11.5858 3.58579 11.25 4 11.25H15C15.4142 11.25 15.75 11.5858 15.75 12C15.75 12.4142 15.4142 12.75 15 12.75H4C3.58579 12.75 3.25 12.4142 3.25 12ZM3.25 17C3.25 16.5858 3.58579 16.25 4 16.25H9C9.41421 16.25 9.75 16.5858 9.75 17C9.75 17.4142 9.41421 17.75 9 17.75H4C3.58579 17.75 3.25 17.4142 3.25 17Z" fill="CurrentColor"></path>
+</svg>
+   
         </div>
         <img src="{{ asset('favicon/logo.png?v=1.2') }}" alt="Logo" class="h-30">
-        <div class="m-left-auto row g-5 align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="CurrentColor" viewBox="0 0 256 256"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg>
-
-        </div>
+        <div onclick="spa(event,'{{ url('users/more') }}')" class="h-40 m-left-auto font-weight-900 desc w-40 circle no-shrink bg-dim column justify-center">{{ ucfirst(Auth::guard('users')->user()->username[0]) }}</div>
+              
     </header>
     <nav style="z-index:4000" onclick="
     this.querySelector('section.nav').classList.remove('animation-trans-in-from-left');
     this.classList.add('mobile-display-none');
+    document.body.classList.remove('overflow-hidden');
   
     " class="pos-fixed mobile-display-none border-right-1 border-color-dim high top-0 left-0 right-0 bottom-0 bg-black-transparent average">
         <section onclick="event.stopPropagation()" class="nav transition-ease-half overflow-auto column bg-secondary h-full w-semi-full">
-            <div class="nav-profile pos-sticky stick-top w-full column g-10 p-10">
+            <div class="nav-profile z-index-1000 pos-sticky stick-top w-full column g-10 p-10">
                 <img src="{{ asset('images/avatar.svg') }}" alt="" class="h-70 w-70 circle border-4 border-color-primary box-shadow">
            <strong class="desc">{{ ucfirst(Auth::guard('users')->user()->username) }}</strong>
             </div>
             <div class="nav-links flex-auto bg-inherit w-full column">
+              {{-- NEW NAV LINK --}}
                 <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/dashboard') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -91,8 +93,22 @@ background-position:center;
 
 
                     Dashboard
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
+                <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
+                  spa(event,'{{ url('users/dashboard') }}');
+                  this.closest('nav').classList.add('mobile-display-none');
+                  ">
+                   <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.33537 7.87495C1.79491 9.00229 1.98463 10.3208 2.36407 12.9579L2.64284 14.8952C3.13025 18.2827 3.37396 19.9764 4.54903 20.9882C5.72409 22 7.44737 22 10.8939 22H13.1061C16.5526 22 18.2759 22 19.451 20.9882C20.626 19.9764 20.8697 18.2827 21.3572 14.8952L21.6359 12.9579C22.0154 10.3208 22.2051 9.00229 21.6646 7.87495C21.1242 6.7476 19.9738 6.06234 17.6731 4.69181L16.2882 3.86687C14.199 2.62229 13.1543 2 12 2C10.8457 2 9.80104 2.62229 7.71175 3.86687L6.32691 4.69181C4.02619 6.06234 2.87583 6.7476 2.33537 7.87495ZM13.45 16.5095C12.6422 15.6377 11.3581 15.6377 10.5503 16.5095C10.2688 16.8134 9.79427 16.8315 9.49041 16.55C9.18656 16.2684 9.16845 15.7939 9.44996 15.4901C10.8514 13.9775 13.1489 13.9775 14.5503 15.4901C14.8318 15.7939 14.8137 16.2684 14.5099 16.55C14.206 16.8315 13.7315 16.8134 13.45 16.5095ZM8.55029 14.3505C10.4626 12.2864 13.5376 12.2864 15.4499 14.3505C15.7315 14.6544 16.206 14.6725 16.5098 14.391C16.8137 14.1095 16.8318 13.6349 16.5503 13.3311C14.0443 10.6262 9.9559 10.6262 7.44995 13.3311C7.16844 13.6349 7.18655 14.1095 7.4904 14.391C7.79425 14.6725 8.26878 14.6544 8.55029 14.3505ZM17.4499 12.192C14.433 8.93571 9.56716 8.93571 6.55027 12.192C6.26876 12.4959 5.79423 12.514 5.49038 12.2325C5.18653 11.951 5.16842 11.4764 5.44993 11.1726C9.06046 7.27552 14.9397 7.27552 18.5503 11.1726C18.8318 11.4764 18.8137 11.951 18.5098 12.2325C18.206 12.514 17.7314 12.4959 17.4499 12.192Z" fill="CurrentColor"></path>
+</svg>
+
+
+
+                  Vendor Dashboard
+                  </a>
+
+                  {{-- NEW NAV LINK --}}
                  <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/tasks') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -104,8 +120,8 @@ background-position:center;
 
 
                    Tasks
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
                 </a>
+                {{-- NEW NAV LINK --}}
                  <a class="p-10 pointer align-center clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/spin') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -120,8 +136,8 @@ background-position:center;
 
 
                   Spin & Win
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
                 
                
                 
@@ -144,8 +160,9 @@ background-position:center;
 </svg>
 
 Articles
-                      <svg class="m-left-auto chevron transition-ease-half" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                      </a> 
+                     <svg  class="m-left-auto chevron transition-ease-half" width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.51192 4.43057C8.82641 4.161 9.29989 4.19743 9.56946 4.51192L15.5695 11.5119C15.8102 11.7928 15.8102 12.2072 15.5695 12.4881L9.56946 19.4881C9.29989 19.8026 8.82641 19.839 8.51192 19.5695C8.19743 19.2999 8.161 18.8264 8.43057 18.5119L14.0122 12L8.43057 5.48811C8.161 5.17361 8.19743 4.70014 8.51192 4.43057Z" fill="CurrentColor"></path>
+</svg>  </a> 
                       <div style="width:calc(100% - 10px)" class="nav-child display-none m-left-10 border-left-4 border-color-bg bg-primary-transparent w-full column">
                         <a class="p-10 w-full row g-5 no-u c-inherit" onclick="
                   spa(event,'{{ url('users/articles/write') }}');
@@ -157,6 +174,18 @@ Articles
                   ">Read & Earn</a>
                              </div>
                 </div>
+                {{-- NEW NAV LINK --}}
+                 <a class="p-10 no-pointer no-select align-center clip-10 w-full row g-5 no-u c-white">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.2132 3.2132C1.5956 4.83081 1.5956 7.45346 3.2132 9.07107L14.9289 20.7868C16.5465 22.4044 19.1692 22.4044 20.7868 20.7868C22.4044 19.1692 22.4044 16.5465 20.7868 14.9289L9.07107 3.2132C7.45346 1.5956 4.83081 1.5956 3.2132 3.2132ZM9.34458 8.23084C9.03703 7.92329 8.53839 7.92329 8.23084 8.23084C7.92329 8.53839 7.92329 9.03703 8.23084 9.34458C8.53839 9.65213 9.03703 9.65213 9.34458 9.34458C9.65213 9.03703 9.65213 8.53839 9.34458 8.23084ZM12.1289 9.15895C11.8214 8.8514 11.3227 8.8514 11.0152 9.15895C10.7076 9.4665 10.7076 9.96514 11.0152 10.2727C11.3227 10.5802 11.8214 10.5802 12.1289 10.2727C12.4365 9.96514 12.4365 9.4665 12.1289 9.15895ZM15.8414 12.8714C16.1489 13.179 16.1489 13.6776 15.8414 13.9852C15.5338 14.2927 15.0352 14.2927 14.7277 13.9852C14.4201 13.6776 14.4201 13.179 14.7277 12.8714C15.0352 12.5639 15.5338 12.5639 15.8414 12.8714ZM16.7695 16.7695C17.0771 16.462 17.0771 15.9633 16.7695 15.6558C16.462 15.3482 15.9633 15.3482 15.6558 15.6558C15.3482 15.9633 15.3482 16.462 15.6558 16.7695C15.9633 17.0771 16.462 17.0771 16.7695 16.7695ZM13.057 13.057C13.3646 12.7495 13.3646 12.2509 13.057 11.9433C12.7495 11.6358 12.2509 11.6358 11.9433 11.9433C11.6358 12.2509 11.6358 12.7495 11.9433 13.057C12.2509 13.3646 12.7495 13.3646 13.057 13.057ZM13.9852 14.7277C14.2927 15.0352 14.2927 15.5338 13.9852 15.8414C13.6776 16.1489 13.179 16.1489 12.8714 15.8414C12.5639 15.5338 12.5639 15.0352 12.8714 14.7277C13.179 14.4201 13.6776 14.4201 13.9852 14.7277ZM9.15895 11.0152C9.4665 10.7076 9.96514 10.7076 10.2727 11.0152C10.5802 11.3227 10.5802 11.8214 10.2727 12.1289C9.96514 12.4365 9.4665 12.4365 9.15895 12.1289C8.8514 11.8214 8.8514 11.3227 9.15895 11.0152Z" fill="CurrentColor"></path>
+<path d="M5.08148 13.0607L3.2132 14.9289C1.5956 16.5465 1.5956 19.1692 3.2132 20.7868C4.83081 22.4044 7.45346 22.4044 9.07107 20.7868L10.9393 18.9185L5.08148 13.0607Z" fill="CurrentColor"></path>
+<path d="M18.9185 10.9393L20.7868 9.07107C22.4044 7.45346 22.4044 4.83081 20.7868 3.2132C19.1692 1.5956 16.5465 1.5956 14.9289 3.2132L13.0607 5.08148L18.9185 10.9393Z" fill="CurrentColor"></path>
+</svg>
+
+    Brain Quest
+    <span class="bg-green m-left-auto br-5 p-5">Coming Soon</span>
+                 </a>
+                 {{-- NEW NAV LINK --}}
                 <div class="nav-group c-white w-full column">
                      <a onclick="
                      let child=this.closest('.nav-group').querySelector('.nav-child');
@@ -178,8 +207,11 @@ Articles
 <path d="M12 14.0001C13.1046 14.0001 14 13.1046 14 12.0001C14 10.8955 13.1046 10.0001 12 10.0001C10.8954 10.0001 10 10.8955 10 12.0001C10 13.1046 10.8954 14.0001 12 14.0001Z" fill="CurrentColor"></path>
 </svg>
      Airtime & Data
-                      <svg class="m-left-auto chevron transition-ease-half" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                      </a> 
+     <svg  class="m-left-auto chevron transition-ease-half" width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.51192 4.43057C8.82641 4.161 9.29989 4.19743 9.56946 4.51192L15.5695 11.5119C15.8102 11.7928 15.8102 12.2072 15.5695 12.4881L9.56946 19.4881C9.29989 19.8026 8.82641 19.839 8.51192 19.5695C8.19743 19.2999 8.161 18.8264 8.43057 18.5119L14.0122 12L8.43057 5.48811C8.161 5.17361 8.19743 4.70014 8.51192 4.43057Z" fill="CurrentColor"></path>
+</svg>
+
+                        </a> 
                       <div style="width:calc(100% - 10px)" class="nav-child display-none m-left-10 border-left-4 border-color-bg bg-primary-transparent w-full column">
                         <a class="p-10 w-full row g-5 no-u c-inherit" onclick="
                   spa(event,'{{ url('users/airtime/topup') }}');
@@ -191,6 +223,7 @@ Articles
                   ">Buy Data Bundle</a>
                              </div>
                 </div>
+                {{-- NEW NAV LINK --}}
                  <a class="p-10 pointer align-center clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/bank/add') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -202,8 +235,8 @@ Articles
 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.75 9.5C10.75 8.80964 11.3097 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3097 10.75 10.75 10.1904 10.75 9.5Z" fill="CurrentColor"></path>
 </svg>
     Add Bank
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
 
                   <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/withdraw') }}');
@@ -216,8 +249,8 @@ Articles
 </svg>
 
                   Withdraw Funds
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
                 <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u secondary-text"  onclick="
                   spa(event,'{{ url('users/transactions') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -229,8 +262,8 @@ Articles
 
 
                     Transactions
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
                 </a>
+                {{-- NEW NAV LINK --}}
                  <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/invite') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -244,8 +277,8 @@ Articles
 <path d="M12.7498 10.0348V11.2498H13.9647C15.1104 11.2498 16.1091 10.47 16.387 9.35847C16.6506 8.30403 15.6955 7.34891 14.6411 7.61252C13.5295 7.8904 12.7498 8.88911 12.7498 10.0348Z" fill="CurrentColor"></path>
 </svg>
        Refer & Earn
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
                     <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/team') }}');
                   this.closest('nav').classList.add('mobile-display-none');
@@ -261,8 +294,8 @@ Articles
 
 
                 My Referrals
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
               
                  
               
@@ -279,8 +312,8 @@ Articles
 </svg>
 
                       Account Settings
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
+                 {{-- NEW NAV LINK --}}
                 
 
 
@@ -297,8 +330,7 @@ Articles
 
 
                   Logout
-                <svg class="m-left-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="CurrentColor" viewBox="0 0 256 256"><path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path></svg>
-                </a>
+                 </a>
 
 
             </div>

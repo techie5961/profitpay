@@ -137,6 +137,7 @@ class AdminsDashboardController extends Controller
     // site settings
     public function SiteSettings(){
         return view('admins.settings',[
+            'social' => json_decode(DB::table('settings')->where('key','social_settings')->first()->json ?? '{}'),
             'general' => json_decode(DB::table('settings')->where('key','general_settings')->first()->json ?? '{}'),
             'finance' => json_decode(DB::table('settings')->where('key','finance_settings')->first()->json ?? '{}')
         ]);

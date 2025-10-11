@@ -158,6 +158,36 @@ class AdminsPostRequestController extends Controller
             ]);
         }
     }
+     // social settings
+    public function SocialSettings(){
+        $key='social_settings';
+        $json=[
+            'whatsapp' => request()->input('whatsapp'),
+            'telegram' => request()->input('telegram'),
+            'notification' => request()->input('notification') ?? ''
+        ];
+        if(DB::table('settings')->where('key',$key)->exists()){
+            DB::table('settings')->where('key',$key)->update([
+                'json' => json_encode($json),
+                'updated' => Carbon::now()
+            ]);
+            return response()->json([
+                'message' => 'settings updated successfully',
+                'status' => 'success'
+            ]);
+        }else{
+             DB::table('settings')->insert([
+                'key' => $key,
+                'json' => json_encode($json),
+                'updated' => Carbon::now(),
+                'date' => Carbon::now()
+            ]);
+            return response()->json([
+                'message' => 'settings saved successfully',
+                'status' => 'success'
+            ]);
+        }
+    }
      // finance settings
     public function FinanceSettings(){
         $key='finance_settings';

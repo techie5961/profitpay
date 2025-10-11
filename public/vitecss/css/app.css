@@ -84,7 +84,9 @@ body{
 
 
 }
-
+.cont:has(input:focus){
+    border-color:var(--primary);
+}
 svg{
     flex-shrink: 0;
 }
@@ -175,6 +177,7 @@ main{
         transform:scale(0.9);
     }
 }
+
 
 /* nav */
 .nav{
@@ -384,7 +387,7 @@ hr.gradient{
 .break-word{
     word-break:break-all;
 }
-.btn,input,select{
+.btn,input,select,textarea{
     font-family:var(--font);
     
 
@@ -449,7 +452,7 @@ input.empty,select.empty,.cont.empty{
 .overflow-scroll{
     overflow:scroll;
 }
-input{
+input,textarea,select{
     padding:10px;
 }
 .spa-loader{
@@ -2082,6 +2085,28 @@ button.post.active .working{
 }
 .place-center{
     place-items: center;
+}
+/* rotate */
+.rotate-90,.rotate-90deg,.rotate-positive-90,.rotate-positive-90deg{
+    transform:rotate(90deg);
+}
+
+.rotate-negative-90,.rotate-negative-90deg{
+    transform:rotate(-90deg);
+}
+/* notify2 */
+.notify2 .child{
+   animation:scale-in 0.5s linear forwards;
+}
+@keyframes scale-in{
+    0%{
+        transform:scale(0.9);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
 }
 /* badge */
 .status{

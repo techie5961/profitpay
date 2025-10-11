@@ -315,6 +315,9 @@ Route::prefix('get')->group(function(){
         Route::post('general/settings/process',[
             AdminsPostRequestController::class,'GeneralSettings'
         ]);
+         Route::post('social/settings/process',[
+            AdminsPostRequestController::class,'SocialSettings'
+        ]);
          Route::post('finance/settings/process',[
             AdminsPostRequestController::class,'FinanceSettings'
         ]);

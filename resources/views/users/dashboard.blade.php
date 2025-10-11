@@ -41,11 +41,31 @@
 @endsection
 @section('main')
     <section class="column p-10 w-full g-10">
-       <div class="cont bg-secondary-dark w-full column p-top-50 br-10">
+       <div class="cont bg-secondary-dark w-full column br-10">
+        <div class="p-10 w-full">
+            <div class="w-full {{ $social->notification == '' ? 'display-none' : '' }} notification-house no-select bg-dim column p-10 br-10">
+              <div class="row w-full g-10">
+                  <span>
+                    <svg onclick="
+                    this.closest('.notification-house').remove();
+                   sessionStorage.setItem('notified','true');
+                    " width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM8.96963 8.96965C9.26252 8.67676 9.73739 8.67676 10.0303 8.96965L12 10.9393L13.9696 8.96967C14.2625 8.67678 14.7374 8.67678 15.0303 8.96967C15.3232 9.26256 15.3232 9.73744 15.0303 10.0303L13.0606 12L15.0303 13.9696C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73742 15.3232 9.26254 15.3232 8.96965 15.0303C8.67676 14.7374 8.67676 14.2625 8.96965 13.9697L10.9393 12L8.96963 10.0303C8.67673 9.73742 8.67673 9.26254 8.96963 8.96965Z" fill="CurrentColor"></path>
+</svg>
+
+                </span>
+                <strong class="desc">Platform Notification</strong>
+            </div>
+                <div>
+                    {!! nl2br($social->notification)  !!}
+                </div>
+                
+            </div>
+        </div>
         <div class="column wallets-house primary-text pos-relative bg-primary p-10 g-10 w-full br-10">
             <div class="row space-between align-center g-10 w-full">
                 <span class="font-weight-900">👋 Welcome Back</span>
-                <div class="p-5 border-1 border-color-secondary bg-dim br-5 row align-center g-10">
+                <div class="p-5 display-none border-1 border-color-secondary bg-dim br-5 row align-center g-10">
                     <span>USD</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.43056 8.51192C4.70012 8.19743 5.1736 8.161 5.48809 8.43057L12 14.0122L18.5119 8.43057C18.8264 8.16101 19.2999 8.19743 19.5694 8.51192C19.839 8.82642 19.8026 9.29989 19.4881 9.56946L12.4881 15.5695C12.2072 15.8102 11.7928 15.8102 11.5119 15.5695L4.5119 9.56946C4.19741 9.29989 4.16099 8.82641 4.43056 8.51192Z" fill="CurrentColor"></path>
@@ -58,7 +78,7 @@
                 <div class="column g-5">
                      <strong class="desc font-weight-900">{{ ucfirst(Auth::guard('users')->user()->username) }}</strong>
                      <div class="w-full w-fit secondary-text font-weight-900 br-5 clip-5 bg-secondary p-5">
-                Alpha Package
+               {{ json_decode(Auth::guard('users')->user()->package)->name }}
             </div>
                 </div>
                
@@ -120,7 +140,7 @@
                    }catch(error){
                    alert(error.stack);
                    }
-                    " style="background: linear-gradient(to top right,red,coral);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full average br-10 p-10 column g-5">
+                    " style="background: linear-gradient(to top right,red,coral);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full z-index-1000 br-10 p-10 column g-5">
             <div class="w-full row align-center space-between g-10">
                <span> Affiliate Balance</span>
               <svg width="30" height="30" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +180,7 @@
                    }catch(error){
                    alert(error.stack);
                    }
-                    " style="background: linear-gradient(to top right,green,#4caf50);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full average br-10 p-10 column g-5">
+                    " style="background: linear-gradient(to top right,green,#4caf50);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full z-index-1000 br-10 p-10 column g-5">
             <div class="w-full row align-center space-between g-10">
                <span> Games Balance</span>
             <svg width="30" height="30" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
@@ -202,7 +222,7 @@
                    }catch(error){
                    alert(error.stack);
                    }
-                    " style="background:linear-gradient(to top right,rgba(108,92,230),rgb(150, 137, 247));;color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full average br-10 p-10 column g-5">
+                    " style="background:linear-gradient(to top right,rgba(108,92,230),rgb(150, 137, 247));;color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full z-index-1000 br-10 p-10 column g-5">
             <div class="w-full row align-center space-between g-10">
                <span>All Time Earnings</span>
             <svg width="30" height="30" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
@@ -241,7 +261,7 @@
                    }catch(error){
                    alert(error.stack);
                    }
-                    " style="background: linear-gradient(to top right,navy,blue);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full average br-10 p-10 column g-5">
+                    " style="background: linear-gradient(to top right,navy,blue);color:white;position:sticky;bottom:0;transform:translateY(30%)" class="w-full z-index-1000 br-10 p-10 column g-5">
             <div class="w-full row align-center space-between g-10">
                <span> Activities Balance</span>
                <svg width="30" height="30" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
@@ -375,19 +395,30 @@
         <div class="w-full bg-secondary-dark border-1 border-color-secondary g-5 secondary-text br-10 p-10 row space-between align-center">
             <div class="w-full h-40 no-scrollbar align-center row ws-nowrap overflow-auto p-5 br-10 bg-secondary-transparent">{{ url('register/ref/'.Auth::guard('users')->user()->username.'') }}</div>
             <div onclick="copy('{{ url('register/ref/'.Auth::guard('users')->user()->username.'') }}')" class="h-40 perfect-square column  bg-secondary  br-10 justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32Zm-8,128H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.0616 12.6473L20.5793 10.7154C21.1835 8.46034 21.4856 7.3328 21.2581 6.35703C21.0785 5.58657 20.6744 4.88668 20.097 4.34587C19.3657 3.66095 18.2381 3.35883 15.9831 2.75458C13.728 2.15033 12.6004 1.84821 11.6247 2.07573C10.8542 2.25537 10.1543 2.65945 9.61351 3.23687C9.02709 3.86298 8.72128 4.77957 8.26621 6.44561C8.18979 6.7254 8.10915 7.02633 8.02227 7.35057L8.02222 7.35077L7.50458 9.28263C6.90033 11.5377 6.59821 12.6652 6.82573 13.641C7.00537 14.4115 7.40945 15.1114 7.98687 15.6522C8.71815 16.3371 9.84569 16.6392 12.1008 17.2435L12.1008 17.2435C14.1334 17.7881 15.2499 18.0873 16.165 17.9744C16.2652 17.9621 16.3629 17.9448 16.4592 17.9223C17.2296 17.7427 17.9295 17.3386 18.4703 16.7612C19.1552 16.0299 19.4574 14.9024 20.0616 12.6473Z" fill="CurrentColor"></path>
+<path d="M2.50458 14.715L3.02222 16.6469C3.62647 18.902 3.92859 20.0295 4.61351 20.7608C5.15432 21.3382 5.85421 21.7423 6.62466 21.9219C7.60044 22.1494 8.72798 21.8473 10.9831 21.2431C13.2381 20.6388 14.3657 20.3367 15.097 19.6518C15.1577 19.5949 15.2164 19.5363 15.2733 19.4761C14.9391 19.448 14.602 19.3942 14.2594 19.3261C13.5633 19.1877 12.7362 18.9661 11.758 18.704L11.6512 18.6753L11.6264 18.6687C10.5621 18.3835 9.67281 18.1448 8.96277 17.8883C8.21607 17.6185 7.5376 17.286 6.96148 16.7464C6.16753 16.0028 5.61193 15.0404 5.36491 13.9811C5.18567 13.2123 5.23691 12.4585 5.37666 11.6769C5.51058 10.928 5.75109 10.0305 6.03926 8.95515L6.03926 8.95514L6.57365 6.96077L6.59245 6.89062C4.6719 7.40799 3.66101 7.71408 2.98687 8.34548C2.40945 8.88629 2.00537 9.58617 1.82573 10.3566C1.59821 11.3324 1.90033 12.4599 2.50458 14.715Z" fill="CurrentColor"></path>
+</svg>
 
             </div>
         </div>
-        <div class="w-full m-x-auto align-center p-20 column g-5 bg-primary primary-text br-10 p-10">
+        
+        <div class="w-full no-select m-x-auto align-center p-20 column g-5 bg-primary primary-text br-10 p-10">
             <strong class="font-1">Join our Community to get latest updates and connect with other users.</strong>
        <div class="grid grid-2 place-center m-left-auto w-full g-10 align-center">
-        <div class="bg-green pc-max-w-half c-white row justify-center h-50 p-10 bold w-full br-1000">Join Whatsapp
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="CurrentColor" viewBox="0 0 256 256"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"></path></svg>
+        <div style="box-shadow:inset 0 0 20px green" class="bg-green g-5 align-center pc-max-w-half c-white row justify-center h-50 p-10 bold w-full br-1000">Join Whatsapp
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 8.5C22 4.91015 19.0899 2 15.5 2C13.4171 2 11.5631 2.9823 10.3735 4.50721C15.4471 4.70336 19.5 8.87838 19.5 14C19.5 14.1103 19.4981 14.2202 19.4944 14.3296L19.8267 14.4185C20.793 14.677 21.677 13.793 21.4185 12.8267L21.2911 12.3506C21.1882 11.9661 21.2501 11.5598 21.4155 11.1977C21.7908 10.376 22 9.46242 22 8.5Z" fill="CurrentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 14C18 18.4183 14.4183 22 10 22C8.76449 22 7.5944 21.7199 6.54976 21.2198C6.19071 21.0479 5.78393 20.9876 5.39939 21.0904L4.17335 21.4185C3.20701 21.677 2.32295 20.793 2.58151 19.8267L2.90955 18.6006C3.01245 18.2161 2.95209 17.8093 2.7802 17.4502C2.28008 16.4056 2 15.2355 2 14C2 9.58172 5.58172 6 10 6C14.4183 6 18 9.58172 18 14ZM6.5 15C7.05228 15 7.5 14.5523 7.5 14C7.5 13.4477 7.05228 13 6.5 13C5.94772 13 5.5 13.4477 5.5 14C5.5 14.5523 5.94772 15 6.5 15ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15ZM13.5 15C14.0523 15 14.5 14.5523 14.5 14C14.5 13.4477 14.0523 13 13.5 13C12.9477 13 12.5 13.4477 12.5 14C12.5 14.5523 12.9477 15 13.5 15Z" fill="CurrentColor"></path>
+</svg>
+
 
         </div>
-         <div class="bg-navy pc-max-w-half m-right-auto c-white row justify-center h-50 p-10 bold w-full br-1000">Join Telegram
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="CurrentColor" viewBox="0 0 256 256"><path d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19ZM175.53,208,92.85,135.5l119-85.29Z"></path></svg>
+         <div style="box-shadow:inset 0 0 20px navy;background:blue" class="bg-navy g-5 align-center pc-max-w-half m-right-auto c-white row justify-center h-50 p-10 bold w-full br-1000">Join Telegram
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.6357 15.6701L20.3521 10.5208C21.8516 6.02242 22.6013 3.77322 21.414 2.58595C20.2268 1.39869 17.9776 2.14842 13.4792 3.64788L8.32987 5.36432C4.69923 6.57453 2.88392 7.17964 2.36806 8.06698C1.87731 8.91112 1.87731 9.95369 2.36806 10.7978C2.88392 11.6852 4.69923 12.2903 8.32987 13.5005C8.77981 13.6505 9.28601 13.5434 9.62294 13.2096L15.1286 7.75495C15.4383 7.44808 15.9382 7.45041 16.245 7.76015C16.5519 8.06989 16.5496 8.56975 16.2398 8.87662L10.8231 14.2432C10.4518 14.6111 10.3342 15.1742 10.4995 15.6701C11.7097 19.3007 12.3148 21.1161 13.2022 21.6319C14.0463 22.1227 15.0889 22.1227 15.933 21.6319C16.8204 21.1161 17.4255 19.3008 18.6357 15.6701Z" fill="CurrentColor"></path>
+</svg>
+
 
         </div>
        </div>
@@ -409,7 +440,11 @@
                 }
             });
             document.querySelector('.wallets-house').style.marginBottom=max_bottom - document.querySelector('.wallets-house').getBoundingClientRect().bottom + 10 + 'px';
-
+            if((sessionStorage.getItem('notified') ?? '') == 'true'){
+                if(document.querySelector('.notification-house')){
+                    document.querySelector('.notification-house').remove();
+                }
+            }
 
            }catch(error){
             alert(error.stack);
