@@ -1699,6 +1699,9 @@ button.post.active .working{
 .font-libertinus-sans{
     font-family: 'libertinus sans';
 }
+.font-bowl{
+    font-family:bowl;
+}
 /* description/heading */
 .desc{
     font-size:1.2rem;
@@ -2740,9 +2743,13 @@ html{
     .pc-grid{
         display:grid;
     }
+    .pc-grid-4{
+    grid-template-columns: repeat(4,1fr);
+}
     .pc-grid-8{
     grid-template-columns: repeat(8,1fr);
 }
+
  .pc-grid-6{
     grid-template-columns: repeat(6,1fr);
 }

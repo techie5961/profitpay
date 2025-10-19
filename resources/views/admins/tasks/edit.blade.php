@@ -46,8 +46,8 @@
              <div class="w-full cont pc-pointer h-50 border-1 br-10 row align-center space-between bg-dim border-color-silver">
             <input value="{{ $data->link }}" placeholder="Enter task url/link" name="link" type="url" class="inp required input w-full h-full br-10 bg-transparent no-border"> 
             </div>
-            <label for="">Task Reward</label>
-             <div class="w-full cont pc-pointer h-50 border-1 br-10 row align-center space-between bg-dim border-color-silver">
+            <label for="" class="display-none">Task Reward</label>
+             <div class="w-full display-none cont pc-pointer h-50 border-1 br-10 row align-center space-between bg-dim border-color-silver">
             <input value="{{ $data->reward }}" placeholder="Enter task reward" name="reward" step="any" type="number" class="inp required input w-full h-full br-10 bg-transparent no-border"> 
             </div>
              <label for="">Task Limit</label>

@@ -19,7 +19,16 @@ Route::get('hash',function(){
 });
 
 Route::get('/',[
-    UsersDashboardController::class,'Login'
+    UsersDashboardController::class,'Index'
+]);
+Route::get('coupon',[
+    UsersDashboardController::class,'Vendors'
+]);
+Route::get('coupon/checker',[
+    UsersDashboardController::class,'CouponChecker'
+]);
+Route::get('vendors',[
+    UsersDashboardController::class,'Vendors'
 ]);
 Route::get('login',[
     UsersDashboardController::class,'Login'
@@ -30,6 +39,18 @@ Route::get('register',[
 Route::get('register/{ref}',[
     UsersDashboardController::class,'RefRegister'
 ]);
+Route::get('earners/top',[
+    UsersDashboardController::class,'TopEarners'
+]);
+Route::get('about',[
+    UsersDashboardController::class,'AboutUs'
+]);
+Route::get('terms',[
+    UsersDashboardController::class,'Terms'
+]);
+Route::get('package/list',[
+    UsersDashboardController::class,'PackageList'
+]);
 
 
 //  prefix users
@@ -37,6 +58,9 @@ Route::prefix('users')->group(function(){
    Route::middleware([UsersAuthCheckerMiddleware::class])->group(function(){
      Route::get('dashboard',[
         UsersDashboardController::class,'Dashboard'
+    ]);
+     Route::get('vendor/dashboard',[
+        UsersDashboardController::class,'VendorDashboard'
     ]);
     Route::get('tasks',[
         UsersDashboardController::class,'Tasks'
@@ -46,6 +70,9 @@ Route::prefix('users')->group(function(){
     ]);
     Route::get('transactions',[
         UsersDashboardController::class,'Transactions'
+    ]);
+    Route::get('transaction/receipt',[
+        UsersDashboardController::class,'TransactionReceipt'
     ]);
     Route::get('more',[
         UsersDashboardController::class,'Profile'
@@ -65,6 +92,9 @@ Route::prefix('users')->group(function(){
     Route::get('password/update',[
         UsersDashboardController::class,'Password'
     ]);
+     Route::get('profile/photo/update',[
+        UsersDashboardController::class,'ProfilePhoto'
+    ]);
     Route::get('articles/write',[
         UsersDashboardController::class,'WriteArticle'
     ]);
@@ -79,6 +109,9 @@ Route::prefix('users')->group(function(){
     ]);
      Route::get('data/topup',[
         UsersDashboardController::class,'DataTopup'
+    ]);
+    Route::get('logout',[
+        UsersDashboardController::class,'Logout'
     ]);
 
 
@@ -125,8 +158,14 @@ Route::prefix('users')->group(function(){
         Route::post('update/password/process',[
             UserPostRequestController::class,'UpdatePassword'
         ]);
+         Route::post('update/profile/photo/process',[
+            UserPostRequestController::class,'UpdatePhoto'
+        ]);
         Route::post('publish/article/process',[
             UserPostRequestController::class,'PublishArticle'
+        ]);
+        Route::post('coupon/checker/process',[
+            UserPostRequestController::class,'CouponChecker'
         ]);
     });
 });

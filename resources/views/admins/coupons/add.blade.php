@@ -11,6 +11,10 @@
                  <strong class="desc c-bg-secondary">Create New Coupon Code</strong>
             </div>
             <hr>
+            <label for="">How many Codes</label>
+             <div class="cont w-full h-50 border-1 border-color-silver bg-dim br-10">
+                <input name="amount" value="1" placeholder="How many codes do you want to generate" type="number" class="inp no-border input w-full h-full br-10 bg-transparent required">
+             </div>
             <label for="" class="m-top-5">Select Vendor</label>
             <div class="cont w-full h-50 border-1 border-color-silver bg-dim br-10">
                <select class="inp no-border input w-full h-full br-10 bg-transparent required" name="vendor_id" id="">

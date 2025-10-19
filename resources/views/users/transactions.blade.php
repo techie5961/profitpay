@@ -111,7 +111,7 @@
        </div>
           <div class="w-full g-5 column  br-10 box-shadow">
               @foreach ($transactions as $data)
-                <div class="w-full bg-secondary-dark p-10 br-5 row align-center g-10 space-between">
+                <div onclick="spa(event,'{{ url('users/transaction/receipt?id='.$data->id.'') }}')" class="w-full bg-secondary-dark p-10 br-5 row align-center g-10 space-between">
                     <div class="h-30 w-30 column svg justify-center bg-primary-transparent circle clip-circle">{!! $data->svg !!}</div>
                <div class="column g-2 m-right-auto">
                 <strong class="font-1">{{ $data->type }}</strong>

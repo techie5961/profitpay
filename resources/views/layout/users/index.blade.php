@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="{{ asset('favicon/favicon-96x96.png') }}" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="{{ asset('favicon/favicon.svg') }}" />
+<link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}" />
+<link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}" />
+<link rel="stylesheet" href="{{ asset('vitecss/fonts/fonts.css?v='.config('versions.vite_version').'') }}">
+<link rel="stylesheet" href="{{ asset('vitecss/css/app.css?v='.config('versions.vite_version').'') }}">
+    <title>{{ config('app.name') }} | Users | @yield('title')</title>
+    <style>
+      .nav-profile{
+        background-color: var(--bg);
+background-color: #cccccc;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 1200'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='100%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f5f5f5'/%3E%3Cstop offset='0.02' stop-color='%23cccccc'/%3E%3Cstop offset='0.02' stop-color='%23c3c3c3'/%3E%3Cstop offset='0.032' stop-color='%23cccccc'/%3E%3Cstop offset='0.032' stop-color='%23bbbbbb'/%3E%3Cstop offset='0.056' stop-color='%23cccccc'/%3E%3Cstop offset='0.056' stop-color='%23c7c7c7'/%3E%3Cstop offset='0.07' stop-color='%23cccccc'/%3E%3Cstop offset='0.07' stop-color='%23a0a0a0'/%3E%3Cstop offset='0.1' stop-color='%23cccccc'/%3E%3Cstop offset='0.1' stop-color='%23e7e7e7'/%3E%3Cstop offset='0.126' stop-color='%23cccccc'/%3E%3Cstop offset='0.126' stop-color='%23bababa'/%3E%3Cstop offset='0.142' stop-color='%23cccccc'/%3E%3Cstop offset='0.142' stop-color='%23c8c8c8'/%3E%3Cstop offset='0.159' stop-color='%23cccccc'/%3E%3Cstop offset='0.159' stop-color='%23b0b0b0'/%3E%3Cstop offset='0.17' stop-color='%23cccccc'/%3E%3Cstop offset='0.17' stop-color='%23cdcdcd'/%3E%3Cstop offset='0.197' stop-color='%23cccccc'/%3E%3Cstop offset='0.197' stop-color='%23b5b5b5'/%3E%3Cstop offset='0.218' stop-color='%23cccccc'/%3E%3Cstop offset='0.218' stop-color='%23c7c7c7'/%3E%3Cstop offset='0.239' stop-color='%23cccccc'/%3E%3Cstop offset='0.239' stop-color='%23cecece'/%3E%3Cstop offset='0.254' stop-color='%23cccccc'/%3E%3Cstop offset='0.254' stop-color='%23cecece'/%3E%3Cstop offset='0.283' stop-color='%23cccccc'/%3E%3Cstop offset='0.283' stop-color='%23cccccc'/%3E%3Cstop offset='0.294' stop-color='%23cccccc'/%3E%3Cstop offset='0.294' stop-color='%23c9c9c9'/%3E%3Cstop offset='0.305' stop-color='%23cccccc'/%3E%3Cstop offset='0.305' stop-color='%234e4e4e'/%3E%3Cstop offset='0.332' stop-color='%23cccccc'/%3E%3Cstop offset='0.332' stop-color='%23909090'/%3E%3Cstop offset='0.346' stop-color='%23cccccc'/%3E%3Cstop offset='0.346' stop-color='%23c5c5c5'/%3E%3Cstop offset='0.362' stop-color='%23cccccc'/%3E%3Cstop offset='0.362' stop-color='%23979797'/%3E%3Cstop offset='0.381' stop-color='%23cccccc'/%3E%3Cstop offset='0.381' stop-color='%23c2c2c2'/%3E%3Cstop offset='0.415' stop-color='%23cccccc'/%3E%3Cstop offset='0.415' stop-color='%23a8a8a8'/%3E%3Cstop offset='0.428' stop-color='%23cccccc'/%3E%3Cstop offset='0.428' stop-color='%23525252'/%3E%3Cstop offset='0.442' stop-color='%23cccccc'/%3E%3Cstop offset='0.442' stop-color='%23c8c8c8'/%3E%3Cstop offset='0.456' stop-color='%23cccccc'/%3E%3Cstop offset='0.456' stop-color='%23a9a9a9'/%3E%3Cstop offset='0.498' stop-color='%23cccccc'/%3E%3Cstop offset='0.498' stop-color='%23dfdfdf'/%3E%3Cstop offset='0.511' stop-color='%23cccccc'/%3E%3Cstop offset='0.511' stop-color='%23cecece'/%3E%3Cstop offset='0.532' stop-color='%23cccccc'/%3E%3Cstop offset='0.532' stop-color='%23cecece'/%3E%3Cstop offset='0.541' stop-color='%23cccccc'/%3E%3Cstop offset='0.541' stop-color='%23bababa'/%3E%3Cstop offset='0.56' stop-color='%23cccccc'/%3E%3Cstop offset='0.56' stop-color='%23f0f0f0'/%3E%3Cstop offset='0.581' stop-color='%23cccccc'/%3E%3Cstop offset='0.581' stop-color='%23aaaaaa'/%3E%3Cstop offset='0.6' stop-color='%23cccccc'/%3E%3Cstop offset='0.6' stop-color='%23d7d7d7'/%3E%3Cstop offset='0.618' stop-color='%23cccccc'/%3E%3Cstop offset='0.618' stop-color='%23cacaca'/%3E%3Cstop offset='0.656' stop-color='%23cccccc'/%3E%3Cstop offset='0.656' stop-color='%23cccccc'/%3E%3Cstop offset='0.679' stop-color='%23cccccc'/%3E%3Cstop offset='0.679' stop-color='%23ababab'/%3E%3Cstop offset='0.689' stop-color='%23cccccc'/%3E%3Cstop offset='0.689' stop-color='%23d1d1d1'/%3E%3Cstop offset='0.720' stop-color='%23cccccc'/%3E%3Cstop offset='0.720' stop-color='%23bbbbbb'/%3E%3Cstop offset='0.734' stop-color='%23cccccc'/%3E%3Cstop offset='0.734' stop-color='%23cbcbcb'/%3E%3Cstop offset='0.748' stop-color='%23cccccc'/%3E%3Cstop offset='0.748' stop-color='%236b6b6b'/%3E%3Cstop offset='0.764' stop-color='%23cccccc'/%3E%3Cstop offset='0.764' stop-color='%23989898'/%3E%3Cstop offset='0.788' stop-color='%23cccccc'/%3E%3Cstop offset='0.788' stop-color='%23dcdcdc'/%3E%3Cstop offset='0.808' stop-color='%23cccccc'/%3E%3Cstop offset='0.808' stop-color='%238f8f8f'/%3E%3Cstop offset='0.831' stop-color='%23cccccc'/%3E%3Cstop offset='0.831' stop-color='%23cbcbcb'/%3E%3Cstop offset='0.856' stop-color='%23cccccc'/%3E%3Cstop offset='0.856' stop-color='%23dbdbdb'/%3E%3Cstop offset='0.872' stop-color='%23cccccc'/%3E%3Cstop offset='0.872' stop-color='%23c7c7c7'/%3E%3Cstop offset='0.894' stop-color='%23cccccc'/%3E%3Cstop offset='0.894' stop-color='%23c8c8c8'/%3E%3Cstop offset='0.914' stop-color='%23cccccc'/%3E%3Cstop offset='0.914' stop-color='%23c0c0c0'/%3E%3Cstop offset='0.942' stop-color='%23cccccc'/%3E%3Cstop offset='0.942' stop-color='%23cdcdcd'/%3E%3Cstop offset='0.957' stop-color='%23cccccc'/%3E%3Cstop offset='0.957' stop-color='%237f7f7f'/%3E%3Cstop offset='0.973' stop-color='%23cccccc'/%3E%3Cstop offset='0.973' stop-color='%23cdcdcd'/%3E%3Cstop offset='1' stop-color='%23cccccc'/%3E%3Cstop offset='1' stop-color='%23e6e6e6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' x='0' y='0' width='100%25' height='100%25'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+color:black;
+}
+/* body{
+  
+   background-color: var(--bg);
+  
+ 
+} */
+div.menu.active svg.menu.open{
+    display:none;
+}
+  
+div.menu svg.menu.close{
+    display:none;
+}
+div.menu.active svg.menu.close{
+    display:flex;
+}
+  body{
+  background-color: var(--bg);
+background-image: url("{{ asset('images/background.jpg') }}");
+background-size:cover;
+background-position:center;
+color:white;
+  
+  }
+  
+    
+    </style>
+    @yield('css')
+</head>
+
+<body class="overflow-hidden">
+  <div class="pos-fixed loader top-0 left-0 right-0 column justify-center bottom-0 z-index-9000 bg">
+   <svg fill="currentColor" height="100" width="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="7.33" height="7.33"><animate id="spinner_oJFS" begin="0;spinner_5T1J.end+0.2s" attributeName="x" dur="0.6s" values="1;4;1"/><animate begin="0;spinner_5T1J.end+0.2s" attributeName="y" dur="0.6s" values="1;4;1"/><animate begin="0;spinner_5T1J.end+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="0;spinner_5T1J.end+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="8.33" y="1" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.1s" attributeName="x" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="y" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="1" y="8.33" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.1s" attributeName="x" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="y" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="15.66" y="1" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.2s" attributeName="x" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="y" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="8.33" y="8.33" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.2s" attributeName="x" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="y" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="1" y="15.66" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.2s" attributeName="x" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="y" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="15.66" y="8.33" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.3s" attributeName="x" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="y" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="8.33" y="15.66" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.3s" attributeName="x" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="y" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="15.66" y="15.66" width="7.33" height="7.33"><animate id="spinner_5T1J" begin="spinner_oJFS.begin+0.4s" attributeName="x" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.4s" attributeName="y" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.4s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.4s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect></svg>
+   </div>
+    <header class="pos-sticky backdrop-blur-5 average c-white bg p-10 top-0 left-0 right-0 bottom-0 row align-center g-10">
+       
+        <img  onclick="window.location.href='{{ url('/') }}'" src="{{ asset('favicon/logo.png?v=1.1') }}" alt="Logo" class="h-30 pc-pointer">
+         <div onclick="
+       if(document.querySelector('section.nav').classList.contains('display-none')){
+        document.querySelector('section.nav').classList.remove('display-none');
+        document.querySelector('section.nav').classList.add('animation-trans-in-from-left');
+        this.classList.add('active');
+         
+       }else{
+        document.querySelector('section.nav').classList.add('display-none');
+        document.querySelector('section.nav').classList.remove('animation-trans-in-from-left');
+        this.classList.remove('active');
+         
+       }
+
+            " class="h-40 c-white m-left-auto menu w-40 column pc-display-none justify-center bg-dim c-white c-bg br-5 p-10 bg-white">
+          
+          <svg class="menu open" width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 7C3.25 6.58579 3.58579 6.25 4 6.25H20C20.4142 6.25 20.75 6.58579 20.75 7C20.75 7.41421 20.4142 7.75 20 7.75H4C3.58579 7.75 3.25 7.41421 3.25 7ZM3.25 12C3.25 11.5858 3.58579 11.25 4 11.25H15C15.4142 11.25 15.75 11.5858 15.75 12C15.75 12.4142 15.4142 12.75 15 12.75H4C3.58579 12.75 3.25 12.4142 3.25 12ZM3.25 17C3.25 16.5858 3.58579 16.25 4 16.25H9C9.41421 16.25 9.75 16.5858 9.75 17C9.75 17.4142 9.41421 17.75 9 17.75H4C3.58579 17.75 3.25 17.4142 3.25 17Z" fill="CurrentColor"></path>
+</svg>
+    <svg class="menu close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 256 256"><path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"></path></svg>
+
+        </div>
+       
+    <div class="row m-left-auto mobile-display-none align-center g-10">
+       <a  class="w-full clip-10 br-10 bold p-10 font-1 w-full g-5 row align-center no-u c-white" href="{{ url('/') }}">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495C22.2051 9.00229 22.0154 10.3208 21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22ZM8.39757 15.5532C8.64423 15.2204 9.11395 15.1506 9.44671 15.3973C10.1751 15.9371 11.0542 16.2498 12.0001 16.2498C12.946 16.2498 13.8251 15.9371 14.5535 15.3973C14.8863 15.1506 15.356 15.2204 15.6026 15.5532C15.8493 15.8859 15.7795 16.3557 15.4467 16.6023C14.4743 17.3231 13.2851 17.7498 12.0001 17.7498C10.7151 17.7498 9.5259 17.3231 8.55349 16.6023C8.22072 16.3557 8.15092 15.8859 8.39757 15.5532Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto">  Home</span>
+            </a>
+            <a href="{{ url('/about') }}" class="w-full clip-10 br-10 g-5 bold p-10 font-1 w-full row align-center no-u c-inherit">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 17.75C12.4142 17.75 12.75 17.4142 12.75 17V11C12.75 10.5858 12.4142 10.25 12 10.25C11.5858 10.25 11.25 10.5858 11.25 11V17C11.25 17.4142 11.5858 17.75 12 17.75ZM12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto ws-nowrap"> About Us</span>
+            </a>
+             <a href="{{ url('/coupon/checker') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 7.75C11.3787 7.75 10.875 8.25368 10.875 8.875C10.875 9.28921 10.5392 9.625 10.125 9.625C9.71079 9.625 9.375 9.28921 9.375 8.875C9.375 7.42525 10.5503 6.25 12 6.25C13.4497 6.25 14.625 7.42525 14.625 8.875C14.625 9.58584 14.3415 10.232 13.883 10.704C13.7907 10.7989 13.7027 10.8869 13.6187 10.9708C13.4029 11.1864 13.2138 11.3753 13.0479 11.5885C12.8289 11.8699 12.75 12.0768 12.75 12.25V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V12.25C11.25 11.5948 11.555 11.0644 11.8642 10.6672C12.0929 10.3733 12.3804 10.0863 12.6138 9.85346C12.6842 9.78321 12.7496 9.71789 12.807 9.65877C13.0046 9.45543 13.125 9.18004 13.125 8.875C13.125 8.25368 12.6213 7.75 12 7.75ZM12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto">Coupon Checker</span>
+            </a>
+              <a href="{{ url('/terms') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.8478 3.23463C18 3.60218 18 4.06812 18 5V19C18 19.9319 18 20.3978 17.8478 20.7654C17.8142 20.8465 17.7755 20.9248 17.7321 21C17.5131 21.3792 17.1743 21.6784 16.7654 21.8478C16.3978 22 15.9319 22 15 22C14.0681 22 13.6022 22 13.2346 21.8478C12.8257 21.6784 12.4869 21.3792 12.2679 21C12.2245 20.9248 12.1858 20.8465 12.1522 20.7654C12 20.3978 12 19.9319 12 19V5C12 4.06812 12 3.60218 12.1522 3.23463C12.1858 3.15353 12.2245 3.07519 12.2679 3C12.4869 2.62082 12.8257 2.32164 13.2346 2.15224C13.6022 2 14.0681 2 15 2C15.9319 2 16.3978 2 16.7654 2.15224C17.1743 2.32164 17.5131 2.62082 17.7321 3C17.7755 3.07519 17.8142 3.15353 17.8478 3.23463ZM15.75 11C15.75 10.5858 15.4142 10.25 15 10.25C14.5858 10.25 14.25 10.5858 14.25 11V13C14.25 13.4142 14.5858 13.75 15 13.75C15.4142 13.75 15.75 13.4142 15.75 13V11Z" fill="CurrentColor"></path>
+<path d="M10.65 21C10.5728 20.7212 10.5398 20.4498 10.5225 20.1964C10.5 19.8658 10.5 19.4721 10.5 19.0435V4.95649C10.5 4.52794 10.5 4.13424 10.5225 3.80358C10.5398 3.55021 10.5728 3.27883 10.65 3H5C4.06812 3 3.60218 3 3.23463 3.15224C2.74458 3.35523 2.35523 3.74458 2.15224 4.23463C2 4.60218 2 5.06812 2 6C2 6.93188 2 7.39782 2.15224 7.76537C2.35523 8.25542 2.74458 8.64477 3.23463 8.84776C3.60218 9 4.06812 9 5 9C4.06812 9 3.60218 9 3.23463 9.15224C2.74458 9.35523 2.35523 9.74458 2.15224 10.2346C2 10.6022 2 11.0681 2 12C2 12.9319 2 13.3978 2.15224 13.7654C2.35523 14.2554 2.74458 14.6448 3.23463 14.8478C3.60218 15 4.06812 15 5 15C4.06812 15 3.60218 15 3.23463 15.1522C2.74458 15.3552 2.35523 15.7446 2.15224 16.2346C2 16.6022 2 17.0681 2 18C2 18.9319 2 19.3978 2.15224 19.7654C2.35523 20.2554 2.74458 20.6448 3.23463 20.8478C3.60218 21 4.06812 21 5 21H10.65Z" fill="CurrentColor"></path>
+<path d="M19.3501 20.9996C20.0549 20.9973 20.447 20.9796 20.7654 20.8478C21.2554 20.6448 21.6448 20.2554 21.8478 19.7654C22 19.3978 22 18.9319 22 18C22 17.0681 22 16.6022 21.8478 16.2346C21.6448 15.7446 21.2554 15.3552 20.7654 15.1522C20.4703 15.03 20.1119 15.0059 19.5 15.0012V19.0435C19.5 19.4721 19.5001 19.8658 19.4775 20.1964C19.4602 20.4497 19.4272 20.7209 19.3501 20.9996Z" fill="CurrentColor"></path>
+<path d="M19.5 14.9988C20.1119 14.9941 20.4703 14.97 20.7654 14.8478C21.2554 14.6448 21.6448 14.2554 21.8478 13.7654C22 13.3978 22 12.9319 22 12C22 11.0681 22 10.6022 21.8478 10.2346C21.6448 9.74458 21.2554 9.35523 20.7654 9.15224C20.4703 9.03004 20.1119 9.00593 19.5 9.00117L19.5 14.9988Z" fill="CurrentColor"></path>
+<path d="M19.5 8.99883C20.1119 8.99407 20.4703 8.96996 20.7654 8.84776C21.2554 8.64477 21.6448 8.25542 21.8478 7.76537C22 7.39782 22 6.93188 22 6C22 5.06812 22 4.60218 21.8478 4.23463C21.6448 3.74458 21.2554 3.35523 20.7654 3.15224C20.447 3.02038 20.0549 3.00273 19.3501 3.00037C19.4272 3.27907 19.4602 3.55032 19.4775 3.80359C19.5001 4.13424 19.5 4.52793 19.5 4.95648V8.99883Z" fill="CurrentColor"></path>
+</svg>
+     
+              <span class="m-top-auto"> Terms</span>
+            </a>
+             <a href="{{ url('/coupon') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 2.75C15.9068 2.75 17.2615 2.75159 18.2892 2.88976C19.2952 3.02503 19.8749 3.27869 20.2981 3.7019C20.7213 4.12511 20.975 4.70476 21.1102 5.71085C21.2484 6.73851 21.25 8.09318 21.25 10C21.25 10.4142 21.5858 10.75 22 10.75C22.4142 10.75 22.75 10.4142 22.75 10V9.94359C22.75 8.10583 22.75 6.65019 22.5969 5.51098C22.4392 4.33856 22.1071 3.38961 21.3588 2.64124C20.6104 1.89288 19.6614 1.56076 18.489 1.40314C17.3498 1.24997 15.8942 1.24998 14.0564 1.25H14C13.5858 1.25 13.25 1.58579 13.25 2C13.25 2.41421 13.5858 2.75 14 2.75Z" fill="CurrentColor"></path>
+<path d="M9.94358 1.25H10C10.4142 1.25 10.75 1.58579 10.75 2C10.75 2.41421 10.4142 2.75 10 2.75C8.09318 2.75 6.73851 2.75159 5.71085 2.88976C4.70476 3.02503 4.12511 3.27869 3.7019 3.7019C3.27869 4.12511 3.02503 4.70476 2.88976 5.71085C2.75159 6.73851 2.75 8.09318 2.75 10C2.75 10.4142 2.41421 10.75 2 10.75C1.58579 10.75 1.25 10.4142 1.25 10V9.94358C1.24998 8.10583 1.24997 6.65019 1.40314 5.51098C1.56076 4.33856 1.89288 3.38961 2.64124 2.64124C3.38961 1.89288 4.33856 1.56076 5.51098 1.40314C6.65019 1.24997 8.10583 1.24998 9.94358 1.25Z" fill="CurrentColor"></path>
+<path d="M5.52721 5.52721C5 6.05442 5 6.90295 5 8.6C5 9.73137 5 10.2971 5.35147 10.6485C5.70294 11 6.26863 11 7.4 11H8.6C9.73137 11 10.2971 11 10.6485 10.6485C11 10.2971 11 9.73137 11 8.6V7.4C11 6.26863 11 5.70294 10.6485 5.35147C10.2971 5 9.73137 5 8.6 5C6.90295 5 6.05442 5 5.52721 5.52721Z" fill="CurrentColor"></path>
+<path d="M5.52721 18.4728C5 17.9456 5 17.0971 5 15.4C5 14.2686 5 13.7029 5.35147 13.3515C5.70295 13 6.26863 13 7.4 13H8.6C9.73137 13 10.2971 13 10.6485 13.3515C11 13.7029 11 14.2686 11 15.4V16.6C11 17.7314 11 18.2971 10.6485 18.6485C10.2971 19 9.73138 19 8.60002 19C6.90298 19 6.05441 19 5.52721 18.4728Z" fill="CurrentColor"></path>
+<path d="M13 7.4C13 6.26863 13 5.70294 13.3515 5.35147C13.7029 5 14.2686 5 15.4 5C17.0971 5 17.9456 5 18.4728 5.52721C19 6.05442 19 6.90295 19 8.6C19 9.73137 19 10.2971 18.6485 10.6485C18.2971 11 17.7314 11 16.6 11H15.4C14.2686 11 13.7029 11 13.3515 10.6485C13 10.2971 13 9.73137 13 8.6V7.4Z" fill="CurrentColor"></path>
+<path d="M13.3515 18.6485C13 18.2971 13 17.7314 13 16.6V15.4C13 14.2686 13 13.7029 13.3515 13.3515C13.7029 13 14.2686 13 15.4 13H16.6C17.7314 13 18.2971 13 18.6485 13.3515C19 13.7029 19 14.2686 19 15.4C19 17.097 19 17.9456 18.4728 18.4728C17.9456 19 17.0971 19 15.4 19C14.2687 19 13.7029 19 13.3515 18.6485Z" fill="CurrentColor"></path>
+<path d="M22 13.25C22.4142 13.25 22.75 13.5858 22.75 14V14.0564C22.75 15.8942 22.75 17.3498 22.5969 18.489C22.4392 19.6614 22.1071 20.6104 21.3588 21.3588C20.6104 22.1071 19.6614 22.4392 18.489 22.5969C17.3498 22.75 15.8942 22.75 14.0564 22.75H14C13.5858 22.75 13.25 22.4142 13.25 22C13.25 21.5858 13.5858 21.25 14 21.25C15.9068 21.25 17.2615 21.2484 18.2892 21.1102C19.2952 20.975 19.8749 20.7213 20.2981 20.2981C20.7213 19.8749 20.975 19.2952 21.1102 18.2892C21.2484 17.2615 21.25 15.9068 21.25 14C21.25 13.5858 21.5858 13.25 22 13.25Z" fill="CurrentColor"></path>
+<path d="M2.75 14C2.75 13.5858 2.41421 13.25 2 13.25C1.58579 13.25 1.25 13.5858 1.25 14V14.0564C1.24998 15.8942 1.24997 17.3498 1.40314 18.489C1.56076 19.6614 1.89288 20.6104 2.64124 21.3588C3.38961 22.1071 4.33856 22.4392 5.51098 22.5969C6.65019 22.75 8.10583 22.75 9.94359 22.75H10C10.4142 22.75 10.75 22.4142 10.75 22C10.75 21.5858 10.4142 21.25 10 21.25C8.09318 21.25 6.73851 21.2484 5.71085 21.1102C4.70476 20.975 4.12511 20.7213 3.7019 20.2981C3.27869 19.8749 3.02503 19.2952 2.88976 18.2892C2.75159 17.2615 2.75 15.9068 2.75 14Z" fill="CurrentColor"></path>
+</svg>
+
+
+              <span class="m-top-auto ws-nowrap"> Buy Coupon Code</span>
+            </a>
+              <a href="{{ url('/earners/top') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.4697 13.4697C18.7626 13.1768 19.2374 13.1768 19.5303 13.4697L21.5303 15.4697C21.8232 15.7626 21.8232 16.2374 21.5303 16.5303C21.2374 16.8232 20.7626 16.8232 20.4697 16.5303L19.75 15.8107V20C19.75 20.4142 19.4142 20.75 19 20.75C18.5858 20.75 18.25 20.4142 18.25 20V15.8107L17.5303 16.5303C17.2374 16.8232 16.7626 16.8232 16.4697 16.5303C16.1768 16.2374 16.1768 15.7626 16.4697 15.4697L18.4697 13.4697Z" fill="CurrentColor"></path>
+<path d="M10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C21.672 6.01511 21.9082 7.22882 21.9743 9.25H2.02572C2.09185 7.22882 2.32803 6.01511 3.17157 5.17157C4.34315 4 6.22876 4 10 4Z" fill="CurrentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 20H14C15.0559 20 15.964 20 16.75 19.9743V18.2362C16.2601 18.1817 15.7847 17.9666 15.409 17.591C14.5303 16.7123 14.5303 15.2877 15.409 14.409L17.409 12.409C18.2877 11.5303 19.7123 11.5303 20.591 12.409L21.9937 13.8118C22 13.2613 22 12.6595 22 12C22 11.5581 22 11.142 21.9981 10.75H2.00189C2 11.142 2 11.5581 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20ZM5.25 16C5.25 15.5858 5.58579 15.25 6 15.25H10C10.4142 15.25 10.75 15.5858 10.75 16C10.75 16.4142 10.4142 16.75 10 16.75H6C5.58579 16.75 5.25 16.4142 5.25 16ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75H14C14.4142 16.75 14.75 16.4142 14.75 16C14.75 15.5858 14.4142 15.25 14 15.25H12.5Z" fill="CurrentColor"></path>
+</svg>
+
+
+
+              <span class="m-top-auto ws-nowrap">Top Earners</span>
+            </a>
+          @if (!Auth::guard('users')->check())
+                <a href="{{ url('/login') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.8447 8.09467C10.5518 8.38756 10.5518 8.86244 10.8447 9.15533L12.5643 10.875H4.375C3.96079 10.875 3.625 11.2108 3.625 11.625C3.625 12.0392 3.96079 12.375 4.375 12.375H12.5643L10.8447 14.0947C10.5518 14.3876 10.5518 14.8624 10.8447 15.1553C11.1376 15.4482 11.6124 15.4482 11.9053 15.1553L14.9053 12.1553C15.1982 11.8624 15.1982 11.3876 14.9053 11.0947L11.9053 8.09467C11.6124 7.80178 11.1376 7.80178 10.8447 8.09467Z" fill="CurrentColor"></path>
+<path d="M12.375 5.87745C12.375 6.3254 12.6492 6.71725 12.966 7.03401L15.966 10.034C16.8447 10.9127 16.8447 12.3373 15.966 13.216L12.966 16.216C12.6492 16.5327 12.375 16.9246 12.375 17.3726V19.625C16.7933 19.625 20.375 16.0433 20.375 11.625C20.375 7.20672 16.7933 3.625 12.375 3.625V5.87745Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto"> Login</span>
+            </a>
+          @else
+                <a href="{{ url('/users/dashboard') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 6.5C2 4.37868 2 3.31802 2.65901 2.65901C3.31802 2 4.37868 2 6.5 2C8.62132 2 9.68198 2 10.341 2.65901C11 3.31802 11 4.37868 11 6.5C11 8.62132 11 9.68198 10.341 10.341C9.68198 11 8.62132 11 6.5 11C4.37868 11 3.31802 11 2.65901 10.341C2 9.68198 2 8.62132 2 6.5Z" fill="CurrentColor"></path>
+<path d="M13 17.5C13 15.3787 13 14.318 13.659 13.659C14.318 13 15.3787 13 17.5 13C19.6213 13 20.682 13 21.341 13.659C22 14.318 22 15.3787 22 17.5C22 19.6213 22 20.682 21.341 21.341C20.682 22 19.6213 22 17.5 22C15.3787 22 14.318 22 13.659 21.341C13 20.682 13 19.6213 13 17.5Z" fill="CurrentColor"></path>
+<path d="M2 17.5C2 15.3787 2 14.318 2.65901 13.659C3.31802 13 4.37868 13 6.5 13C8.62132 13 9.68198 13 10.341 13.659C11 14.318 11 15.3787 11 17.5C11 19.6213 11 20.682 10.341 21.341C9.68198 22 8.62132 22 6.5 22C4.37868 22 3.31802 22 2.65901 21.341C2 20.682 2 19.6213 2 17.5Z" fill="CurrentColor"></path>
+<path d="M13 6.5C13 4.37868 13 3.31802 13.659 2.65901C14.318 2 15.3787 2 17.5 2C19.6213 2 20.682 2 21.341 2.65901C22 3.31802 22 4.37868 22 6.5C22 8.62132 22 9.68198 21.341 10.341C20.682 11 19.6213 11 17.5 11C15.3787 11 14.318 11 13.659 10.341C13 9.68198 13 8.62132 13 6.5Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto"> Dashboard</span>
+            </a>
+          @endif
+    </div>
+    </header>
+     <section class="nav mobile-nav backdrop-blur-5 display-none high pc-display-none pos-fixed bg w-full top-0 left-0 right-0">
+        <nav class="c-white">
+            <a  class="w-full clip-10 br-10 bold p-10 font-1 w-full g-5 row align-center no-u c-white" href="{{ url('/') }}">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495C22.2051 9.00229 22.0154 10.3208 21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22ZM8.39757 15.5532C8.64423 15.2204 9.11395 15.1506 9.44671 15.3973C10.1751 15.9371 11.0542 16.2498 12.0001 16.2498C12.946 16.2498 13.8251 15.9371 14.5535 15.3973C14.8863 15.1506 15.356 15.2204 15.6026 15.5532C15.8493 15.8859 15.7795 16.3557 15.4467 16.6023C14.4743 17.3231 13.2851 17.7498 12.0001 17.7498C10.7151 17.7498 9.5259 17.3231 8.55349 16.6023C8.22072 16.3557 8.15092 15.8859 8.39757 15.5532Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto">  Home</span>
+            </a>
+            <a href="{{ url('/about') }}" class="w-full clip-10 br-10 g-5 bold p-10 font-1 w-full row align-center no-u c-inherit">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 17.75C12.4142 17.75 12.75 17.4142 12.75 17V11C12.75 10.5858 12.4142 10.25 12 10.25C11.5858 10.25 11.25 10.5858 11.25 11V17C11.25 17.4142 11.5858 17.75 12 17.75ZM12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto"> About Us</span>
+            </a>
+             <a href="{{ url('/coupon/checker') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM10.004 5.7517C10.4182 5.7495 10.7522 5.41194 10.75 4.99773C10.7478 4.58353 10.4102 4.24952 9.99602 4.25172C8.91427 4.25745 8.01583 4.28215 7.28261 4.41042C6.53075 4.54195 5.88786 4.79244 5.36144 5.29379C4.90634 5.72721 4.60191 6.16616 4.43626 6.79676C4.28612 7.36833 4.25937 8.07154 4.25231 8.99426C4.24914 9.40846 4.58234 9.74681 4.99654 9.74998C5.41074 9.75315 5.74909 9.41994 5.75226 9.00574C5.75952 8.05697 5.79204 7.53952 5.88704 7.17786C5.96654 6.87522 6.09314 6.66836 6.39592 6.38C6.63788 6.14955 6.96814 5.98821 7.54109 5.88798C8.13268 5.78449 8.91071 5.75749 10.004 5.7517ZM14.0041 4.25172C13.5899 4.24952 13.2523 4.58352 13.2501 4.99773C13.2479 5.41194 13.5819 5.7495 13.9961 5.7517C15.0894 5.7575 15.8674 5.78449 16.4589 5.88799C17.0319 5.98822 17.3621 6.14956 17.6041 6.37999C17.9069 6.66835 18.0335 6.87522 18.113 7.17786C18.208 7.53952 18.2405 8.05697 18.2477 9.00574C18.2509 9.41994 18.5893 9.75315 19.0035 9.74998C19.4177 9.74681 19.7509 9.40846 19.7477 8.99426C19.7406 8.07154 19.7139 7.36833 19.5637 6.79676C19.3981 6.16616 19.0937 5.72721 18.6386 5.29379C18.1121 4.79244 17.4693 4.54196 16.7174 4.41043C15.9842 4.28216 15.0858 4.25746 14.0041 4.25172ZM5 11.2501C4.58579 11.2501 4.25 11.5858 4.25 12.0001C4.25 12.4143 4.58579 12.7501 5 12.7501H19C19.4142 12.7501 19.75 12.4143 19.75 12.0001C19.75 11.5858 19.4142 11.2501 19 11.2501H5ZM5.75226 14.9944C5.74909 14.5802 5.41074 14.247 4.99654 14.2501C4.58234 14.2533 4.24914 14.5916 4.25231 15.0058C4.25937 15.9286 4.28612 16.6318 4.43626 17.2034C4.60191 17.8339 4.90634 18.2729 5.36144 18.7063C5.88785 19.2077 6.53073 19.4581 7.28258 19.5897C8.01578 19.718 8.91421 19.7427 9.99593 19.7484C10.4101 19.7506 10.7477 19.4166 10.7499 19.0024C10.7521 18.5882 10.4181 18.2506 10.0039 18.2484C8.91065 18.2426 8.13264 18.2156 7.54107 18.1121C6.96814 18.0119 6.63788 17.8506 6.39592 17.6201C6.09314 17.3318 5.96654 17.1249 5.88704 16.8223C5.79204 16.4606 5.75952 15.9431 5.75226 14.9944ZM19.7477 15.0058C19.7509 14.5916 19.4177 14.2533 19.0035 14.2501C18.5893 14.247 18.2509 14.5802 18.2477 14.9944C18.2405 15.9431 18.208 16.4606 18.113 16.8223C18.0335 17.1249 17.9069 17.3318 17.6041 17.6201C17.3621 17.8506 17.0319 18.0119 16.4589 18.1121C15.8674 18.2156 15.0894 18.2426 13.9961 18.2484C13.5819 18.2506 13.2479 18.5882 13.2501 19.0024C13.2523 19.4166 13.5899 19.7506 14.0041 19.7484C15.0858 19.7427 15.9842 19.718 16.7174 19.5897C17.4693 19.4581 18.1121 19.2077 18.6386 18.7063C19.0937 18.2729 19.3981 17.8339 19.5637 17.2034C19.7139 16.6318 19.7406 15.9286 19.7477 15.0058Z" fill="CurrentColor"></path>
+</svg>
+
+
+              <span class="m-top-auto"> Coupon Checker</span>
+            </a>
+              <a href="{{ url('/terms') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.8478 3.23463C18 3.60218 18 4.06812 18 5V19C18 19.9319 18 20.3978 17.8478 20.7654C17.8142 20.8465 17.7755 20.9248 17.7321 21C17.5131 21.3792 17.1743 21.6784 16.7654 21.8478C16.3978 22 15.9319 22 15 22C14.0681 22 13.6022 22 13.2346 21.8478C12.8257 21.6784 12.4869 21.3792 12.2679 21C12.2245 20.9248 12.1858 20.8465 12.1522 20.7654C12 20.3978 12 19.9319 12 19V5C12 4.06812 12 3.60218 12.1522 3.23463C12.1858 3.15353 12.2245 3.07519 12.2679 3C12.4869 2.62082 12.8257 2.32164 13.2346 2.15224C13.6022 2 14.0681 2 15 2C15.9319 2 16.3978 2 16.7654 2.15224C17.1743 2.32164 17.5131 2.62082 17.7321 3C17.7755 3.07519 17.8142 3.15353 17.8478 3.23463ZM15.75 11C15.75 10.5858 15.4142 10.25 15 10.25C14.5858 10.25 14.25 10.5858 14.25 11V13C14.25 13.4142 14.5858 13.75 15 13.75C15.4142 13.75 15.75 13.4142 15.75 13V11Z" fill="CurrentColor"></path>
+<path d="M10.65 21C10.5728 20.7212 10.5398 20.4498 10.5225 20.1964C10.5 19.8658 10.5 19.4721 10.5 19.0435V4.95649C10.5 4.52794 10.5 4.13424 10.5225 3.80358C10.5398 3.55021 10.5728 3.27883 10.65 3H5C4.06812 3 3.60218 3 3.23463 3.15224C2.74458 3.35523 2.35523 3.74458 2.15224 4.23463C2 4.60218 2 5.06812 2 6C2 6.93188 2 7.39782 2.15224 7.76537C2.35523 8.25542 2.74458 8.64477 3.23463 8.84776C3.60218 9 4.06812 9 5 9C4.06812 9 3.60218 9 3.23463 9.15224C2.74458 9.35523 2.35523 9.74458 2.15224 10.2346C2 10.6022 2 11.0681 2 12C2 12.9319 2 13.3978 2.15224 13.7654C2.35523 14.2554 2.74458 14.6448 3.23463 14.8478C3.60218 15 4.06812 15 5 15C4.06812 15 3.60218 15 3.23463 15.1522C2.74458 15.3552 2.35523 15.7446 2.15224 16.2346C2 16.6022 2 17.0681 2 18C2 18.9319 2 19.3978 2.15224 19.7654C2.35523 20.2554 2.74458 20.6448 3.23463 20.8478C3.60218 21 4.06812 21 5 21H10.65Z" fill="CurrentColor"></path>
+<path d="M19.3501 20.9996C20.0549 20.9973 20.447 20.9796 20.7654 20.8478C21.2554 20.6448 21.6448 20.2554 21.8478 19.7654C22 19.3978 22 18.9319 22 18C22 17.0681 22 16.6022 21.8478 16.2346C21.6448 15.7446 21.2554 15.3552 20.7654 15.1522C20.4703 15.03 20.1119 15.0059 19.5 15.0012V19.0435C19.5 19.4721 19.5001 19.8658 19.4775 20.1964C19.4602 20.4497 19.4272 20.7209 19.3501 20.9996Z" fill="CurrentColor"></path>
+<path d="M19.5 14.9988C20.1119 14.9941 20.4703 14.97 20.7654 14.8478C21.2554 14.6448 21.6448 14.2554 21.8478 13.7654C22 13.3978 22 12.9319 22 12C22 11.0681 22 10.6022 21.8478 10.2346C21.6448 9.74458 21.2554 9.35523 20.7654 9.15224C20.4703 9.03004 20.1119 9.00593 19.5 9.00117L19.5 14.9988Z" fill="CurrentColor"></path>
+<path d="M19.5 8.99883C20.1119 8.99407 20.4703 8.96996 20.7654 8.84776C21.2554 8.64477 21.6448 8.25542 21.8478 7.76537C22 7.39782 22 6.93188 22 6C22 5.06812 22 4.60218 21.8478 4.23463C21.6448 3.74458 21.2554 3.35523 20.7654 3.15224C20.447 3.02038 20.0549 3.00273 19.3501 3.00037C19.4272 3.27907 19.4602 3.55032 19.4775 3.80359C19.5001 4.13424 19.5 4.52793 19.5 4.95648V8.99883Z" fill="CurrentColor"></path>
+</svg>
+     
+              <span class="m-top-auto"> Terms of Service</span>
+            </a>
+             <a href="{{ url('/coupon') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 2.75C15.9068 2.75 17.2615 2.75159 18.2892 2.88976C19.2952 3.02503 19.8749 3.27869 20.2981 3.7019C20.7213 4.12511 20.975 4.70476 21.1102 5.71085C21.2484 6.73851 21.25 8.09318 21.25 10C21.25 10.4142 21.5858 10.75 22 10.75C22.4142 10.75 22.75 10.4142 22.75 10V9.94359C22.75 8.10583 22.75 6.65019 22.5969 5.51098C22.4392 4.33856 22.1071 3.38961 21.3588 2.64124C20.6104 1.89288 19.6614 1.56076 18.489 1.40314C17.3498 1.24997 15.8942 1.24998 14.0564 1.25H14C13.5858 1.25 13.25 1.58579 13.25 2C13.25 2.41421 13.5858 2.75 14 2.75Z" fill="CurrentColor"></path>
+<path d="M9.94358 1.25H10C10.4142 1.25 10.75 1.58579 10.75 2C10.75 2.41421 10.4142 2.75 10 2.75C8.09318 2.75 6.73851 2.75159 5.71085 2.88976C4.70476 3.02503 4.12511 3.27869 3.7019 3.7019C3.27869 4.12511 3.02503 4.70476 2.88976 5.71085C2.75159 6.73851 2.75 8.09318 2.75 10C2.75 10.4142 2.41421 10.75 2 10.75C1.58579 10.75 1.25 10.4142 1.25 10V9.94358C1.24998 8.10583 1.24997 6.65019 1.40314 5.51098C1.56076 4.33856 1.89288 3.38961 2.64124 2.64124C3.38961 1.89288 4.33856 1.56076 5.51098 1.40314C6.65019 1.24997 8.10583 1.24998 9.94358 1.25Z" fill="CurrentColor"></path>
+<path d="M5.52721 5.52721C5 6.05442 5 6.90295 5 8.6C5 9.73137 5 10.2971 5.35147 10.6485C5.70294 11 6.26863 11 7.4 11H8.6C9.73137 11 10.2971 11 10.6485 10.6485C11 10.2971 11 9.73137 11 8.6V7.4C11 6.26863 11 5.70294 10.6485 5.35147C10.2971 5 9.73137 5 8.6 5C6.90295 5 6.05442 5 5.52721 5.52721Z" fill="CurrentColor"></path>
+<path d="M5.52721 18.4728C5 17.9456 5 17.0971 5 15.4C5 14.2686 5 13.7029 5.35147 13.3515C5.70295 13 6.26863 13 7.4 13H8.6C9.73137 13 10.2971 13 10.6485 13.3515C11 13.7029 11 14.2686 11 15.4V16.6C11 17.7314 11 18.2971 10.6485 18.6485C10.2971 19 9.73138 19 8.60002 19C6.90298 19 6.05441 19 5.52721 18.4728Z" fill="CurrentColor"></path>
+<path d="M13 7.4C13 6.26863 13 5.70294 13.3515 5.35147C13.7029 5 14.2686 5 15.4 5C17.0971 5 17.9456 5 18.4728 5.52721C19 6.05442 19 6.90295 19 8.6C19 9.73137 19 10.2971 18.6485 10.6485C18.2971 11 17.7314 11 16.6 11H15.4C14.2686 11 13.7029 11 13.3515 10.6485C13 10.2971 13 9.73137 13 8.6V7.4Z" fill="CurrentColor"></path>
+<path d="M13.3515 18.6485C13 18.2971 13 17.7314 13 16.6V15.4C13 14.2686 13 13.7029 13.3515 13.3515C13.7029 13 14.2686 13 15.4 13H16.6C17.7314 13 18.2971 13 18.6485 13.3515C19 13.7029 19 14.2686 19 15.4C19 17.097 19 17.9456 18.4728 18.4728C17.9456 19 17.0971 19 15.4 19C14.2687 19 13.7029 19 13.3515 18.6485Z" fill="CurrentColor"></path>
+<path d="M22 13.25C22.4142 13.25 22.75 13.5858 22.75 14V14.0564C22.75 15.8942 22.75 17.3498 22.5969 18.489C22.4392 19.6614 22.1071 20.6104 21.3588 21.3588C20.6104 22.1071 19.6614 22.4392 18.489 22.5969C17.3498 22.75 15.8942 22.75 14.0564 22.75H14C13.5858 22.75 13.25 22.4142 13.25 22C13.25 21.5858 13.5858 21.25 14 21.25C15.9068 21.25 17.2615 21.2484 18.2892 21.1102C19.2952 20.975 19.8749 20.7213 20.2981 20.2981C20.7213 19.8749 20.975 19.2952 21.1102 18.2892C21.2484 17.2615 21.25 15.9068 21.25 14C21.25 13.5858 21.5858 13.25 22 13.25Z" fill="CurrentColor"></path>
+<path d="M2.75 14C2.75 13.5858 2.41421 13.25 2 13.25C1.58579 13.25 1.25 13.5858 1.25 14V14.0564C1.24998 15.8942 1.24997 17.3498 1.40314 18.489C1.56076 19.6614 1.89288 20.6104 2.64124 21.3588C3.38961 22.1071 4.33856 22.4392 5.51098 22.5969C6.65019 22.75 8.10583 22.75 9.94359 22.75H10C10.4142 22.75 10.75 22.4142 10.75 22C10.75 21.5858 10.4142 21.25 10 21.25C8.09318 21.25 6.73851 21.2484 5.71085 21.1102C4.70476 20.975 4.12511 20.7213 3.7019 20.2981C3.27869 19.8749 3.02503 19.2952 2.88976 18.2892C2.75159 17.2615 2.75 15.9068 2.75 14Z" fill="CurrentColor"></path>
+</svg>
+
+
+              <span class="m-top-auto"> Buy Coupon Code</span>
+            </a>
+              <a href="{{ url('/earners/top') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.4697 13.4697C18.7626 13.1768 19.2374 13.1768 19.5303 13.4697L21.5303 15.4697C21.8232 15.7626 21.8232 16.2374 21.5303 16.5303C21.2374 16.8232 20.7626 16.8232 20.4697 16.5303L19.75 15.8107V20C19.75 20.4142 19.4142 20.75 19 20.75C18.5858 20.75 18.25 20.4142 18.25 20V15.8107L17.5303 16.5303C17.2374 16.8232 16.7626 16.8232 16.4697 16.5303C16.1768 16.2374 16.1768 15.7626 16.4697 15.4697L18.4697 13.4697Z" fill="CurrentColor"></path>
+<path d="M10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C21.672 6.01511 21.9082 7.22882 21.9743 9.25H2.02572C2.09185 7.22882 2.32803 6.01511 3.17157 5.17157C4.34315 4 6.22876 4 10 4Z" fill="CurrentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 20H14C15.0559 20 15.964 20 16.75 19.9743V18.2362C16.2601 18.1817 15.7847 17.9666 15.409 17.591C14.5303 16.7123 14.5303 15.2877 15.409 14.409L17.409 12.409C18.2877 11.5303 19.7123 11.5303 20.591 12.409L21.9937 13.8118C22 13.2613 22 12.6595 22 12C22 11.5581 22 11.142 21.9981 10.75H2.00189C2 11.142 2 11.5581 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20ZM5.25 16C5.25 15.5858 5.58579 15.25 6 15.25H10C10.4142 15.25 10.75 15.5858 10.75 16C10.75 16.4142 10.4142 16.75 10 16.75H6C5.58579 16.75 5.25 16.4142 5.25 16ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75H14C14.4142 16.75 14.75 16.4142 14.75 16C14.75 15.5858 14.4142 15.25 14 15.25H12.5Z" fill="CurrentColor"></path>
+</svg>
+
+
+
+              <span class="m-top-auto">Top Earners</span>
+            </a>
+          @if (!Auth::guard('users')->check())
+                <a href="{{ url('/login') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+            
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.8447 8.09467C10.5518 8.38756 10.5518 8.86244 10.8447 9.15533L12.5643 10.875H4.375C3.96079 10.875 3.625 11.2108 3.625 11.625C3.625 12.0392 3.96079 12.375 4.375 12.375H12.5643L10.8447 14.0947C10.5518 14.3876 10.5518 14.8624 10.8447 15.1553C11.1376 15.4482 11.6124 15.4482 11.9053 15.1553L14.9053 12.1553C15.1982 11.8624 15.1982 11.3876 14.9053 11.0947L11.9053 8.09467C11.6124 7.80178 11.1376 7.80178 10.8447 8.09467Z" fill="CurrentColor"></path>
+<path d="M12.375 5.87745C12.375 6.3254 12.6492 6.71725 12.966 7.03401L15.966 10.034C16.8447 10.9127 16.8447 12.3373 15.966 13.216L12.966 16.216C12.6492 16.5327 12.375 16.9246 12.375 17.3726V19.625C16.7933 19.625 20.375 16.0433 20.375 11.625C20.375 7.20672 16.7933 3.625 12.375 3.625V5.87745Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto"> Login</span>
+            </a>
+          @else
+                <a href="{{ url('/users/dashboard') }}" class="w-full clip-10 br-10 bold g-5 p-10 font-1 w-full row align-center no-u c-inherit">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 6.5C2 4.37868 2 3.31802 2.65901 2.65901C3.31802 2 4.37868 2 6.5 2C8.62132 2 9.68198 2 10.341 2.65901C11 3.31802 11 4.37868 11 6.5C11 8.62132 11 9.68198 10.341 10.341C9.68198 11 8.62132 11 6.5 11C4.37868 11 3.31802 11 2.65901 10.341C2 9.68198 2 8.62132 2 6.5Z" fill="CurrentColor"></path>
+<path d="M13 17.5C13 15.3787 13 14.318 13.659 13.659C14.318 13 15.3787 13 17.5 13C19.6213 13 20.682 13 21.341 13.659C22 14.318 22 15.3787 22 17.5C22 19.6213 22 20.682 21.341 21.341C20.682 22 19.6213 22 17.5 22C15.3787 22 14.318 22 13.659 21.341C13 20.682 13 19.6213 13 17.5Z" fill="CurrentColor"></path>
+<path d="M2 17.5C2 15.3787 2 14.318 2.65901 13.659C3.31802 13 4.37868 13 6.5 13C8.62132 13 9.68198 13 10.341 13.659C11 14.318 11 15.3787 11 17.5C11 19.6213 11 20.682 10.341 21.341C9.68198 22 8.62132 22 6.5 22C4.37868 22 3.31802 22 2.65901 21.341C2 20.682 2 19.6213 2 17.5Z" fill="CurrentColor"></path>
+<path d="M13 6.5C13 4.37868 13 3.31802 13.659 2.65901C14.318 2 15.3787 2 17.5 2C19.6213 2 20.682 2 21.341 2.65901C22 3.31802 22 4.37868 22 6.5C22 8.62132 22 9.68198 21.341 10.341C20.682 11 19.6213 11 17.5 11C15.3787 11 14.318 11 13.659 10.341C13 9.68198 13 8.62132 13 6.5Z" fill="CurrentColor"></path>
+</svg>
+
+              <span class="m-top-auto"> Dashboard</span>
+            </a>
+          @endif
+       
+        </nav>
+    </section>
+    
+    
+    <main class="p-10 pc-x-padding c-inherit">
+       
+        @yield('main')
+<section onclick="HidePopUp()" class="popup">
+  <div onclick="event.stopPropagation()" style="background:white;color:black;" class="child">
+
+  </div>
+</section>
+<section onclick="HideSlideUp()" class="slideup">
+  <div onclick="event.stopPropagation()" class="child bg-secondary-dark">@yield('slideup_child')</div>
+</section>
+    </main>
+   <footer class="w-full pc-align-center pc-place-center pc-grid pc-grid-2 c-white bg p-10 column g-10">
+   <img src="{{ asset('favicon/logo-white.png?v=1.1') }}" alt="" class="grid-full w-100 pc-m-x-auto">
+   <span class="font-1 grid-full">Your daily companion for earning opportunities. Transform your smartphone into an income generator with our innovative platform.
+
+</span>
+ <div class="column g-5">
+    <strong class="font-1 u">Company</strong>
+ <a href="{{ url('about') }}" class="no-u c-white">About Us</a>
+ <a href="{{ url('vendors') }}" class="no-u c-white">Vendors</a>
+ <a href="{{ url('terms') }}" class="no-u c-white">Terms of Service</a>
+ <a href="{{ url('package/list') }}" class="no-u c-white">Packages</a>
+ </div>
+<div class="column g-5">
+     <strong class="font-1 u">My Account</strong>
+ <a href="{{ url('login') }}" class="no-u c-white">Login</a>
+ <a href="{{ url('register') }}" class="no-u c-white">SignUp</a>
+</div>
+ <hr class="bg-white grid-full">
+ <div class="w-full align-center grid-full text-center column justify-center">
+    <span>&copy;2025 {{ config('app.name') }}.</span>
+     <span>Built & Designed by <a class="c-gold" href="https://wa.me/+2349013350351">Techie Innovations</a></span>
+ </div>
+</footer>
+
+    <script src="{{ asset('vitecss/js/app.js?v='.config('versions.vite_version').'') }}"></script>
+    <script class="js">
+      window.addEventListener('load',()=>{
+        try{
+            document.querySelector('.loader').remove();
+        document.querySelector('body').classList.remove('overflow-hidden');
+        document.querySelector('section.nav').style.top=document.querySelector('header').offsetHeight + 'px';
+     
+        }catch(error){
+          alert(error.stack)
+        }
+       });
+    </script>
+    @yield('js')
+</body>
+</html>

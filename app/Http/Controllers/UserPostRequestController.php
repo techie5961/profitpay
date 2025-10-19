@@ -26,7 +26,7 @@ class UserPostRequestController extends Controller
             ]);
         }
     
-       if(request()->input('coupon') !== ''){
+       if(request()->has('coupon')){
         if(!DB::table('coupons')->where('code',request()->input('coupon'))->exists()){
             return response()->json([
                 'message' => 'Invalid coupon code,kindly purchase new coupon code from any of our verified vendors',
@@ -45,6 +45,8 @@ class UserPostRequestController extends Controller
         $package=json_decode($coupon->package ?? '{}');
       //  return $package;
         $welcome_bonus=$package->cashback;
+       }else{
+        $package=DB::table('packages')->where('id',request()->input('package'))->first();
        }
      DB::table('notifications')->insert([
         'message' => '<strong class="font-1 c-green">'.strtolower(str_replace('-','_',request()->input('username'))).'</strong> Just registered an account',
@@ -61,12 +63,13 @@ class UserPostRequestController extends Controller
         'package' => json_encode($package ?? []),
         'coupon' => request()->input('coupon') ?? null,
         'activities_balance' => $welcome_bonus,
+        'photo' => 'avatar.jpeg',
         'ref' => request()->input('ref'),
         'password' => Hash::make(request()->input('password')),
         'updated' => Carbon::now(),
         'date' => Carbon::now()
        ]);
-       if(request()->input('coupon') !== ''){
+       if(request()->has('coupon')){
         DB::table('coupons')->where('code',request()->input('coupon'))->update([
             'status' => 'redeemed'
         ]);
@@ -81,6 +84,7 @@ class UserPostRequestController extends Controller
                 'affiliate_balance' => DB::raw('affiliate_balance + '.$package->subordinate.'')
               ]);
               DB::table('transactions')->insert([
+                'uniqid' => strtoupper(uniqid('trx')),
             'user_id' => $ref->id,
             'type' => 'Direct Commission',
             'class' => 'credit',
@@ -110,6 +114,7 @@ class UserPostRequestController extends Controller
                 'affiliate_balance' => DB::raw('affiliate_balance + '.$pkg->first_indirect.'')
             ]);
               DB::table('transactions')->insert([
+                 'uniqid' => strtoupper(uniqid('trx')),
             'user_id' => $indirect->id,
             'type' => 'First Indirect Commission',
             'class' => 'credit',
@@ -202,6 +207,7 @@ class UserPostRequestController extends Controller
     }
     // withdraw
     public function Withdraw(){
+        $uniqid=strtoupper(uniqid('TRX'));
       if(request()->input('amount') == 0){
         return response()->json([
             'message' => 'Please enter a valid withdrawal amount',
@@ -232,6 +238,7 @@ class UserPostRequestController extends Controller
         request()->input('wallet') => DB::raw(''.request()->input('wallet').' - '.request()->input('amount').'') 
       ]);
        DB::table('transactions')->insert([
+        'uniqid' => $uniqid,
             'user_id' => Auth::guard('users')->user()->id,
             'type' => ''.ucfirst(str_replace('_balance','',request()->input('wallet'))).' Withdrawal',
             'class' => 'debit',
@@ -258,7 +265,7 @@ class UserPostRequestController extends Controller
         return response()->json([
             'message' => 'Withdrawal placed successfully,awaiting processing',
             'status' => 'success',
-            'url' => url('users/transactions')
+            'url' => url('users/transaction/receipt?id=').DB::table('transactions')->where('uniqid',$uniqid)->where('user_id',Auth::guard('users')->user()->id)->first()->id
         ]);
     }
     // update account password
@@ -285,7 +292,7 @@ class UserPostRequestController extends Controller
         'updated' => Carbon::now()
        ]);
         return response()->json([
-            'message' => 'Account password updared success',
+            'message' => 'Account password updated success',
             'status'  => 'success',
             'url' => url('users/more')
         ]);
@@ -311,5 +318,43 @@ class UserPostRequestController extends Controller
         'url' => url('users/articles/read')
      ]);
 
+    }
+    // update profile photo
+    public function UpdatePhoto(){
+        $name=time().'.'.request()->file('photo')->getClientOriginalExtension();
+        if(request()->file('photo')->move(public_path('users'),$name)){
+            DB::table('users')->where('id',Auth::guard('users')->user()->id)->update([
+                'photo' => $name
+            ]);
+               DB::table('notifications')->insert([
+        'message' => '<strong class="font-1 c-green">'.Auth::guard('users')->user()->username.'</strong> Just updated his/her profile photo',
+        'status' => 'unread',
+        'date' => Carbon::now(),
+        'updated' => Carbon::now()
+       ]);
+             return response()->json([
+            'message' => 'profile photo updated success',
+            'status'  => 'success',
+            'url' => url('users/more')
+        ]);
+        }
+    }
+    // coupon checker
+    public function CouponChecker(){
+        if(!DB::table('coupons')->where('code',request()->input('coupon'))->exists()){
+            return response()->json([
+                'message' => 'Invalid coupon code',
+                'status' => 'error'
+            ]);
+        }
+        $coupon=DB::table('coupons')->where('code',request()->input('coupon'))->first();
+        $coupon->text=$coupon->status == 'active' ? 'Coupon code is active' : 'Coupon code has been used';
+        $coupon->package=json_decode($coupon->package);
+        $coupon->value=number_format($coupon->package->cost,2);
+        return response()->json([
+            'message' => 'Coupon code validated success',
+            'status' => 'success',
+            'coupon' => $coupon
+        ]);
     }
 }

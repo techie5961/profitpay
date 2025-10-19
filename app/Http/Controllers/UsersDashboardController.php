@@ -21,10 +21,12 @@ class UsersDashboardController extends Controller
     }
      // referral register
     public function RefRegister($ref){
+    
         $username='';
-       if( DB::table('users')->where('uniqid',$ref)->exists()){
-         $username=DB::table('users')->where('uniqid',$ref)->first()->username;
+       if( DB::table('users')->where('username',$ref)->exists()){
+         $username=DB::table('users')->where('username',$ref)->first()->username;
        }
+      // return $username;
         return view('users.auth.register',[
             'pkg' => DB::table('packages')->where('status','active')->orderBy('date','desc')->get(),
             'ref' => $username
@@ -40,16 +42,23 @@ class UsersDashboardController extends Controller
     }
     // tasks
     public function Tasks(){
+       
+        if(!json_decode(Auth::guard('users')->user()->package)->earning_per_click){
+            return CheckPackage();
+        }
+    //   return json_decode(Auth::guard('users')->user()->package)->earning_per_click;
         $tasks=DB::table('tasks')->where('status','active')->whereNotIn('id',function($q){
           $q->select('task_id')->from('task_proofs')->where('user_id',Auth::guard('users')->user()->id);
         })->orderBy('date','desc')->paginate(10);
         if(request()->has('paginate')){
             return view('paginate.users',[
-                'tasks' => $tasks
+                'tasks' => $tasks,
+                'reward' => json_decode(Auth::guard('users')->user()->package)->earning_per_click
             ]);
         }
         return view('users.tasks',[
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'reward' => json_decode(Auth::guard('users')->user()->package)->earning_per_click
         ]);
     }
     // spin
@@ -83,7 +92,9 @@ class UsersDashboardController extends Controller
     }
     // profile
     public function Profile(){
-        return view('users.profile');
+        return view('users.profile',[
+            'downlines' => DB::table('users')->where('ref',Auth::guard('users')->user()->username)->count()
+        ]);
     }
     // add bank
     public function AddBank(){
@@ -186,6 +197,99 @@ class UsersDashboardController extends Controller
             'general' => json_decode(DB::table('settings')->where('key','finance_settings')->first()->json)
         ]);
     }
+    //  index page
+    public function Index(){
+        return view('users.index.home');
+    }
+    // transaction receipt
+    public function TransactionReceipt(){
+        $trx=DB::table('transactions')->where('id',request()->input('id'))->first();
+        $trx->date_format=Carbon::parse($trx->date)->format('D, M Y,H:i:s');
+        $trx->json=json_decode($trx->json ?? '{}');
+        return view('users.receipt',[
+            'data' => $trx
+        ]);
+    }
+    // vendors
+    public function Vendors(){
+     
+        $vendors=DB::table('users')->where('type','vendor')->where('status','active')->paginate(100);
 
+        return view('users.index.vendors',[
+            'vendors' => $vendors
+        ]);
+    }
+    // profile photo update
+    public function ProfilePhoto(){
+        return view('users.photo');
+    }
+    // logout
+     public function Logout(){
+        Auth::guard('users')->logout();
+        return redirect('login');
+     }
+    //  vendor dashboard
+    public function VendorDashboard(){
+        if(Auth::guard('users')->user()->type == 'user'){
+            return redirect('users/dashboard');
+        }
+        $coupons=DB::table('coupons')->where('vendor_id',Auth::guard('users')->user()->id)->paginate(10);
+        if(request()->has('status')){
+            $coupons=DB::table('coupons')->where('vendor_id',Auth::guard('users')->user()->id)->where('status',request('status'))->paginate(10);
+        }
+        $coupons->getCollection()->transform(function($each){
+            $each->used_by=DB::table('users')->where('coupon',$each->code)->first()->username ?? '---';
+            $each->ref=DB::table('users')->where('coupon',$each->code)->first()->ref ?? '---';
+            $each->frame=Carbon::parse($each->date)->diffForHumans();
+            $each->package=json_decode($each->package);
+            return $each;
+        });
+        if(request()->has('paginate')){
+            return view('paginate.users',[
+            'coupons' => $coupons,
+            'vendors_dashboard' => true
+
+        ]);
+        }
+        return view('users.vendor.dashboard',[
+            'total_coupons' => DB::table('coupons')->where('vendor_id',Auth::guard('users')->user()->id)->count(),
+            'active_coupons' => DB::table('coupons')->where('vendor_id',Auth::guard('users')->user()->id)->where('status','active')->count(),
+            'redeemed_coupons' => DB::table('coupons')->where('vendor_id',Auth::guard('users')->user()->id)->where('status','redeemed')->count(),
+            'value' => DB::table('coupons')->where('vendor_id',Auth::guard('users')->user()->id)->sum('package->cost'),
+            'coupons' => $coupons
+        ]);
+    }
+    // coupon checker
+    public function CouponChecker(){
+        return view('users.index.checker');
+    }
+    // top earners
+    public function TopEarners(){
+        $top=DB::table('transactions')->where('type','like','%commission%')->groupBy('user_id')->select('user_id',DB::raw('SUM(amount) as total'))->having('total','>','0')->orderBy('total','desc')->limit(10)->get();
+        $top->transform(function($each){
+            $each->user=DB::table('users')->where('id',$each->user_id)->first();
+            return $each;
+        });
+
+        return view('users.index.top_earners',[
+            'top' => $top
+        ]);
+    }
+    // about us 
+    public function AboutUs(){
+        return view('users.index.about');
+    }
+
+    // terms
+    public function Terms(){
+        return view('users.index.terms');
+    }
+    // package list
+    public function PackageList(){
+        $packages=DB::table('packages')->orderBy('cost','asc')->get();
+        return view('users.index.packages',[
+            'packages' => $packages
+        ]);
+    }
 
 }

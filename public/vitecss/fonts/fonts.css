@@ -383,3 +383,11 @@
     font-family: 'bowl';
     src: url('BowlByOneSC/BowlbyOneSC-Regular.ttf');
 }
+@font-face {
+    font-family: 'titan one';
+    src: url('titan_one/TitanOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'luckiest guy';
+    src: url('luckiest_guy/LuckiestGuy-Regular.ttf');
+}

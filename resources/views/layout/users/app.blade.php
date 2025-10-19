@@ -52,7 +52,10 @@ background-position:center;
     @yield('css')
 </head>
 
-<body>
+<body class="overflow-hidden">
+   <div class="pos-fixed c-white loader top-0 left-0 right-0 column justify-center bottom-0 z-index-9000 bg">
+   <svg fill="currentColor" height="100" width="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="7.33" height="7.33"><animate id="spinner_oJFS" begin="0;spinner_5T1J.end+0.2s" attributeName="x" dur="0.6s" values="1;4;1"/><animate begin="0;spinner_5T1J.end+0.2s" attributeName="y" dur="0.6s" values="1;4;1"/><animate begin="0;spinner_5T1J.end+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="0;spinner_5T1J.end+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="8.33" y="1" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.1s" attributeName="x" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="y" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="1" y="8.33" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.1s" attributeName="x" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="y" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.1s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="15.66" y="1" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.2s" attributeName="x" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="y" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="8.33" y="8.33" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.2s" attributeName="x" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="y" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="1" y="15.66" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.2s" attributeName="x" dur="0.6s" values="1;4;1"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="y" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.2s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="15.66" y="8.33" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.3s" attributeName="x" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="y" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="8.33" y="15.66" width="7.33" height="7.33"><animate begin="spinner_oJFS.begin+0.3s" attributeName="x" dur="0.6s" values="8.33;11.33;8.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="y" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.3s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect><rect x="15.66" y="15.66" width="7.33" height="7.33"><animate id="spinner_5T1J" begin="spinner_oJFS.begin+0.4s" attributeName="x" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.4s" attributeName="y" dur="0.6s" values="15.66;18.66;15.66"/><animate begin="spinner_oJFS.begin+0.4s" attributeName="width" dur="0.6s" values="7.33;1.33;7.33"/><animate begin="spinner_oJFS.begin+0.4s" attributeName="height" dur="0.6s" values="7.33;1.33;7.33"/></rect></svg>
+   </div>
     <header style="z-index:3000" class="pos-sticky average c-white bg p-10 top-0 left-0 right-0 bottom-0 row align-center g-10">
         <div onclick="
             document.querySelector('nav').classList.remove('mobile-display-none');
@@ -67,8 +70,8 @@ background-position:center;
    
         </div>
         <img src="{{ asset('favicon/logo.png?v=1.2') }}" alt="Logo" class="h-30">
-        <div onclick="spa(event,'{{ url('users/more') }}')" class="h-40 m-left-auto font-weight-900 desc w-40 circle no-shrink bg-dim column justify-center">{{ ucfirst(Auth::guard('users')->user()->username[0]) }}</div>
-              
+        
+      <img onclick="spa(event,'{{ url('users/more') }}')" src="{{ asset('users/'.Auth::guard('users')->user()->photo.'') }}" alt="" class="h-40 m-left-auto font-weight-900 desc w-40 circle no-shrink bg-dim column justify-center">        
     </header>
     <nav style="z-index:4000" onclick="
     this.querySelector('section.nav').classList.remove('animation-trans-in-from-left');
@@ -78,14 +81,15 @@ background-position:center;
     " class="pos-fixed mobile-display-none border-right-1 border-color-dim high top-0 left-0 right-0 bottom-0 bg-black-transparent average">
         <section onclick="event.stopPropagation()" class="nav transition-ease-half overflow-auto column bg-secondary h-full w-semi-full">
             <div class="nav-profile z-index-1000 pos-sticky stick-top w-full column g-10 p-10">
-                <img src="{{ asset('images/avatar.svg') }}" alt="" class="h-70 w-70 circle border-4 border-color-primary box-shadow">
+                <img src="{{ asset('users/'.Auth::guard('users')->user()->photo.'') }}" alt="" class="h-70 w-70 circle border-4 border-color-primary box-shadow">
            <strong class="desc">{{ ucfirst(Auth::guard('users')->user()->username) }}</strong>
             </div>
             <div class="nav-links flex-auto bg-inherit w-full column">
               {{-- NEW NAV LINK --}}
                 <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/dashboard') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
+                  document.body.classList.remove('overflow-hidden');
                   ">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495C22.2051 9.00229 22.0154 10.3208 21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22ZM8.39757 15.5532C8.64423 15.2204 9.11395 15.1506 9.44671 15.3973C10.1751 15.9371 11.0542 16.2498 12.0001 16.2498C12.946 16.2498 13.8251 15.9371 14.5535 15.3973C14.8863 15.1506 15.356 15.2204 15.6026 15.5532C15.8493 15.8859 15.7795 16.3557 15.4467 16.6023C14.4743 17.3231 13.2851 17.7498 12.0001 17.7498C10.7151 17.7498 9.5259 17.3231 8.55349 16.6023C8.22072 16.3557 8.15092 15.8859 8.39757 15.5532Z" fill="CurrentColor"></path>
@@ -96,8 +100,9 @@ background-position:center;
                  </a>
                  {{-- NEW NAV LINK --}}
                 <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
-                  spa(event,'{{ url('users/dashboard') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  spa(event,'{{ url('users/vendor/dashboard') }}');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
+                  document.body.classList.remove('overflow-hidden');
                   ">
                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33537 7.87495C1.79491 9.00229 1.98463 10.3208 2.36407 12.9579L2.64284 14.8952C3.13025 18.2827 3.37396 19.9764 4.54903 20.9882C5.72409 22 7.44737 22 10.8939 22H13.1061C16.5526 22 18.2759 22 19.451 20.9882C20.626 19.9764 20.8697 18.2827 21.3572 14.8952L21.6359 12.9579C22.0154 10.3208 22.2051 9.00229 21.6646 7.87495C21.1242 6.7476 19.9738 6.06234 17.6731 4.69181L16.2882 3.86687C14.199 2.62229 13.1543 2 12 2C10.8457 2 9.80104 2.62229 7.71175 3.86687L6.32691 4.69181C4.02619 6.06234 2.87583 6.7476 2.33537 7.87495ZM13.45 16.5095C12.6422 15.6377 11.3581 15.6377 10.5503 16.5095C10.2688 16.8134 9.79427 16.8315 9.49041 16.55C9.18656 16.2684 9.16845 15.7939 9.44996 15.4901C10.8514 13.9775 13.1489 13.9775 14.5503 15.4901C14.8318 15.7939 14.8137 16.2684 14.5099 16.55C14.206 16.8315 13.7315 16.8134 13.45 16.5095ZM8.55029 14.3505C10.4626 12.2864 13.5376 12.2864 15.4499 14.3505C15.7315 14.6544 16.206 14.6725 16.5098 14.391C16.8137 14.1095 16.8318 13.6349 16.5503 13.3311C14.0443 10.6262 9.9559 10.6262 7.44995 13.3311C7.16844 13.6349 7.18655 14.1095 7.4904 14.391C7.79425 14.6725 8.26878 14.6544 8.55029 14.3505ZM17.4499 12.192C14.433 8.93571 9.56716 8.93571 6.55027 12.192C6.26876 12.4959 5.79423 12.514 5.49038 12.2325C5.18653 11.951 5.16842 11.4764 5.44993 11.1726C9.06046 7.27552 14.9397 7.27552 18.5503 11.1726C18.8318 11.4764 18.8137 11.951 18.5098 12.2325C18.206 12.514 17.7314 12.4959 17.4499 12.192Z" fill="CurrentColor"></path>
@@ -111,7 +116,8 @@ background-position:center;
                   {{-- NEW NAV LINK --}}
                  <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/tasks') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
+                  document.body.classList.remove('overflow-hidden');
                   ">
                  <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.2915 4.78553V4.72453C7.2915 4.38601 7.30305 3.94261 7.4565 3.50336C7.9652 2.04714 9.35853 1 11 1H13C14.6415 1 16.0349 2.04714 16.5436 3.50336C16.697 3.94261 16.7085 4.38601 16.7085 4.72453V4.78555C19.212 5.52304 20.9631 7.79709 20.9994 10.4163C21 10.4574 21 10.5036 21 10.596V12.9191C20.8982 12.9191 20.7947 12.9398 20.6956 12.9835C15.1597 15.4273 8.84065 15.4273 3.30479 12.9835C3.2056 12.9397 3.10197 12.919 3 12.9191V10.596C3 10.5036 3 10.4574 3.00057 10.4163C3.03694 7.79707 4.78799 5.52301 7.2915 4.78553ZM8.87362 3.99175C9.17937 3.11649 10.017 2.48989 11 2.48989H13C13.9831 2.48989 14.8207 3.11649 15.1264 3.99175C15.1719 4.12188 15.194 4.27205 15.2032 4.46183C13.0832 4.10168 10.9169 4.10168 8.79689 4.46182C8.80602 4.27205 8.82816 4.12188 8.87362 3.99175ZM9.25 12.6708C9.25 12.2594 9.58579 11.9258 10 11.9258H14C14.4142 11.9258 14.75 12.2594 14.75 12.6708C14.75 13.0822 14.4142 13.4157 14 13.4157H10C9.58579 13.4157 9.25 13.0822 9.25 12.6708Z" fill="CurrentColor"></path>
@@ -124,7 +130,7 @@ background-position:center;
                 {{-- NEW NAV LINK --}}
                  <a class="p-10 pointer align-center clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/spin') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
                  <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.68202 12.682C7.92466 14.4393 5.07542 14.4393 3.31806 12.682C2.63085 11.9948 2.21236 11.1406 2.06262 10.25H10.9375C10.7877 11.1406 10.3692 11.9948 9.68202 12.682Z" fill="CurrentColor"></path>
@@ -166,11 +172,11 @@ Articles
                       <div style="width:calc(100% - 10px)" class="nav-child display-none m-left-10 border-left-4 border-color-bg bg-primary-transparent w-full column">
                         <a class="p-10 w-full row g-5 no-u c-inherit" onclick="
                   spa(event,'{{ url('users/articles/write') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">Write & Win</a>
                           <a class="p-10 w-full row g-5 no-u c-inherit" onclick="
                   spa(event,'{{ url('users/articles/read') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">Read & Earn</a>
                              </div>
                 </div>
@@ -215,18 +221,18 @@ Articles
                       <div style="width:calc(100% - 10px)" class="nav-child display-none m-left-10 border-left-4 border-color-bg bg-primary-transparent w-full column">
                         <a class="p-10 w-full row g-5 no-u c-inherit" onclick="
                   spa(event,'{{ url('users/airtime/topup') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">Buy Airtime</a>
                           <a class="p-10 w-full row g-5 no-u c-inherit" onclick="
                   spa(event,'{{ url('users/data/topup') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">Buy Data Bundle</a>
                              </div>
                 </div>
                 {{-- NEW NAV LINK --}}
                  <a class="p-10 pointer align-center clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/bank/add') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.5 3H16C15.7239 3 15.5 3.22386 15.5 3.5V3.55891L19 6.35891V3.5C19 3.22386 18.7762 3 18.5 3Z" fill="CurrentColor"></path>
@@ -240,7 +246,7 @@ Articles
 
                   <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/withdraw') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path d="M20.9414 8.18881C21.5215 8.76206 21.771 9.48386 21.8877 10.3411C22 11.1668 22 12.2166 22 13.5191V13.6236C22 14.9261 22 15.9759 21.8877 16.8016C21.771 17.6589 21.5215 18.3807 20.9414 18.9539C20.3612 19.5272 19.6307 19.7738 18.7632 19.889C17.9276 20 16.8651 20 15.547 20H10.622C9.30387 20 8.24141 20 7.4058 19.889C6.53824 19.7738 5.80777 19.5272 5.22762 18.9539C4.87566 18.6062 4.64535 18.2037 4.49261 17.7495C5.36407 17.8574 6.4422 17.8573 7.68787 17.8573H12.6974C13.979 17.8573 15.0833 17.8574 15.9676 17.7399C16.9154 17.614 17.8238 17.3301 18.5607 16.602C19.2975 15.8739 19.5848 14.9762 19.7123 14.0398C19.8312 13.166 19.8311 12.0748 19.831 10.8084V10.6203C19.8311 9.38912 19.8311 8.32356 19.7219 7.46234C20.1818 7.61328 20.5893 7.84088 20.9414 8.18881Z" fill="CurrentColor"></path>
@@ -253,7 +259,7 @@ Articles
                  {{-- NEW NAV LINK --}}
                 <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u secondary-text"  onclick="
                   spa(event,'{{ url('users/transactions') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
                    <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.24502 2H16.755C17.9139 2 18.4933 2 18.9606 2.16261C19.8468 2.47096 20.5425 3.18719 20.842 4.09946C21 4.58055 21 5.17705 21 6.37006V20.3742C21 21.2324 20.015 21.6878 19.3919 21.1176C19.0258 20.7826 18.4742 20.7826 18.1081 21.1176L17.625 21.5597C16.9834 22.1468 16.0166 22.1468 15.375 21.5597C14.7334 20.9726 13.7666 20.9726 13.125 21.5597C12.4834 22.1468 11.5166 22.1468 10.875 21.5597C10.2334 20.9726 9.26659 20.9726 8.625 21.5597C7.98341 22.1468 7.01659 22.1468 6.375 21.5597L5.8919 21.1176C5.52583 20.7826 4.97417 20.7826 4.6081 21.1176C3.985 21.6878 3 21.2324 3 20.3742V6.37006C3 5.17705 3 4.58055 3.15795 4.09946C3.45748 3.18719 4.15322 2.47096 5.03939 2.16261C5.50671 2 6.08614 2 7.24502 2ZM7 6.75C6.58579 6.75 6.25 7.08579 6.25 7.5C6.25 7.91421 6.58579 8.25 7 8.25H7.5C7.91421 8.25 8.25 7.91421 8.25 7.5C8.25 7.08579 7.91421 6.75 7.5 6.75H7ZM10.5 6.75C10.0858 6.75 9.75 7.08579 9.75 7.5C9.75 7.91421 10.0858 8.25 10.5 8.25H17C17.4142 8.25 17.75 7.91421 17.75 7.5C17.75 7.08579 17.4142 6.75 17 6.75H10.5ZM7 10.25C6.58579 10.25 6.25 10.5858 6.25 11C6.25 11.4142 6.58579 11.75 7 11.75H7.5C7.91421 11.75 8.25 11.4142 8.25 11C8.25 10.5858 7.91421 10.25 7.5 10.25H7ZM10.5 10.25C10.0858 10.25 9.75 10.5858 9.75 11C9.75 11.4142 10.0858 11.75 10.5 11.75H17C17.4142 11.75 17.75 11.4142 17.75 11C17.75 10.5858 17.4142 10.25 17 10.25H10.5ZM7 13.75C6.58579 13.75 6.25 14.0858 6.25 14.5C6.25 14.9142 6.58579 15.25 7 15.25H7.5C7.91421 15.25 8.25 14.9142 8.25 14.5C8.25 14.0858 7.91421 13.75 7.5 13.75H7ZM10.5 13.75C10.0858 13.75 9.75 14.0858 9.75 14.5C9.75 14.9142 10.0858 15.25 10.5 15.25H17C17.4142 15.25 17.75 14.9142 17.75 14.5C17.75 14.0858 17.4142 13.75 17 13.75H10.5Z" fill="CurrentColor"></path>
@@ -266,7 +272,7 @@ Articles
                 {{-- NEW NAV LINK --}}
                  <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/invite') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.2498 2C7.03145 2.00411 4.84888 2.07958 3.46423 3.46423C2.07958 4.84888 2.00411 7.03145 2 11.2498H6.91352C6.56255 10.8114 6.30031 10.2943 6.15731 9.72228C5.61906 7.56926 7.56926 5.61906 9.72228 6.15731C10.2943 6.30031 10.8114 6.56255 11.2498 6.91352V2Z" fill="CurrentColor"></path>
@@ -281,7 +287,7 @@ Articles
                  {{-- NEW NAV LINK --}}
                     <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u c-white" onclick="
                   spa(event,'{{ url('users/team') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.5 7.5C15.5 9.433 13.933 11 12 11C10.067 11 8.5 9.433 8.5 7.5C8.5 5.567 10.067 4 12 4C13.933 4 15.5 5.567 15.5 7.5Z" fill="CurrentColor"></path>
@@ -305,7 +311,7 @@ Articles
                  
                  <a class="p-10 align-center pointer clip-10 w-full row g-5 no-u secondary-text"  onclick="
                   spa(event,'{{ url('users/settings') }}');
-                  this.closest('nav').classList.add('mobile-display-none');
+                  this.closest('nav').classList.add('mobile-display-none');   document.body.classList.remove('overflow-hidden');
                   ">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2788 2.15224C13.9085 2 13.439 2 12.5 2C11.561 2 11.0915 2 10.7212 2.15224C10.2274 2.35523 9.83509 2.74458 9.63056 3.23463C9.53719 3.45834 9.50065 3.7185 9.48635 4.09799C9.46534 4.65568 9.17716 5.17189 8.69017 5.45093C8.20318 5.72996 7.60864 5.71954 7.11149 5.45876C6.77318 5.2813 6.52789 5.18262 6.28599 5.15102C5.75609 5.08178 5.22018 5.22429 4.79616 5.5472C4.47814 5.78938 4.24339 6.1929 3.7739 6.99993C3.30441 7.80697 3.06967 8.21048 3.01735 8.60491C2.94758 9.1308 3.09118 9.66266 3.41655 10.0835C3.56506 10.2756 3.77377 10.437 4.0977 10.639C4.57391 10.936 4.88032 11.4419 4.88029 12C4.88026 12.5581 4.57386 13.0639 4.0977 13.3608C3.77372 13.5629 3.56497 13.7244 3.41645 13.9165C3.09108 14.3373 2.94749 14.8691 3.01725 15.395C3.06957 15.7894 3.30432 16.193 3.7738 17C4.24329 17.807 4.47804 18.2106 4.79606 18.4527C5.22008 18.7756 5.75599 18.9181 6.28589 18.8489C6.52778 18.8173 6.77305 18.7186 7.11133 18.5412C7.60852 18.2804 8.2031 18.27 8.69012 18.549C9.17714 18.8281 9.46533 19.3443 9.48635 19.9021C9.50065 20.2815 9.53719 20.5417 9.63056 20.7654C9.83509 21.2554 10.2274 21.6448 10.7212 21.8478C11.0915 22 11.561 22 12.5 22C13.439 22 13.9085 22 14.2788 21.8478C14.7726 21.6448 15.1649 21.2554 15.3694 20.7654C15.4628 20.5417 15.4994 20.2815 15.5137 19.902C15.5347 19.3443 15.8228 18.8281 16.3098 18.549C16.7968 18.2699 17.3914 18.2804 17.8886 18.5412C18.2269 18.7186 18.4721 18.8172 18.714 18.8488C19.2439 18.9181 19.7798 18.7756 20.2038 18.4527C20.5219 18.2105 20.7566 17.807 21.2261 16.9999C21.6956 16.1929 21.9303 15.7894 21.9827 15.395C22.0524 14.8691 21.9088 14.3372 21.5835 13.9164C21.4349 13.7243 21.2262 13.5628 20.9022 13.3608C20.4261 13.0639 20.1197 12.558 20.1197 11.9999C20.1197 11.4418 20.4261 10.9361 20.9022 10.6392C21.2263 10.4371 21.435 10.2757 21.5836 10.0835C21.9089 9.66273 22.0525 9.13087 21.9828 8.60497C21.9304 8.21055 21.6957 7.80703 21.2262 7C20.7567 6.19297 20.522 5.78945 20.2039 5.54727C19.7799 5.22436 19.244 5.08185 18.7141 5.15109C18.4722 5.18269 18.2269 5.28136 17.8887 5.4588C17.3915 5.71959 16.7969 5.73002 16.3099 5.45096C15.8229 5.17191 15.5347 4.65566 15.5136 4.09794C15.4993 3.71848 15.4628 3.45833 15.3694 3.23463C15.1649 2.74458 14.7726 2.35523 14.2788 2.15224ZM12.5 15C14.1695 15 15.5228 13.6569 15.5228 12C15.5228 10.3431 14.1695 9 12.5 9C10.8305 9 9.47716 10.3431 9.47716 12C9.47716 13.6569 10.8305 15 12.5 15Z" fill="CurrentColor"></path>
@@ -474,6 +480,9 @@ Articles
     <script src="{{ asset('vitecss/js/app.js?v='.config('versions.vite_version').'') }}"></script>
     <script>
 window.onload=function(){
+        document.querySelector('.loader').remove();
+        document.querySelector('body').classList.remove('overflow-hidden');
+       
   let max_bottom=document.querySelector('footer').getBoundingClientRect().bottom;
   document.querySelector('main').style.paddingBottom=max_bottom - document.querySelector('.home-nav').getBoundingClientRect().top + 'px'; 
  // document.querySelector('main').style.paddingBottom=document.querySelector('footer').offsetHeight + 'px';

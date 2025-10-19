@@ -13,11 +13,13 @@ class UsersGetRequestController extends Controller
     // claim task reward
     public function ClaimTaskReward(){
         $task=DB::table('tasks')->where('id',request('id'))->first();
+        $task->reward=json_decode(Auth::guard('users')->user()->package)->earning_per_click;
         DB::table('users')->where('id',Auth::guard('users')->user()->id)->update([
             'activities_balance' => DB::raw('activities_balance + '.$task->reward.''),
             'updated' => Carbon::now()
         ]);
         DB::table('transactions')->insert([
+             'uniqid' => strtoupper(uniqid('trx')),
             'user_id' => Auth::guard('users')->user()->id,
             'type' => 'Task Reward',
             'class' => 'credit',
@@ -73,6 +75,7 @@ class UsersGetRequestController extends Controller
             'updated' => Carbon::now()
         ]);
        DB::table('transactions')->insert([
+         'uniqid' => strtoupper(uniqid('trx')),
             'user_id' => Auth::guard('users')->user()->id,
             'type' => 'Spin Reward',
             'class' => 'credit',
@@ -203,6 +206,7 @@ class UsersGetRequestController extends Controller
             'activities_balance' => DB::raw('activities_balance - '.$plans[request()->input('amount')].'')
         ]);
           DB::table('transactions')->insert([
+             'uniqid' => strtoupper(uniqid('trx')),
             'user_id' => Auth::guard('users')->user()->id,
             'type' => 'Airtime Topup',
             'class' => 'debit',
@@ -332,6 +336,7 @@ class UsersGetRequestController extends Controller
             'activities_balance' => DB::raw('activities_balance - '.$plans[request()->input('amount')].'')
         ]);
           DB::table('transactions')->insert([
+             'uniqid' => strtoupper(uniqid('trx')),
             'user_id' => Auth::guard('users')->user()->id,
             'type' => 'Data Bundle',
             'class' => 'debit',

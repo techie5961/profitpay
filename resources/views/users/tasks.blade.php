@@ -12,10 +12,10 @@
         @else
         <strong class="desc c-primary grid-full">Available Tasks</strong>
             @foreach ($tasks as $data)
-            <div class="column w-full no-select g-10 p-10 br-10 bg-secondary-dark box-shadow">
+            <div class="column  w-full no-select g-10 p-10 br-10 bg-secondary-dark box-shadow">
                 <div class="row w-full align-center space-between">
                     <strong>{{ $data->title ?? 'null' }}</strong>
-                    <div class="p-y-5 p-x-10 c-black bg-gold br-1000 bold">&#8358;{{ number_format($data->reward ?? 0,2) }}</div>
+                    <div class="p-y-5 p-x-10 c-black bg-gold br-1000 bold">&#8358;{{ number_format($reward ?? 0,2) }}</div>
                 </div>
                 <hr>
                 <span class="text-average">Click the button below to perform the task,note that not performing task would lead to permanent banning of your account so be warned.</span>
@@ -31,7 +31,7 @@
            <div class="row space-between w-full align-center">
             <button onclick="
                 window.open('{{ $data->link }}');
-                document.querySelector('.claim-btn').classList.remove('display-none');
+                this.closest('.row').querySelector('.claim-btn').classList.remove('display-none');
                 " class="btn-blue br-5 clip-5"><span>Perform task</span></button>
               <button onclick="GetRequest(event,'{{ url('users/get/claim/task/reward?id='.$data->id.'') }}',this,MyFunc.Completed)" class="btn-green claim-btn display-none br-5 clip-5"><span>Claim Reward</span></button>
            </div>
