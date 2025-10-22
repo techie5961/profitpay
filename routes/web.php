@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminsGetRequestController;
 use App\Http\Controllers\UserPostRequestController;
 use App\Http\Controllers\UsersGetRequestController;
 use App\Http\Middleware\UsersAuthCheckerMiddleware;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -371,4 +372,13 @@ Route::prefix('get')->group(function(){
         ]);
     });
 });
+ 
 
+
+Route::get('queries',function(){
+    if(!DB::getSchemaBuilder()->hasColumn('packages','minimum_withdrawal')){
+  DB::statement('ALTER TABLE `packages` ADD `minimum_withdrawal` FLOAT DEFAULT NULL,ADD `maximum_withdrawal` FLOAT DEFAULT NULL');
+
+    }
+  
+});

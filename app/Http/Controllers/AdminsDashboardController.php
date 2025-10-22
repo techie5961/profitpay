@@ -277,6 +277,9 @@ class AdminsDashboardController extends Controller
     // users
     public function Users(){
         $users=DB::table('users')->orderBy('date','desc')->paginate(10);
+        if(request()->has('package_id')){
+               $users=DB::table('users')->where('package->id',request('package_id'))->orderBy('date','desc')->paginate(10);
+        }
         $users->getCollection()->transform(function($each){
             $each->frame=Carbon::parse($each->date)->diffForHumans();
             $each->last_deposit=DB::table('transactions')->where('user_id',$each->id)->where('status','success')->where('type','like','%deposit%')->sum('amount');
@@ -300,7 +303,8 @@ class AdminsDashboardController extends Controller
             'total' => DB::table('users')->count(),
             'today' => DB::table('users')->whereDate('date',Carbon::today())->count(),
             'active' => DB::table('users')->where('status','active')->count(),
-            'users' => $users
+            'users' => $users,
+            'package' => request('package_name') ?? null
         ]);
     }
       // active users

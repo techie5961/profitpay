@@ -48,12 +48,15 @@ class UserPostRequestController extends Controller
        }else{
         $package=DB::table('packages')->where('id',request()->input('package'))->first();
        }
+       $usr_pkg=$package;
      DB::table('notifications')->insert([
         'message' => '<strong class="font-1 c-green">'.strtolower(str_replace('-','_',request()->input('username'))).'</strong> Just registered an account',
         'status' => 'unread',
         'date' => Carbon::now(),
         'updated' => Carbon::now()
        ]);
+       
+     // == DB::table('users')->where('username',request()->input('ref'))->first()->type;
        DB::table('users')->insert([
         'uniqid' => strtoupper(uniqid('USR')),
         'name' => request()->input('name'),
@@ -74,11 +77,15 @@ class UserPostRequestController extends Controller
             'status' => 'redeemed'
         ]);
        }
+       
     //    referral
-     if(request()->has('ref')){
+     if(request()->has('ref') &&  json_decode(DB::table('users')->where('username',request()->input('ref'))->first()->package)->type == $usr_pkg->type){
+
         if(request()->input('ref') !== ''){
               $ref=DB::table('users')->where('username',request()->input('ref'))->first();
               $package=json_decode($ref->package);
+              $package->subordinate=$usr_pkg->subordinate ?? 0;
+
             //   direct
               DB::table('users')->where('id',$ref->id)->update([
                 'affiliate_balance' => DB::raw('affiliate_balance + '.$package->subordinate.'')
@@ -108,8 +115,11 @@ class UserPostRequestController extends Controller
 
         // first indirect
         if(($ref->ref ?? '') !== ''){
-            $indirect=DB::table('users')->where('username',$ref->ref)->first();
+           if(json_decode(DB::table('users')->where('username',$ref->ref)->first()->package)->type == $usr_pkg->type){
+
+             $indirect=DB::table('users')->where('username',$ref->ref)->first();
             $pkg=json_decode($indirect->package);
+            $pkg->first_indirect=$usr_pkg->first_indirect ?? 0;
             DB::table('users')->where('id',$indirect->id)->update([
                 'affiliate_balance' => DB::raw('affiliate_balance + '.$pkg->first_indirect.'')
             ]);
@@ -135,6 +145,8 @@ class UserPostRequestController extends Controller
             'updated' => Carbon::now(),
             'date' => Carbon::now()
         ]);
+           }
+           
         }
 
         }
@@ -207,6 +219,11 @@ class UserPostRequestController extends Controller
     }
     // withdraw
     public function Withdraw(){
+         $pkg=json_decode(Auth::guard('users')->user()->package);
+        $finance=json_decode(DB::table('settings')->where('key','finance_settings')->first()->json ?? '{}');
+     $minimum_withdrawal= $pkg->minimum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->minimum_withdrawal ?? $finance->wallets->activities->minimum;
+     $maximum_withdrawal=$pkg->maximum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->maximum_withdrawal ?? 100000000;
+
         $uniqid=strtoupper(uniqid('TRX'));
       if(request()->input('amount') == 0){
         return response()->json([
@@ -221,9 +238,15 @@ class UserPostRequestController extends Controller
         ]);
        }
         $finance=json_decode(DB::table('settings')->where('key','finance_settings')->first()->json ?? '{}');
-      if(request()->input('amount') < $finance->wallets->{str_replace('_balance','',request()->input('wallet'))}->minimum){
+      if(request()->input('amount') < $minimum_withdrawal){
         return response()->json([
-            'message' => 'Minimum withdrawal for '.ucfirst(str_replace('_balance','',request()->input('wallet'))).' Wallet is &#8358;'.number_format($finance->wallets->{str_replace('_balance','',request()->input('wallet'))}->minimum,2).'',
+            'message' => 'Minimum withdrawal for '.$pkg->name.' users is &#8358;'.number_format($minimum_withdrawal,2).'',
+            'status' => 'error'
+        ]);
+      }
+         if(request()->input('amount') > $maximum_withdrawal){
+        return response()->json([
+            'message' => 'Maximum withdrawal for '.$pkg->name.' users is &#8358;'.number_format($maximum_withdrawal,2).'',
             'status' => 'error'
         ]);
       }
@@ -351,6 +374,7 @@ class UserPostRequestController extends Controller
         $coupon->text=$coupon->status == 'active' ? 'Coupon code is active' : 'Coupon code has been used';
         $coupon->package=json_decode($coupon->package);
         $coupon->value=number_format($coupon->package->cost,2);
+        $coupon->user=DB::table('users')->where('coupon',$coupon->code)->first();
         return response()->json([
             'message' => 'Coupon code validated success',
             'status' => 'success',

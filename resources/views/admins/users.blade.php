@@ -76,6 +76,13 @@
            
         </div>
       </div>
+      @isset($package)
+         <div style="background: rgba(0,255,0,0.1);border:0.1px dashed green;" class="w-full br-5 p-5">
+           <span style="font-family:titan one" class="font-100 desc c-green">
+           {{ $package }} Registered Users
+          </span>
+         </div>
+      @endisset
          @foreach ($users as $data)
              <div class="column w-full g-10 p-10 br-10 bg-white box-shadow">
                 <div class="row w-full g-10 space-between">

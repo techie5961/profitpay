@@ -103,10 +103,10 @@ class UsersGetRequestController extends Controller
     }
     //  bank auto verify
     public function BankAutoVerify(){
-         return response()->json([
-            'message' => 'David James',
-            'status' => 'success'
-          ]);
+        //  return response()->json([
+        //     'message' => 'David James',
+        //     'status' => 'success'
+        //   ]);
         $verify=Http::withToken(env('PSTCK_SECRET_KEY'))->get('https://api.paystack.co/bank/resolve',[
             'account_number' => request()->input('account_number'),
             'bank_code' => request()->input('bank_code')

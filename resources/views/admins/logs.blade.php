@@ -13,7 +13,7 @@
             @foreach ($logs as $data)
                 <div class="w-full br-10 bg-white box-shadow p-10 column g-10">
                     <div class="row g-10 space-between">
-                        <img class="h-50 w-50 circle clip-circle" src="{{ asset('users/'.$data->user->photo.'') }}" alt="">
+                        <img class="h-50 w-50 circle clip-circle" src="{{ asset('users/'.$data->user->photo ?? 'avatar.jpeg'.'') }}" alt="">
                         <div class="column g-2 m-right-auto">
                 <a href="{{ url('admins/user?id='.$data->user->id.'') }}" class="no-u bold font-1 c-green">{{ $data->user->username }}</a>
                 <div class="row text-average text-dim align-center g-2">

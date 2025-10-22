@@ -81,6 +81,14 @@
                 <span class="c-green">STATUS:</span>
                 <span>${data.coupon.status}</span>
             </div>
+             <div class="row align-center g-5">
+                <span class="c-green">USED BY:</span>
+                <span>${data.coupon.user.username}</span>
+            </div>
+            <div class="row align-center g-5">
+                <span class="c-green">UPLINE:</span>
+                <span>${data.coupon.user.ref ?? 'NULL'}</span>
+            </div>
           </div>
               `;
               document.querySelector('.coupon-summary').innerHTML=text;

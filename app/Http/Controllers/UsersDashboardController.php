@@ -36,7 +36,7 @@ class UsersDashboardController extends Controller
     public function Dashboard(){
  //   return 'tech';
     return view('users.dashboard',[
-        'all_time' => DB::table('transactions')->where('class','credit')->whereNot('type','like','%deposit%')->where('status','success')->where('id',Auth::guard('users')->user()->id)->sum('amount'),
+        'all_time' => DB::table('transactions')->where('class','credit')->whereNot('type','like','%deposit%')->where('status','success')->where('user_id',Auth::guard('users')->user()->id)->sum('amount'),
         'social' => json_decode(DB::table('settings')->where('key','social_settings')->first()->json)
     ]);
     }
@@ -108,12 +108,14 @@ class UsersDashboardController extends Controller
         if((Auth::guard('users')->user()->bank ?? '') == ''){
             return redirect('users/bank/add');
         }
+        $pkg=json_decode(Auth::guard('users')->user()->package);
         $finance=json_decode(DB::table('settings')->where('key','finance_settings')->first()->json ?? '{}');
         return view('users.withdraw',[
             'bank_linked' => Auth::guard('users')->user()->bank ?? 'false',
             'bank' => json_decode(Auth::guard('users')->user()->bank ?? '{}'),
-            'activities_minimum' => $finance->wallets->activities->minimum,
-            'affiliate_minimum' => $finance->wallets->affiliate->minimum
+            'activities_minimum' => $pkg->minimum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->minimum_withdrawal ?? $finance->wallets->activities->minimum,
+            'affiliate_minimum' => $pkg->minimum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->minimum_withdrawal ?? $finance->wallets->affiliate->minimum,
+            'maximum_withdrawal' => $pkg->maximum_withdrawal ?? DB::table('packages')->where('id',$pkg->id)->first()->maximum_withdrawal ?? 100000000
         ]);
     }
     // invite 

@@ -110,7 +110,7 @@
                  
                
               
-                <button class="post ddisabled">Update Bank Details</button>
+                <button class="post ddisabled">Withdraw Funds</button>
             </form>
         </div>
     </section>

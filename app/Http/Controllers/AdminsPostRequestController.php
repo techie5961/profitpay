@@ -53,6 +53,8 @@ class AdminsPostRequestController extends Controller
         'tiktok_monitizing' => request('tiktok_minitizing') ?? null,
         'casino_game' => request('casino_game') ?? null,
         'daily_advert' => request('daily_advert') ?? null,
+        'minimum_withdrawal' => request()->input('minimum_withdrawal'),
+        'maximum_withdrawal' => request()->input('maximum_withdrawal'),
         'updated' => Carbon::now(),
         'date' => Carbon::now()
        ]);
@@ -85,6 +87,8 @@ class AdminsPostRequestController extends Controller
         'tiktok_monitizing' => request('tiktok_minitizing') ?? null,
         'casino_game' => request('casino_game') ?? null,
         'daily_advert' => request('daily_advert') ?? null,
+         'minimum_withdrawal' => request()->input('minimum_withdrawal'),
+        'maximum_withdrawal' => request()->input('maximum_withdrawal'),
         'updated' => Carbon::now(),
       
        ]);
@@ -109,6 +113,8 @@ class AdminsPostRequestController extends Controller
         'tiktok_monitizing' => request('tiktok_minitizing') ?? null,
         'casino_game' => request('casino_game') ?? null,
         'daily_advert' => request('daily_advert') ?? null,
+        'minimum_withdrawal' => request()->input('minimum_withdrawal'),
+        'maximum_withdrawal' => request()->input('maximum_withdrawal'),
         'updated' => Carbon::now(),
       
        ]);

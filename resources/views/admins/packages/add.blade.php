@@ -40,11 +40,17 @@
            <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">
             <input placeholder="E.g Alpha Package" type="text" name="name" class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent">
            </div>
-           <div class="column w-full reg-fee g-5">
-             <label for="">Registration Fee</label>
+        
+             <label for="">Minimum Withdrawal</label>
            <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">
-            <input placeholder="E.g 3000" type="number" step="any" name="fee" class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent">
+            <input placeholder="E.g 5000" type="number" step="any" name="minimum_withdrawal" class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent">
            </div>
+             <label for="">Maximum Withdrawal</label>
+           <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">
+            <input placeholder="E.g 150000" type="number" step="any" name="maximum_withdrawal" class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent">
+           </div>
+           
+
            </div>
             <div class="w-full house g-5 bg-secondary-light p-10 border-1 br-10 border-color-bg-secondary column">
             <div class="row w-full align-center space-between">

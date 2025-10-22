@@ -140,7 +140,7 @@
                     Credit User
                 </div>
                 <hr>
-               <div class="cont h-50 w-full br-10 p-10 bg-dim border-1 border-color-silver">
+               <div class="cont h-50 w-full br-10 bg-dim border-1 border-color-silver">
                 <select name="wallet" class="inp required input w-full h-full border-none br-10 bg-transparent">
                     <option value="" selected disabled>Select Wallet...</option>
                  
@@ -162,7 +162,7 @@
                       Debit User
                 </div>
                 <hr>
-               <div class="cont h-50 w-full br-10 p-10 bg-dim border-1 border-color-silver">
+               <div class="cont h-50 w-full br-10 bg-dim border-1 border-color-silver">
                 <select name="wallet" class="inp required input w-full h-full border-none br-10 bg-transparent">
                     <option value="" selected disabled>Select Wallet...</option>
                  

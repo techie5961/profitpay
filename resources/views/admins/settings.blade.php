@@ -107,8 +107,8 @@
             </div>
             <input type="hidden" class="input" value="{{ $finance->wallets->activities->portal ?? 'active' }}" name="activities_withdrawal_portal">
             <label for="" class="text-dim m-top-5">Minimum Withdrawal</label>
-            <div class="cont w-full h-50 br-10 border-1 border-color-silver bg-white">
-                <input value="{{ $finance->wallets->activities->minimum ?? 0 }}" type="number" placeholder="E.g 500" name="activities_minimum_withdrawal"  class="inp required input h-full w-full no-border bg-transparent br-10">
+            <div class="cont  br-10 clip-10 overflow-hidden w-full h-50 br-10 border-1 border-color-silver bg-white">
+                <input  readonly style="background:rgb(187, 182, 182);color:white;" value="{{ $finance->wallets->activities->minimum ?? 0 }}" type="number" placeholder="E.g 500" name="activities_minimum_withdrawal"  class="inp required input h-full w-full no-border bg-transparent br-5">
             </div>
            </div>
             <label for="">Affiliate Wallet</label>
@@ -127,8 +127,8 @@
             </div>
             <input type="hidden" value="{{ $finance->wallets->activities->portal ?? 'active' }}" class="input" name="affiliate_withdrawal_portal">
             <label for="" class="text-dim m-top-5">Minimum Withdrawal</label>
-            <div class="cont w-full h-50 br-10 border-1 border-color-silver bg-white">
-                <input value="{{ $finance->wallets->affiliate->minimum ?? 0 }}" type="number" placeholder="E.g 500" name="affiliate_minimum_withdrawal"  class="inp required input h-full w-full no-border bg-transparent br-10">
+            <div class="cont w-full h-50 br-10 clip-10 overflow-hidden border-1 border-color-silver bg-white">
+                <input readonly style="background:rgb(187, 182, 182);color:white;" value="{{ $finance->wallets->affiliate->minimum ?? 0 }}" type="number" placeholder="E.g 500" name="affiliate_minimum_withdrawal"  class="inp required input h-full w-full no-border bg-transparent br-5">
             </div>
            </div>
           
