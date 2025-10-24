@@ -3,8 +3,53 @@
 function SpaLoader(element){
     // spa loader to be updated nased on script
     let loader=` <div class="spa-loader">
-  <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><filter id="spinner-gF01"><feGaussianBlur in="SourceGraphic" stdDeviation="1" result="y"/><feColorMatrix in="y" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7" result="z"/><feBlend in="SourceGraphic" in2="z"/></filter></defs><g filter="url(#spinner-gF01)"><circle cx="5" cy="12" r="4"><animate attributeName="cx" calcMode="spline" dur="2s" values="5;8;5" keySplines=".36,.62,.43,.99;.79,0,.58,.57" repeatCount="indefinite"/></circle><circle cx="19" cy="12" r="4"><animate attributeName="cx" calcMode="spline" dur="2s" values="19;16;19" keySplines=".36,.62,.43,.99;.79,0,.58,.57" repeatCount="indefinite"/></circle><animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite"/></g></svg>
-    </div>
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve"><style>.st3067 {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 4pt;
+			stroke-miterlimit: 10;
+		}
+
+		.st3067--transparent {
+			stroke: rgba(#ffffff, 0);
+		}
+
+		.st3067--xlarge {
+			stroke-linecap: square;
+			stroke-dasharray: 2000, 513;
+			stroke-width: 20;
+		}
+
+		.st3067--large {
+			stroke-linecap: square;
+			stroke-dasharray: 1500, 1013;
+			stroke-width: 20;
+		}
+
+		.st3067--medium {
+			stroke-linecap: square;
+			stroke-dasharray: 1000, 1513;
+			stroke-width: 20;
+		}
+
+		.st3067--small {
+			stroke-linecap: square;
+			stroke-dasharray: 500, 2013;
+			stroke-width: 20;
+		}
+
+		.st3067--xsmall {
+			stroke-linecap: square;
+			stroke-dasharray: 100, 2413;
+			stroke-width: 20;
+		}
+
+		.st3067--three {
+			stroke-linecap: square;
+			stroke-dasharray: 320, 320;
+			stroke-width: 20;
+		}</style><!--ring 5--><circle class="st3067" cx="500" cy="500" r="160"/><circle class="st3067 st3067--small" cx="500" cy="500" r="160" transform="rotate(0 500 500)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 500 500" to="-360 500 500" dur="5s" repeatCount="indefinite"/></circle><!--ring 4--><circle class="st3067 st3067--transparent" cx="500" cy="500" r="240"/><circle class="st3067 st3067--medium" cx="500" cy="500" r="240" transform="rotate(0 500 500)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 500 500" to="-360 500 500" dur="4s" repeatCount="indefinite"/></circle><!--ring 3--><circle class="st3067" cx="500" cy="500" r="320"/><circle class="st3067 st3067--three" cx="500" cy="500" r="320" transform="rotate(0 500 500)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 500 500" to="-360 500 500" dur="2s" repeatCount="indefinite"/></circle><!--ring 2--><circle class="st3067" cx="500" cy="500" r="400"/><circle class="st3067 st3067--large" cx="500" cy="500" r="400" transform="rotate(0 500 500)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 500 500" to="-360 500 500" dur="5s" repeatCount="indefinite"/></circle><!--ring 1--><circle class="st3067" cx="500" cy="500" r="480"/><circle class="st3067 st3067--xlarge" cx="500" cy="500" r="480" transform="rotate(0 500 500)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 500 500" to="-360 500 500" dur="5s" repeatCount="indefinite"/></circle></svg>
+            </div>
 `;
     element.innerHTML=loader;
 }

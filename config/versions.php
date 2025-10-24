@@ -1,6 +1,6 @@
 <?php
 return [
-    'vite_version' => 70.5
+    'vite_version' => 70.6
 ]
 
 ?>

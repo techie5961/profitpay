@@ -91,7 +91,8 @@ class UserPostRequestController extends Controller
         if(request()->input('ref') !== ''){
               $ref=DB::table('users')->where('username',request()->input('ref'))->first();
               $package=json_decode($ref->package);
-              $package->subordinate=$usr_pkg->subordinate ?? 0;
+              $package->subordinate=ConvertCurrency($usr_pkg->subordinate,DB::table('users')->where('email',request()->input('email'))->first()->country,$ref->country) ?? 0;
+
 
             //   direct
               DB::table('users')->where('id',$ref->id)->update([
@@ -126,7 +127,7 @@ class UserPostRequestController extends Controller
 
              $indirect=DB::table('users')->where('username',$ref->ref)->first();
             $pkg=json_decode($indirect->package);
-            $pkg->first_indirect=$usr_pkg->first_indirect ?? 0;
+            $pkg->first_indirect=ConvertCurrency($usr_pkg->subordinate,DB::table('users')->where('email',request()->input('email'))->first()->country,$indirect->country) ?? 0;
             DB::table('users')->where('id',$indirect->id)->update([
                 'affiliate_balance' => DB::raw('affiliate_balance + '.$pkg->first_indirect.'')
             ]);
@@ -387,5 +388,55 @@ class UserPostRequestController extends Controller
             'status' => 'success',
             'coupon' => $coupon
         ]);
+    }
+     // claim task reward
+    public function ClaimTaskReward(){
+        $task=DB::table('tasks')->where('id',request('id'))->first();
+        $task->reward=json_decode(Auth::guard('users')->user()->package)->earning_per_click;
+        DB::table('users')->where('id',Auth::guard('users')->user()->id)->update([
+            'activities_balance' => DB::raw('activities_balance + '.$task->reward.''),
+            'updated' => Carbon::now()
+        ]);
+        DB::table('transactions')->insert([
+             'uniqid' => strtoupper(uniqid('trx')),
+            'user_id' => Auth::guard('users')->user()->id,
+            'type' => 'Task Reward',
+            'class' => 'credit',
+            'amount' => $task->reward,
+            'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm-12.69,88L136,60.69V48h12.69L208,107.32V120ZM136,83.31,172.69,120H136Zm72,1.38L171.31,48H208ZM120,48v72H48V48ZM107.31,208,48,148.69V136H60.69L120,195.31V208ZM120,172.69,83.31,136H120Zm-72-1.38L84.69,208H48ZM208,208H136V136h72v72Z"></path></svg>',
+            'json' => json_encode([
+                'data' => $task,
+                'wallet' => 'activities_wallet'
+            ]),
+            'status' => 'success',
+            'updated' => Carbon::now(),
+            'date' => Carbon::now()
+        ]);
+        DB::table('task_proofs')->insert([
+            'user_id' => Auth::Guard('users')->user()->id,
+            'task_id' => $task->id,
+            'json' => json_encode($task),
+            'uniqid' => strtoupper(uniqid('PRF')),
+            'status' => 'success',
+            'updated' => Carbon::now(),
+            'date' => Carbon::now()
+        ]);
+        DB::table('tasks')->where('id',request()->input('id'))->update([
+            'completed' => DB::raw('`completed` + 1'),
+            'status' => DB::raw('CASE WHEN `completed` + 1 >= `limit` THEN "completed" ELSE "active" END')
+        ]);
+        DB::table('notifications')->insert([
+        'message' => '<strong class="font-1 c-green">'.Auth::guard('users')->user()->username.'</strong> Just performed a task',
+        'status' => 'unread',
+        'date' => Carbon::now(),
+        'updated' => Carbon::now()
+       ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Task completed and reward granted',
+        
+        ]);
+
+
     }
 }
