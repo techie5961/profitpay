@@ -59,6 +59,11 @@
            
     <div onclick="window.location.href='{{ url('admins/users/all?package_name='.$data->name.'&package_id='.$data->id.'') }}'" class="bg-black c-white p-5 align-center br-5 no-select pointer clip-5 row br-2">View Registered Users</div>
       </div>
+      <div class="row w-full align-center g-2">
+        <strong class="c-green">Country :</strong>
+        <img src="{{ asset('countries/'.$data->country.'.jpg') }}" alt="" class="h-10 w-10">
+        <strong>{{ ucfirst($data->country) }}</strong>
+      </div>
         <hr>
         <div class="row w-full space-between g-10 align-center">
           <div class="column g-2 align-center">
@@ -73,7 +78,7 @@
               </span> 
                 Registration Fee
             </div>
-                      <strong class="font-1 c-green">&#8358;{{ number_format($data->cost,2) }}</strong>
+                      <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->cost,2) }}</strong>
            </div>
             <div class="column g-2 align-center">
             <div class="row align-center g-2">
@@ -89,7 +94,7 @@
                 Cashback
             </div>
                       @isset($data->cashback)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->cashback,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->cashback,2) }}</strong>
                           @else
                         <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -111,7 +116,7 @@
                SubOrdinate
             </div>
                    @isset($data->subordinate)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->subordinate,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->subordinate,2) }}</strong>
                           @else
                              <strong class="font-1 c-green">NULL</strong>
                    @endisset
@@ -132,7 +137,7 @@
               First Indirect
             </div>
                      @isset($data->first_indirect)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->first_indirect,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->first_indirect,2) }}</strong>
                           @else
                            <strong class="font-1 c-green">NULL</strong>
                      @endisset
@@ -174,7 +179,7 @@
               Article Writing
             </div>
                       @isset($data->article_writing)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->article_writing,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->article_writing,2) }}</strong>
                           @else
                           <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -194,7 +199,7 @@
               Earn per Click
             </div>
                       @isset($data->earning_per_click)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->earning_per_click,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->earning_per_click,2) }}</strong>
                           @else
                           <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -205,7 +210,7 @@
                Tiktok Monitizing
             </div>
                       @isset($data->tiktok_monitizing)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->tiktok_monitizing,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->tiktok_monitizing,2) }}</strong>
                           @else
                           
                           <strong class="font-1 c-green">NULL</strong>
@@ -230,7 +235,7 @@
               Casino Games
             </div>
                       @isset($data->casino_game)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->casino_game,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->casino_game,2) }}</strong>
                           @else
                           <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -250,7 +255,7 @@
               Daily Adverts
             </div>
                      @isset($data->daily_advert)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->daily_advert,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->daily_advert,2) }}</strong>
                           @else
                            <strong class="font-1 c-green">NULL</strong>
                      @endisset
@@ -272,7 +277,7 @@
               Minimum Withdrawal
             </div>
                     
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->minimum_withdrawal ?? 0,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->minimum_withdrawal ?? 0,2) }}</strong>
                         
            </div>
             <div class="column g-2 align-center">
@@ -289,7 +294,7 @@
              Maximum Withdrawal
             </div>
                  
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->maximum_withdrawal ?? 0,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency(0,$data->country)  !!}{{ number_format($data->maximum_withdrawal ?? 0,2) }}</strong>
                          
            </div>
 

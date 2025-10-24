@@ -79,7 +79,7 @@
 </div>
                 <strong class="desc">Affiliate Balance</strong>
                </div>
-               <strong class="desc">&#8358;{{ number_format(Auth::guard('users')->user()->affiliate_balance,2) }}</strong>
+               <strong class="desc">{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->affiliate_balance,2) }}</strong>
          
                </div>
             </div>
@@ -95,7 +95,7 @@
   </div>
                 <strong class="desc">Activities Balance</strong>
                </div>
-               <strong class="desc">&#8358;{{ number_format(Auth::guard('users')->user()->activities_balance,2) }}</strong>
+               <strong class="desc">{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->activities_balance,2) }}</strong>
          
                </div>
             </div>
@@ -109,7 +109,7 @@
    </div>
                 <strong class="desc">Deposit Balance</strong>
                </div>
-               <strong class="desc">&#8358;{{ number_format(Auth::guard('users')->user()->deposit_balance,2) }}</strong>
+               <strong class="desc">{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->deposit_balance,2) }}</strong>
            
             </div>  
             </div>

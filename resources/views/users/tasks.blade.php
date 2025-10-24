@@ -15,7 +15,7 @@
             <div class="column  w-full no-select g-10 p-10 br-10 bg-secondary-dark box-shadow">
                 <div class="row w-full align-center space-between">
                     <strong>{{ $data->title ?? 'null' }}</strong>
-                    <div class="p-y-5 p-x-10 c-black bg-gold br-1000 bold">&#8358;{{ number_format($reward ?? 0,2) }}</div>
+                    <div class="p-y-5 p-x-10 c-black bg-gold br-1000 bold">{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($reward ?? 0,2) }}</div>
                 </div>
                 <hr>
                 <span class="text-average">Click the button below to perform the task,note that not performing task would lead to permanent banning of your account so be warned.</span>

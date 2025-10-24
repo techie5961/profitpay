@@ -113,7 +113,7 @@ Refer & Earn
 	<path class="st0_birthday-1" d="M49.7,229.6c-0.1,0-0.2,0-0.3-0.1c-0.2-0.2-0.2-0.5,0-0.7c0,0,0,0,0,0c0.6-0.6,1.4-0.9,2.2-0.6&#10;&#9;&#9;c0.3,0.1,0.4,0.4,0.3,0.6c-0.1,0.3-0.4,0.4-0.6,0.3c-0.4-0.1-0.9,0-1.2,0.3C50,229.5,49.9,229.6,49.7,229.6z"/>
 </g>
 </svg>
-<div class="desc font-cinzel-decorative c-primary bold text-center">Invite Friends to {{ config('app.name') }} & Earn Awesome Rewards up to &#8358;1000,000.00</div>
+<div class="desc font-cinzel-decorative c-primary bold text-center">Invite Friends to {{ config('app.name') }} & Earn Awesome Rewards up to {!! Currency(Auth::guard('users')->user()->id)  !!}1000,000.00</div>
  <button onclick="copy('{{ url('register/'.Auth::guard('users')->user()->uniqid.'') }}')" class="max-w-500 btn-primary-3d w-full clip-5 br-5">Copy Referral Link</button>
 <strong class="u font-1">How It Works</strong>
 <ol class="w-full max-w-500">
@@ -125,11 +125,11 @@ Refer & Earn
 	<strong class="u font-1 grid-full">Reward Levels</strong>
 	<div class="bg-secondary-dark border-1 border-color-secondary no-select w-full br-10 p-10 column g-10 align-center">
 		<span>Direct SubOrdinate</span>
-		<strong class="desc c-primary">&#8358;{{ number_format($package->subordinate,2) }}</strong>
+		<strong class="desc c-primary">{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($package->subordinate,2) }}</strong>
 	</div>
 	<div class="bg-secondary-dark border-1 border-color-secondary no-select w-full br-10 p-10 column g-10 align-center">
 		<span>First Indirect</span>
-		<strong class="desc c-primary">&#8358;{{ number_format($package->first_indirect,2) }}</strong>
+		<strong class="desc c-primary">{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($package->first_indirect,2) }}</strong>
 	</div>
 </div>
 

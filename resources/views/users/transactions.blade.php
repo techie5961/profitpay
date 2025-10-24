@@ -119,10 +119,10 @@
                </div>
                <div class="column align-center g-2">
               @if ($data->class == 'credit')
-               <strong class="font-1 c-green">+ &#8358;
+               <strong class="font-1 c-green">+ {!! Currency(Auth::guard('users')->user()->id)  !!}
                 {{ number_format($data->amount,2) }}</strong>
                  @else
-                  <strong class="font-1 c-red">- &#8358;
+                  <strong class="font-1 c-red">- {!! Currency(Auth::guard('users')->user()->id)  !!}
                 {{ number_format($data->amount,2) }}</strong> 
               @endif
                 <div class="status {{ $data->status == 'success' ? 'green' : ($data->status == 'rejected' ? 'red' : 'gold') }}">{{ $data->status }}</div>

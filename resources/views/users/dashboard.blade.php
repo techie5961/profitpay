@@ -64,13 +64,12 @@
         </div>
         <div class="column wallets-house primary-text pos-relative bg-primary p-10 g-10 w-full br-10">
             <div class="row space-between align-center g-10 w-full">
+           
                 <span class="font-weight-900">👋 Welcome Back</span>
-                <div class="p-5 display-none border-1 border-color-secondary bg-dim br-5 row align-center g-10">
-                    <span>USD</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.43056 8.51192C4.70012 8.19743 5.1736 8.161 5.48809 8.43057L12 14.0122L18.5119 8.43057C18.8264 8.16101 19.2999 8.19743 19.5694 8.51192C19.839 8.82642 19.8026 9.29989 19.4881 9.56946L12.4881 15.5695C12.2072 15.8102 11.7928 15.8102 11.5119 15.5695L4.5119 9.56946C4.19741 9.29989 4.16099 8.82641 4.43056 8.51192Z" fill="CurrentColor"></path>
-</svg>
-
+                <div class="p-5 bg-dim br-5 row align-center g-10">
+                    <img src="{{ asset('countries/'.Auth::guard('users')->user()->country.'.jpg') }}" alt="" class="h-10 w-10 br-2 no-shrink">
+                    <span>{{ strtoupper(Auth::guard('users')->user()->country) }}</span>
+                   
                 </div>
             </div>
             <div class="row w-full align-center g-10">
@@ -112,7 +111,7 @@
 
             </div>
             <strong class="desc font-weight-900" style="font-size:2rem">
-                &#8358;{{ number_format(Auth::guard('users')->user()->activities_balance) }}
+                {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->activities_balance) }}
             </strong>
             <span>Your earnings from different activities</span>
             <button onclick="event.stopPropagation();spa(event,'{{ url('users/withdraw') }}')" class="clip5 br-5 btn-green-3d c-white">Withdraw</button>
@@ -159,7 +158,7 @@
 
             </div>
             <strong class="desc font-weight-900" style="font-size:2rem">
-                &#8358;{{ number_format(Auth::guard('users')->user()->affiliate_balance,2) }}
+                {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->affiliate_balance,2) }}
             </strong>
             <span>Your earnings from Downlines & Subordinates</span>
             <button onclick="event.stopPropagation();spa(event,'{{ url('users/withdraw') }}')" class="clip5 br-5 btn-green-3d c-white">Cash-Out</button>
@@ -201,7 +200,7 @@
 
             </div>
             <strong class="desc font-weight-900" style="font-size:2rem">
-                &#8358;{{ number_format(Auth::guard('users')->user()->deposit_balance,2) }}
+                {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->deposit_balance,2) }}
             </strong>
             <span>Funds used in playing fun games</span>
             <div onclick="event.stopPropagation();spa(event,'{{ url('users/deposit') }}')" class="clip-5 br-5 p-10 bg-white border-bottom-2 border-color-silver w-fit c-black bold">Fund Wallet</div>
@@ -240,7 +239,7 @@
 
             </div>
             <strong class="desc font-weight-900" style="font-size:2rem">
-                &#8358;{{ number_format($all_time,2) }}
+                {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($all_time,2) }}
             </strong>
             <span>Your total earnings on the platform</span>
             <div onclick="event.stopPropagation();spa(event,'{{ url('users/transactions') }}')" class="clip-5 br-5 p-10 bg-white border-bottom-2 border-color-silver w-fit c-black bold">View Transactions</div>
@@ -281,7 +280,7 @@
 
             </div>
             <strong class="desc font-weight-900" style="font-size:2rem">
-                &#8358;{{ number_format(Auth::guard('users')->user()->activities_balance) }}
+                {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(Auth::guard('users')->user()->activities_balance) }}
             </strong>
             <span>Your earnings from different activities</span>
             <button onclick="event.stopPropagation();spa(event,'{{ url('users/withdraw') }}')" class="clip5 br-5 btn-green-3d c-white">Withdraw</button>

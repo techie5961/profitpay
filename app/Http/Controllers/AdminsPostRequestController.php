@@ -43,6 +43,7 @@ class AdminsPostRequestController extends Controller
         'banner' => $name,
         'type' => request()->input('type'),
         'name' => request('name'),
+        'country' => request()->input('country'),
         'cost' => request('fee'),
         'cashback' => request('cashback') ?? null,
         'subordinate' => request('subordinate') ?? null,
@@ -77,6 +78,7 @@ class AdminsPostRequestController extends Controller
         'banner' => $name,
         'type' => request()->input('type'),
         'name' => request('name'),
+        'country' => request()->input('country'),
         'cost' => request('fee'),
         'cashback' => request('cashback') ?? null,
         'subordinate' => request('subordinate') ?? null,
@@ -103,6 +105,7 @@ class AdminsPostRequestController extends Controller
        DB::table('packages')->where('id',request()->input('id'))->update([
         'type' => request()->input('type'),
         'name' => request('name'),
+        'country' => request()->input('country'),
         'cost' => request('fee'),
         'cashback' => request('cashback') ?? null,
         'subordinate' => request('subordinate') ?? null,

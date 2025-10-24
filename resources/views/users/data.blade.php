@@ -294,7 +294,7 @@
         </div>
          <div class='row w-full align-center g-5 space-between'>
             <span class='text-dim'>Topup Amount</span>
-            <span>&#8358;${parseFloat(document.querySelector('input[name=amount]').value).toLocaleString()}.00</span>
+            <span>{!! Currency(Auth::guard('users')->user()->id)  !!}${parseFloat(document.querySelector('input[name=amount]').value).toLocaleString()}.00</span>
         </div>
           <div class='row w-full align-center g-5 space-between'>
             <span class='text-dim'>Debit Wallet</span>

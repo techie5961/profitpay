@@ -376,8 +376,12 @@ Route::prefix('get')->group(function(){
 
 
 Route::get('queries',function(){
-    if(!DB::getSchemaBuilder()->hasColumn('packages','minimum_withdrawal')){
-  DB::statement('ALTER TABLE `packages` ADD `minimum_withdrawal` FLOAT DEFAULT NULL,ADD `maximum_withdrawal` FLOAT DEFAULT NULL');
+    if(!DB::getSchemaBuilder()->hasColumn('users','country')){
+  DB::statement("ALTER TABLE `users` ADD `country` VARCHAR(255) DEFAULT 'nigeria' AFTER `phone`");
+
+    }
+      if(!DB::getSchemaBuilder()->hasColumn('packages','country')){
+  DB::statement("ALTER TABLE `packages` ADD `country` VARCHAR(255) DEFAULT 'nigeria' AFTER `name`");
 
     }
   

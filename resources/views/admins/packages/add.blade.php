@@ -3,6 +3,7 @@
     Add Package
 @endsection
 @section('main')
+
     <section class="w-full column g-10 p-10">
         <form action="{{ url('admins/post/packages/add/process') }}" method="POST" onsubmit="PostRequest(event,this,MyFunc.Added)" class="w-full bg-white br-10 p-10 column g-10">
            <input type="hidden" name="_token" class="input" value="{{ @csrf_token() }}">
@@ -39,6 +40,15 @@
            <label for="">Package Name</label>
            <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">
             <input placeholder="E.g Alpha Package" type="text" name="name" class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent">
+           </div>
+            <label for="">Country</label>
+           <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">
+           <select class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent" name="country">
+            <option value="" selected disabled>Select Country...</option>
+            <option value="nigeria">Nigeria</option>
+            <option value="ghana">Ghana</option>
+            <option value="cameroon">Cameroon</option>
+           </select>
            </div>
         
              <label for="">Minimum Withdrawal</label>

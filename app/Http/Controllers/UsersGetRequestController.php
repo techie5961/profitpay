@@ -96,7 +96,7 @@ class UsersGetRequestController extends Controller
         'updated' => Carbon::now()
        ]);
         return response()->json([
-            'message' => '&#8358;'.$reward.' spin reward granted successfully',
+            'message' => Currency(Auth::guard('users')->user()->id).$reward.' spin reward granted successfully',
             'status' => 'success',
             'reward' => $reward
         ]);

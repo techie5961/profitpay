@@ -14,6 +14,35 @@
 </style>
 @endsection
 @section('main')
+{{-- NIGERIA PACKAGES --}}
+<template class="pkgs nigeria">
+ <option value="" selected disabled>Choose Package...</option>
+                @if (!$nigeria_pkgs->isEmpty())
+                    @foreach ($nigeria_pkgs as $data)
+                        <option data-type="{{ $data->type }}" value="{{ $data->id ?? '' }}">{{ $data->name ?? '' }}</option>
+                    @endforeach
+                @endif
+</template>
+{{-- GHANA PACKAGES --}}
+<template class="pkgs ghana">
+ <option value="" selected disabled>Choose Package...</option>
+                @if (!$ghana_pkgs->isEmpty())
+                    @foreach ($ghana_pkgs as $data)
+                        <option data-type="{{ $data->type }}" value="{{ $data->id ?? '' }}">{{ $data->name ?? '' }}</option>
+                    @endforeach
+                @endif
+</template>
+{{-- CAMEROON PACKAGES --}}
+<template class="pkgs cameroon">
+ <option value="" selected disabled>Choose Package...</option>
+                @if (!$cameroon_pkgs->isEmpty())
+                    @foreach ($cameroon_pkgs as $data)
+                        <option data-type="{{ $data->type }}" value="{{ $data->id ?? '' }}">{{ $data->name ?? '' }}</option>
+                    @endforeach
+                @endif
+</template>
+
+
      <section class="column p-10 p-y-20 w-full flex-auto justify-center">
        <form style="backdrop-filter: blur(20px);box-shadow:inset 0 0 50px var(--bg-light)" action="{{ url('users/post/register/process') }}" method="POST" onsubmit="PostRequest(event,this,MyFunc.call_back)" class="w-full border-1 border-color-silver max-w-500 align-center br-10 bg-transparent c-white column g-5">
             <div class="column w-full p-10 align-center g-5">
@@ -43,11 +72,26 @@
             <div class="cont bg-secondary-dark w-full h-50 br-5 border-1 border-color-silver">
                 <input autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" type="email" placeholder="Enter email address" name="email" class="inp input required w-full h-full no-border bg-transparent br-5">
             </div>
-             <label for="" class="m-right-auto m-top-10">Phone Number</label>
+              <label for="" class="m-right-auto m-top-10">Phone Number</label>
             <div class="cont bg-secondary-dark w-full h-50 br-5 border-1 border-color-silver">
                 <input autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" type="number" placeholder="Enter phone number" name="phone" class="inp input required w-full h-full no-border bg-transparent br-5">
             </div>
-             <label for="" class="m-right-auto m-top-10">Select Package</label>
+             <label for="" class="m-right-auto m-top-10">Select Country</label>
+            <div class="cont bg-secondary-dark w-full h-50 br-5 border-1 border-color-silver">
+               <select onchange="
+            
+               document.querySelector('select[name=package]').innerHTML=document.querySelector('template.pkgs.' + this.value).innerHTML;
+               document.querySelector('.packages').classList.remove('display-none');
+                " name="country" class="inp input required w-full h-full no-border bg-transparent br-5">
+                <option value="" selected disabled>Select Country....</option>
+                <option value="nigeria">Nigeria</option>
+                <option value="ghana">Ghana</option>
+                <option value="cameroon">Cameroon</option>
+
+               </select>
+            </div>
+            <div class="column packages display-none">
+                 <label for="" class="m-right-auto m-top-10">Select Package</label>
             <div class="cont bg-secondary-dark w-full h-50 br-5 border-1 border-color-silver">
               <select onchange="
               if(this.options[this.selectedIndex].dataset.type == 'free'){
@@ -61,13 +105,9 @@
               }
              
               "name="package"  class="inp input required w-full h-full no-border bg-transparent br-5" id="">
-                <option value="" selected disabled>Choose Package...</option>
-                @if (!$pkg->isEmpty())
-                    @foreach ($pkg as $data)
-                        <option data-type="{{ $data->type }}" value="{{ $data->id ?? '' }}">{{ $data->name ?? '' }}</option>
-                    @endforeach
-                @endif
+               
               </select>
+            </div>
             </div>
             <div class="m-left-auto c-green pointer no-select" onclick="window.location.href='{{ url('package/list') }}'" style="color:greenyellow">See our package list and Incentives here</div>
             @isset($ref)

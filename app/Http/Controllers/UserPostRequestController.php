@@ -13,7 +13,7 @@ class UserPostRequestController extends Controller
     // register
     public function Register(){
         $welcome_bonus = 0;
-        if(DB::table('users')->where('username',strtolower(str_replace('-','_',request()->input('username'))))->exists()){
+        if(DB::table('users')->where('username',strtolower(str_replace(['-',' '],'_',request()->input('username'))))->exists()){
             return response()->json([
                 'message' => 'Username has been taken',
                 'status' => 'error'
@@ -41,6 +41,12 @@ class UserPostRequestController extends Controller
 
             ]);
         }
+        if((json_decode($coupon->package)->country ?? 'nigeria') !== request()->input('country')){
+            return response()->json([
+                'message' => 'Please Enter a valid '.ucfirst(request()->input('country')).' coupon code',
+                'status' => 'error'
+            ]);
+        }
        // return $coupon;
         $package=json_decode($coupon->package ?? '{}');
       //  return $package;
@@ -50,7 +56,7 @@ class UserPostRequestController extends Controller
        }
        $usr_pkg=$package;
      DB::table('notifications')->insert([
-        'message' => '<strong class="font-1 c-green">'.strtolower(str_replace('-','_',request()->input('username'))).'</strong> Just registered an account',
+        'message' => '<strong class="font-1 c-green">'.strtolower(str_replace(['-',' '],'_',request()->input('username'))).'</strong> Just registered an account',
         'status' => 'unread',
         'date' => Carbon::now(),
         'updated' => Carbon::now()
@@ -61,8 +67,9 @@ class UserPostRequestController extends Controller
         'uniqid' => strtoupper(uniqid('USR')),
         'name' => request()->input('name'),
         'email' => request()->input('email'),
-        'username' => strtolower(str_replace('-','_',request()->input('username'))),
+        'username' => strtolower(str_replace(['-',' '],'_',request()->input('username'))),
         'phone' => request()->input('phone') ?? null,
+        'country' => request()->input('country'),
         'package' => json_encode($package ?? []),
         'coupon' => request()->input('coupon') ?? null,
         'activities_balance' => $welcome_bonus,
@@ -240,13 +247,13 @@ class UserPostRequestController extends Controller
         $finance=json_decode(DB::table('settings')->where('key','finance_settings')->first()->json ?? '{}');
       if(request()->input('amount') < $minimum_withdrawal){
         return response()->json([
-            'message' => 'Minimum withdrawal for '.$pkg->name.' users is &#8358;'.number_format($minimum_withdrawal,2).'',
+            'message' => 'Minimum withdrawal for '.$pkg->name.' users is '.Currency(Auth::guard('users')->user()->id).''.number_format($minimum_withdrawal,2).'',
             'status' => 'error'
         ]);
       }
          if(request()->input('amount') > $maximum_withdrawal){
         return response()->json([
-            'message' => 'Maximum withdrawal for '.$pkg->name.' users is &#8358;'.number_format($maximum_withdrawal,2).'',
+            'message' => 'Maximum withdrawal for '.$pkg->name.' users is '.Currency(Auth::guard('users')->user()->id).''.number_format($maximum_withdrawal,2).'',
             'status' => 'error'
         ]);
       }

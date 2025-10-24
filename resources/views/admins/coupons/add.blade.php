@@ -33,7 +33,7 @@
                 <option value="" selected disabled>Choose Package</option>
                 @if (!$packages->isEmpty())
                     @foreach ($packages as $data)
-                        <option value="{{ $data->id ?? '' }}">{{ $data->name ?? 'null' }}</option>
+                        <option value="{{ $data->id ?? '' }}">{{ $data->name ?? 'null' }} ({{ $data->country }})</option>
                     @endforeach
                 @endif
               </select>

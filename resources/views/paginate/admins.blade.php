@@ -1,6 +1,6 @@
 @isset($coupons)
       @foreach ($coupons as $data)
-              <div class="bg-white w-full br-10 box-shadow p-10 column g-5">
+               <div class="bg-white w-full br-10 box-shadow p-10 column g-5">
                 <div class="row w-full space-between g-10">
                     <div class="column g-2">
                         <strong class="font-1 row align-center g-2 c-green">{{ $data->code ?? '' }}
@@ -18,16 +18,43 @@
                 <hr>
                 <div class="row w-full g-2 align-center">
                    <div class="row align-center g-2">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4caf50" viewBox="0 0 256 256"><path d="M92,140a12,12,0,1,1,12-12A12,12,0,0,1,92,140Zm72-24a12,12,0,1,0,12,12A12,12,0,0,0,164,116Zm-12.27,45.23a45,45,0,0,1-47.46,0,8,8,0,0,0-8.54,13.54,61,61,0,0,0,64.54,0,8,8,0,0,0-8.54-13.54ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88.11,88.11,0,0,0-84.09-87.91C120.32,56.38,120,71.88,120,72a8,8,0,0,0,16,0,8,8,0,0,1,16,0,24,24,0,0,1-48,0c0-.73.13-14.3,8.46-30.63A88,88,0,1,0,216,128Z"></path></svg>
-                   <span>Vendor:</span> 
+                    <div class="c-green">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="6" r="4" fill="CurrentColor"></circle>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 22C14.8501 22 14.0251 22 13.5126 21.4874C13 20.9749 13 20.1499 13 18.5C13 16.8501 13 16.0251 13.5126 15.5126C14.0251 15 14.8501 15 16.5 15C18.1499 15 18.9749 15 19.4874 15.5126C20 16.0251 20 16.8501 20 18.5C20 20.1499 20 20.9749 19.4874 21.4874C18.9749 22 18.1499 22 16.5 22ZM18.468 17.7458C18.6958 17.518 18.6958 17.1487 18.468 16.9209C18.2402 16.693 17.8709 16.693 17.6431 16.9209L15.7222 18.8417L15.3569 18.4764C15.1291 18.2486 14.7598 18.2486 14.532 18.4764C14.3042 18.7042 14.3042 19.0736 14.532 19.3014L15.3097 20.0791C15.5375 20.307 15.9069 20.307 16.1347 20.0791L18.468 17.7458Z" fill="CurrentColor"></path>
+<path d="M15.4147 13.5074C14.4046 13.1842 13.24 13 12 13C8.13401 13 5 14.7909 5 17C5 19.1406 7.94244 20.8884 11.6421 20.9949C11.615 20.8686 11.594 20.7432 11.5775 20.6201C11.4998 20.0424 11.4999 19.3365 11.5 18.586V18.414C11.4999 17.6635 11.4998 16.9576 11.5775 16.3799C11.6639 15.737 11.8705 15.0333 12.4519 14.4519C13.0334 13.8705 13.737 13.6639 14.3799 13.5774C14.6919 13.5355 15.0412 13.5162 15.4147 13.5074Z" fill="CurrentColor"></path>
+</svg>
+
+                    </div>
+                        <span>Vendor:</span> 
                    <a class="no-u c-green bold" {{ ($data->vendor_id ?? '') == 0 ? 'href="'.url('admins/user?id='.$data->id.'').'"' : '' }}>{{ $data->vendor->username ?? 'Non vendor' }}</a>
                    </div>
                 </div>
                  <div class="row w-full g-2 align-center">
                    <div class="row align-center g-2">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4caf50" viewBox="0 0 256 256"><path d="M224,64H176V56a24,24,0,0,0-24-24H104A24,24,0,0,0,80,56v8H32A16,16,0,0,0,16,80V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V80A16,16,0,0,0,224,64ZM96,56a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM224,80v32H192v-8a8,8,0,0,0-16,0v8H80v-8a8,8,0,0,0-16,0v8H32V80Zm0,112H32V128H64v8a8,8,0,0,0,16,0v-8h96v8a8,8,0,0,0,16,0v-8h32v64Z"></path></svg>
-                       <span>Package:</span> 
+                   <div class="c-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0002 2.75C11.0217 2.75 10.1873 3.37503 9.87803 4.24993C9.73999 4.64047 9.3115 4.84517 8.92096 4.70713C8.53043 4.56909 8.32573 4.1406 8.46377 3.75007C8.97821 2.29459 10.3662 1.25 12.0002 1.25C13.6341 1.25 15.0222 2.29459 15.5366 3.75007C15.6747 4.1406 15.47 4.56909 15.0794 4.70713C14.6889 4.84517 14.2604 4.64047 14.1224 4.24993C13.8131 3.37503 12.9787 2.75 12.0002 2.75Z" fill="CurrentColor"></path>
+<path d="M14 12.5H10C9.72386 12.5 9.5 12.7239 9.5 13V15.1615C9.5 15.3659 9.62448 15.5498 9.8143 15.6257L10.5144 15.9058C11.4681 16.2872 12.5319 16.2872 13.4856 15.9058L14.1857 15.6257C14.3755 15.5498 14.5 15.3659 14.5 15.1615V13C14.5 12.7239 14.2761 12.5 14 12.5Z" fill="CurrentColor"></path>
+<path d="M8.01076 15.3691L3.00586 13.8677C3.03595 16.9822 3.21789 19.8505 4.31792 20.8283C5.63593 21.9998 7.75726 21.9998 11.9999 21.9998C16.2425 21.9998 18.3639 21.9998 19.6819 20.8283C20.7819 19.8505 20.9638 16.9822 20.9939 13.8677L15.9892 15.3691C15.913 16.1018 15.4372 16.7407 14.7428 17.0184L14.0426 17.2985C12.7314 17.823 11.2686 17.823 9.95735 17.2985L9.25722 17.0184C8.5628 16.7407 8.08702 16.1018 8.01076 15.3691Z" fill="CurrentColor"></path>
+<path d="M7.60893 5H16.3911C18.8412 5 20.0663 5 20.8934 5.67298C21.0524 5.80233 21.1977 5.94762 21.327 6.10659C22 6.9337 22 8.15877 22 10.6089C22 11.2307 22 11.5415 21.8492 11.784C21.8199 11.8312 21.7866 11.8759 21.7498 11.9176C21.5609 12.1317 21.2631 12.2211 20.6676 12.3997L16 13.8V13C16 11.8954 15.1046 11 14 11H10C8.89543 11 8 11.8954 8 13V13.8L3.3324 12.3997C2.7369 12.2211 2.43915 12.1317 2.25021 11.9176C2.21341 11.8759 2.18015 11.8312 2.15078 11.784C2 11.5415 2 11.2307 2 10.6089C2 8.15877 2 6.9337 2.67298 6.10659C2.80233 5.94763 2.94763 5.80233 3.10659 5.67298C3.9337 5 5.15877 5 7.60893 5Z" fill="CurrentColor"></path>
+</svg>
+
+                    </div>  
+                      <span>Package:</span> 
                    <strong>{{ $data->package->name ?? '' }}</strong>
+                   </div>
+                </div>
+                 <div class="row w-full g-2 align-center">
+                   <div class="row align-center g-2">
+                    <div class="c-green">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.46447 20.5355C4.92893 22 7.28595 22 12 22C16.714 22 19.0711 22 20.5355 20.5355C22 19.0711 22 16.714 22 12C22 7.28595 22 4.92893 20.5355 3.46447C19.0711 2 16.714 2 12 2C7.28595 2 4.92893 2 3.46447 3.46447C2 4.92893 2 7.28595 2 12C2 16.714 2 19.0711 3.46447 20.5355ZM16.9348 8.19598L13.4227 17.3618C13.1045 18.1922 11.94 18.2192 11.6917 17.4019L10.6352 13.9249C10.553 13.6545 10.3455 13.447 10.0751 13.3648L6.5981 12.3083C5.78079 12.06 5.80779 10.8955 6.63824 10.5773L15.804 7.06521C16.5389 6.78361 17.2164 7.46107 16.9348 8.19598Z" fill="CurrentColor"></path>
+</svg>
+
+                      </div>
+                         <span>Country:</span> 
+                   <strong>{{ $data->package->country ?? 'nigeria' }}</strong>
                    </div>
                 </div>
               
@@ -81,7 +108,7 @@
                 <div class="row align-center g-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgb(108,92,230)" viewBox="0 0 256 256"><path d="M207.58,63.84C186.85,53.48,159.33,48,128,48S69.15,53.48,48.42,63.84,16,88.78,16,104v48c0,15.22,11.82,29.85,32.42,40.16S96.67,208,128,208s58.85-5.48,79.58-15.84S240,167.22,240,152V104C240,88.78,228.18,74.15,207.58,63.84ZM128,64c62.64,0,96,23.23,96,40s-33.36,40-96,40-96-23.23-96-40S65.36,64,128,64Zm-8,95.86v32c-19-.62-35-3.42-48-7.49V153.05A203.43,203.43,0,0,0,120,159.86Zm16,0a203.43,203.43,0,0,0,48-6.81v31.31c-13,4.07-29,6.87-48,7.49ZM32,152V133.53a82.88,82.88,0,0,0,16.42,10.63c2.43,1.21,5,2.35,7.58,3.43V178C40.17,170.16,32,160.29,32,152Zm168,26V147.59c2.61-1.08,5.15-2.22,7.58-3.43A82.88,82.88,0,0,0,224,133.53V152C224,160.29,215.83,170.16,200,178Z"></path></svg>
                     <span>Task Reward:</span>
-                    <strong class="font-1 c-green">&#8358;{{ number_format($data->reward,2) }}</strong>
+                    <strong class="font-1 c-green">Package Based</strong>
                 </div>
                 <div class="row align-center g-5">
                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgb(108,92,230)" viewBox="0 0 256 256"><path d="M76,152a36,36,0,1,0,36,36A36,36,0,0,0,76,152Zm0,56a20,20,0,1,1,20-20A20,20,0,0,1,76,208ZM42.34,106.34,56.69,92,42.34,77.66A8,8,0,0,1,53.66,66.34L68,80.69,82.34,66.34A8,8,0,0,1,93.66,77.66L79.31,92l14.35,14.34a8,8,0,0,1-11.32,11.32L68,103.31,53.66,117.66a8,8,0,0,1-11.32-11.32Zm187.32,96a8,8,0,0,1-11.32,11.32L204,199.31l-14.34,14.35a8,8,0,0,1-11.32-11.32L192.69,188l-14.35-14.34a8,8,0,0,1,11.32-11.32L204,176.69l14.34-14.35a8,8,0,0,1,11.32,11.32L215.31,188Zm-45.19-89.51c-6.18,22.33-25.32,41.63-46.53,46.93A8.13,8.13,0,0,1,136,160a8,8,0,0,1-1.93-15.76c15.63-3.91,30.35-18.91,35-35.68,3.19-11.5,3.22-29-14.71-46.9L152,59.31V80a8,8,0,0,1-16,0V40a8,8,0,0,1,8-8h40a8,8,0,0,1,0,16H163.31l2.35,2.34C183.9,68.59,190.58,90.78,184.47,112.83Z"></path></svg>
@@ -222,7 +249,7 @@
             
             @endif
             <div class="row w-full m-top-10 align-center space-between">
-              <strong class="desc m-left-auto c-green">&#8358;{{ number_format($data->amount,2) }}</strong>
+              <strong class="desc m-left-auto c-green">{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong>
             </div>
            
            @if ($data->status == 'pending')
@@ -235,7 +262,7 @@
                 let data=`<div class='align-center column g-5 text-center'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='blue' viewBox='0 0 256 256'><path d='M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z'></path></svg>
                   <strong class='desc c-blue'>Security Check</strong>
-                 <span> Are you sure you want to approve this deposit, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be creditted the sum of <strong class='desc c-green'>&#8358;{{ number_format($data->amount,2) }}</strong> into his/her deposit wallet</span></div>
+                 <span> Are you sure you want to approve this deposit, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be creditted the sum of <strong class='desc c-green'>{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong> into his/her deposit wallet</span></div>
                 <button onclick=&quot;GetRequest(event,'{{ url('admins/get/transaction/approve?id='.$data->id.'') }}',this,MyFunc.Actioned)&quot; class='btn-green-3d c-white w-full clip-5 g-5 br-5'>Yes! i confirm to approve this deposit</button>
                 `;
                 PopUp(data);
@@ -271,7 +298,7 @@
                    let data=`<div class='align-center column g-5 text-center'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='blue' viewBox='0 0 256 256'><path d='M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z'></path></svg>
                   <strong class='desc c-blue'>Security Check</strong>
-                 <span> Are you sure you want to approve this withdrawal, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be refunded back the sum of <strong class='desc c-green'>&#8358;{{ number_format($data->amount,2) }}</strong> into his/her {{ ucfirst(str_replace('_balance','',$data->json->wallet)) }} Wallet.</span></div>
+                 <span> Are you sure you want to approve this withdrawal, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be refunded back the sum of <strong class='desc c-green'>{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong> into his/her {{ ucfirst(str_replace('_balance','',$data->json->wallet)) }} Wallet.</span></div>
                 <button onclick=&quot;GetRequest(event,'{{ url('admins/get/transaction/reject?id='.$data->id.'') }}',this,MyFunc.Actioned)&quot; class='btn-red-3d c-white w-full clip-5 g-5 br-5'>Yes! i confirm to reject this withdrawal</button>
                 `;
                 PopUp(data);
@@ -315,19 +342,19 @@
                 <div class="grid w-full g-10 place-center grid-2">
                     <div class="column br-10 align-center g-5 bg-dim no-select w-full p-10">
                         <span>Activities Balance</span>
-                        <strong class="desc c-green">&#8358;{{ number_format($data->activities_balance,2) }}</strong>
+                        <strong class="desc c-green">{!! Currency($data->id)  !!}{{ number_format($data->activities_balance,2) }}</strong>
                     </div>
                      <div class="column br-10 align-center g-5 bg-dim no-select w-full p-10">
                         <span>Affiliate Balance</span>
-                        <strong class="desc c-green">&#8358;{{ number_format($data->affiliate_balance,2) }}</strong>
+                        <strong class="desc c-green">{!! Currency($data->id)  !!}{{ number_format($data->affiliate_balance,2) }}</strong>
                     </div>
                      <div class="column br-10 align-center g-5 bg-dim no-select w-full p-10">
                         <span>Deposit Balance</span>
-                        <strong class="desc c-green">&#8358;{{ number_format($data->deposit_balance,2) }}</strong>
+                        <strong class="desc c-green">{!! Currency($data->id)  !!}{{ number_format($data->deposit_balance,2) }}</strong>
                     </div>
                      <div class="column br-10 align-center g-5 bg-dim no-select w-full p-10">
                         <span>Last Deposit</span>
-                        <strong class="desc c-green">&#8358;{{ number_format($data->last_deposit,2) }}</strong>
+                        <strong class="desc c-green">{!! Currency($data->id)  !!}{{ number_format($data->last_deposit,2) }}</strong>
                     </div>
                 </div>
                 <div class="row align-center g-2">
@@ -348,7 +375,7 @@
                 <div class="row align-center g-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M216,64H56a8,8,0,0,1,0-16H192a8,8,0,0,0,0-16H56A24,24,0,0,0,32,56V184a24,24,0,0,0,24,24H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64Zm0,128H56a8,8,0,0,1-8-8V78.63A23.84,23.84,0,0,0,56,80H216Zm-48-60a12,12,0,1,1,12,12A12,12,0,0,1,168,132Z"></path></svg>
                      <span>Total Withdrawn:</span>
-                    <strong class="font-1 c-green">&#8358;{{ number_format($data->total_withdrawn,2) }}</strong>
+                    <strong class="font-1 c-green">{!! Currency($data->id)  !!}{{ number_format($data->total_withdrawn,2) }}</strong>
                 </div>
                  <div class="row align-center g-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"></path></svg>
@@ -402,7 +429,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#6c5ce6" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z"></path></svg>
               Registration Fee
             </div>
-                      <strong class="font-1 c-green">&#8358;{{ number_format($data->cost,2) }}</strong>
+                      <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->cost,2) }}</strong>
            </div>
             <div class="column g-2 align-center">
             <div class="row align-center g-2">
@@ -410,7 +437,7 @@
                Cashback
             </div>
                       @isset($data->cashback)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->cashback,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->cashback,2) }}</strong>
                           @else
                         <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -424,7 +451,7 @@
                SubOrdinate
             </div>
                    @isset($data->subordinate)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->subordinate,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->subordinate,2) }}</strong>
                           @else
                              <strong class="font-1 c-green">NULL</strong>
                    @endisset
@@ -435,7 +462,7 @@
                First Indirect
             </div>
                      @isset($data->first_indirect)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->first_indirect,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->first_indirect,2) }}</strong>
                           @else
                            <strong class="font-1 c-green">NULL</strong>
                      @endisset
@@ -460,7 +487,7 @@
               Article Writing
             </div>
                       @isset($data->article_writing)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->article_writing,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->article_writing,2) }}</strong>
                           @else
                           <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -474,7 +501,7 @@
     Earn per Click
             </div>
                       @isset($data->earning_per_click)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->earning_per_click,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->earning_per_click,2) }}</strong>
                           @else
                           <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -485,7 +512,7 @@
                Tiktok Monitizing
             </div>
                       @isset($data->tiktok_monitizing)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->tiktok_monitizing,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->tiktok_monitizing,2) }}</strong>
                           @else
                           
                           <strong class="font-1 c-green">NULL</strong>
@@ -500,7 +527,7 @@
   Casino Games
             </div>
                       @isset($data->casino_game)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->casino_game,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->casino_game,2) }}</strong>
                           @else
                           <strong class="font-1 c-green">NULL</strong>
                       @endisset
@@ -511,7 +538,7 @@
               Daily Adverts
             </div>
                      @isset($data->daily_advert)
-                          <strong class="font-1 c-green">&#8358;{{ number_format($data->daily_advert,2) }}</strong>
+                          <strong class="font-1 c-green">{!! Currency($data->country)  !!}{{ number_format($data->daily_advert,2) }}</strong>
                           @else
                            <strong class="font-1 c-green">NULL</strong>
                      @endisset
@@ -562,7 +589,7 @@
             <div class="row g-5 align-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#6c5ce6" viewBox="0 0 256 256"><path d="M207.58,63.84C186.85,53.48,159.33,48,128,48S69.15,53.48,48.42,63.84,16,88.78,16,104v48c0,15.22,11.82,29.85,32.42,40.16S96.67,208,128,208s58.85-5.48,79.58-15.84S240,167.22,240,152V104C240,88.78,228.18,74.15,207.58,63.84ZM128,64c62.64,0,96,23.23,96,40s-33.36,40-96,40-96-23.23-96-40S65.36,64,128,64Zm-8,95.86v32c-19-.62-35-3.42-48-7.49V153.05A203.43,203.43,0,0,0,120,159.86Zm16,0a203.43,203.43,0,0,0,48-6.81v31.31c-13,4.07-29,6.87-48,7.49ZM32,152V133.53a82.88,82.88,0,0,0,16.42,10.63c2.43,1.21,5,2.35,7.58,3.43V178C40.17,170.16,32,160.29,32,152Zm168,26V147.59c2.61-1.08,5.15-2.22,7.58-3.43A82.88,82.88,0,0,0,224,133.53V152C224,160.29,215.83,170.16,200,178Z"></path></svg>
                  <span>Task Earning:</span>
-                <strong class="font-1 c-green">&#8358;{{ number_format($data->json->reward,2) }}</strong>
+                <strong class="font-1 c-green">{!! Currency($data->user->id)  !!}{{ number_format($data->json->reward,2) }}</strong>
             </div>
 
               </div>
@@ -806,7 +833,7 @@
 
                        Topup Amount
                     </div>
-                    <strong class="font-1 m-right-auto">&#8358;{{ number_format($data->json->body->amount ?? 0,2) }}</strong>
+                    <strong class="font-1 m-right-auto">{!! Currency($data->user->id)  !!}{{ number_format($data->json->body->amount ?? 0,2) }}</strong>
                 </div>
                  <div class="column g-2">
                     <div class="row m-left-auto align-center g-2">
@@ -880,7 +907,7 @@
             
             @endif
             <div class="row w-full m-top-10 align-center space-between">
-              <strong class="desc m-left-auto c-green">&#8358;{{ number_format($data->amount,2) }}</strong>
+              <strong class="desc m-left-auto c-green">{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong>
             </div>
            
            @if ($data->status == 'pending')
@@ -893,7 +920,7 @@
                 let data=`<div class='align-center column g-5 text-center'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='blue' viewBox='0 0 256 256'><path d='M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z'></path></svg>
                   <strong class='desc c-blue'>Security Check</strong>
-                 <span> Are you sure you want to approve this deposit, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be creditted the sum of <strong class='desc c-green'>&#8358;{{ number_format($data->amount,2) }}</strong> into his/her deposit wallet</span></div>
+                 <span> Are you sure you want to approve this deposit, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be creditted the sum of <strong class='desc c-green'>{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong> into his/her deposit wallet</span></div>
                 <button onclick=&quot;GetRequest(event,'{{ url('admins/get/transaction/approve?id='.$data->id.'') }}',this,MyFunc.Actioned)&quot; class='btn-green-3d c-white w-full clip-5 g-5 br-5'>Yes! i confirm to approve this deposit</button>
                 `;
                 PopUp(data);
@@ -929,7 +956,7 @@
                    let data=`<div class='align-center column g-5 text-center'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='blue' viewBox='0 0 256 256'><path d='M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z'></path></svg>
                   <strong class='desc c-blue'>Security Check</strong>
-                 <span> Are you sure you want to approve this withdrawal, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be refunded back the sum of <strong class='desc c-green'>&#8358;{{ number_format($data->amount,2) }}</strong> into his/her {{ ucfirst(str_replace('_balance','',$data->json->wallet)) }} Wallet.</span></div>
+                 <span> Are you sure you want to approve this withdrawal, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be refunded back the sum of <strong class='desc c-green'>{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong> into his/her {{ ucfirst(str_replace('_balance','',$data->json->wallet)) }} Wallet.</span></div>
                 <button onclick=&quot;GetRequest(event,'{{ url('admins/get/transaction/reject?id='.$data->id.'') }}',this,MyFunc.Actioned)&quot; class='btn-red-3d c-white w-full clip-5 g-5 br-5'>Yes! i confirm to reject this withdrawal</button>
                 `;
                 PopUp(data);
@@ -1089,7 +1116,7 @@
             
             @endif
             <div class="row w-full m-top-10 align-center space-between">
-              <strong class="desc m-left-auto c-green">&#8358;{{ number_format($data->amount,2) }}</strong>
+              <strong class="desc m-left-auto c-green">{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong>
             </div>
            
            @if ($data->status == 'pending')
@@ -1102,7 +1129,7 @@
                 let data=`<div class='align-center column g-5 text-center'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='blue' viewBox='0 0 256 256'><path d='M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z'></path></svg>
                   <strong class='desc c-blue'>Security Check</strong>
-                 <span> Are you sure you want to approve this deposit, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be creditted the sum of <strong class='desc c-green'>&#8358;{{ number_format($data->amount,2) }}</strong> into his/her deposit wallet</span></div>
+                 <span> Are you sure you want to approve this deposit, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be creditted the sum of <strong class='desc c-green'>{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong> into his/her deposit wallet</span></div>
                 <button onclick=&quot;GetRequest(event,'{{ url('admins/get/transaction/approve?id='.$data->id.'') }}',this,MyFunc.Actioned)&quot; class='btn-green-3d c-white w-full clip-5 g-5 br-5'>Yes! i confirm to approve this deposit</button>
                 `;
                 PopUp(data);
@@ -1138,7 +1165,7 @@
                    let data=`<div class='align-center column g-5 text-center'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='blue' viewBox='0 0 256 256'><path d='M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z'></path></svg>
                   <strong class='desc c-blue'>Security Check</strong>
-                 <span> Are you sure you want to approve this withdrawal, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be refunded back the sum of <strong class='desc c-green'>&#8358;{{ number_format($data->amount,2) }}</strong> into his/her {{ ucfirst(str_replace('_balance','',$data->json->wallet)) }} Wallet.</span></div>
+                 <span> Are you sure you want to approve this withdrawal, <strong class='desc c-green'>{{ $data->user->username }}</strong> would be refunded back the sum of <strong class='desc c-green'>{!! Currency($data->user->id)  !!}{{ number_format($data->amount,2) }}</strong> into his/her {{ ucfirst(str_replace('_balance','',$data->json->wallet)) }} Wallet.</span></div>
                 <button onclick=&quot;GetRequest(event,'{{ url('admins/get/transaction/reject?id='.$data->id.'') }}',this,MyFunc.Actioned)&quot; class='btn-red-3d c-white w-full clip-5 g-5 br-5'>Yes! i confirm to reject this withdrawal</button>
                 `;
                 PopUp(data);

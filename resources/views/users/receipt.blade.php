@@ -40,9 +40,9 @@
             </div>
             <hr class="bg-primary">
           @if ($data->class == 'credit')
-                <strong style="font-size:2rem;"  class="desc w-fit c-green row m-x-auto">+ &#8358;{{ number_format($data->amount,2) }}</strong>
+                <strong style="font-size:2rem;"  class="desc w-fit c-green row m-x-auto">+ {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($data->amount,2) }}</strong>
           @else
-                <strong style="font-size:2rem;" class="desc w-fit c-red row m-x-auto">- &#8358;{{ number_format($data->amount,2) }}</strong>
+                <strong style="font-size:2rem;" class="desc w-fit c-red row m-x-auto">- {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($data->amount,2) }}</strong>
           @endif
           <strong class="m-x-auto w-fit row font-weight-400">{{ $data->date_format }}</strong>
           <div style="border-top:1px dashed var(--primary)" class="w-full m-y-10"></div>
@@ -52,11 +52,11 @@
 </div>
          <div class="row m-top-10 w-full align-center g-10 space-between">
     <span>Transaction Amount</span>
-    <span>&#8358;{{ number_format($data->amount,2) }}</span>
+    <span>{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($data->amount,2) }}</span>
 </div>
  <div class="row w-full m-top-10 align-center g-10 space-between">
     <span>Transaction Fee</span>
-    <span>&#8358;{{ number_format(0,2) }}</span>
+    <span>{!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format(0,2) }}</span>
 </div>
 <div class="row w-full m-top-10 align-center g-10 space-between">
     <span>Transaction ID</span>
@@ -165,7 +165,7 @@
             <div class="column g-2">
                 <span class="text-dim">To</span>
                  <strong class="desc">{{ $data->json->body->number }}</strong>
-                  <span>{{ $data->json->body->network }} / &#8358;{{ number_format($data->json->body->amount,2) }}</span>
+                  <span>{{ $data->json->body->network }} / {!! Currency(Auth::guard('users')->user()->id)  !!}{{ number_format($data->json->body->amount,2) }}</span>
               
             </div>
           </div>

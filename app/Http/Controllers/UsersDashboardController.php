@@ -13,10 +13,14 @@ class UsersDashboardController extends Controller
     public function Login(){
         return view('users.auth.login');
     }
+    
     // register
     public function Register(){
         return view('users.auth.register',[
-            'pkg' => DB::table('packages')->where('status','active')->orderBy('date','desc')->get()
+            'pkg' => DB::table('packages')->where('status','active')->orderBy('date','desc')->get(),
+            'nigeria_pkgs' => DB::table('packages')->where('status','active')->where('country','nigeria')->orderBy('date','desc')->get(),
+            'ghana_pkgs' => DB::table('packages')->where('status','active')->where('country','ghana')->orderBy('date','desc')->get(),
+            'cameroon_pkgs' => DB::table('packages')->where('status','active')->where('country','cameroon')->orderBy('date','desc')->get()
         ]);
     }
      // referral register

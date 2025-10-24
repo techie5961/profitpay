@@ -41,6 +41,15 @@
            <div class="w-full br-10 bg-dim h-50 border-1 border-color-silver">
             <input value="{{ $data->name }}" placeholder="E.g Alpha Package" type="text" name="name" class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent">
            </div>
+            <label for="">Country</label>
+           <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">
+           <select class="inp required input h-full w-full no-border bg-transparent br-10 border-color-transparent" name="country">
+            <option value="" disabled>Select Country...</option>
+            <option {{ $data->country == 'nigeria' ? 'selected' : '' }} value="nigeria">Nigeria</option>
+            <option {{ $data->country == 'ghana' ? 'selected' : '' }} value="ghana">Ghana</option>
+            <option {{ $data->country == 'cameroon' ? 'selected' : '' }} value="cameroon">Cameroon</option>
+           </select>
+           </div>
             <div class="column {{ $data->type == 'free' ? 'display-none' : '' }} w-full reg-fee g-5">
             <label for="">Registration Fee</label>
            <div class="w-full cont br-10 bg-dim h-50 border-1 border-color-silver">

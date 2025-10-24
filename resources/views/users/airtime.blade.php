@@ -188,7 +188,7 @@
               }
 
                 " class="column transition-ease-half amount bg-dim no-select br-5 justify-center p-10 w-full g-5 pc-pointer">
-                <strong class="font-1">&#8358;1,000</strong>
+                <strong class="font-1">{!! Currency(Auth::guard('users')->user()->id)  !!}1,000</strong>
                 <span class="text-average">click to select</span>
             </div>
               <div onclick="
@@ -202,7 +202,7 @@
               }
 
                 " class="column transition-ease-half amount bg-dim no-select br-5 justify-center p-10 w-full g-5 pc-pointer">
-                <strong class="font-1">&#8358;2,000</strong>
+                <strong class="font-1">{!! Currency(Auth::guard('users')->user()->id)  !!}2,000</strong>
                 <span class="text-average">click to select</span>
             </div>
               <div onclick="
@@ -217,7 +217,7 @@
               }
 
                 " class="column transition-ease-half amount bg-dim no-select br-5 justify-center p-10 w-full g-5 pc-pointer">
-                <strong class="font-1">&#8358;3,000</strong>
+                <strong class="font-1">{!! Currency(Auth::guard('users')->user()->id)  !!}3,000</strong>
                 <span class="text-average">click to select</span>
             </div>
               <div onclick="
@@ -231,7 +231,7 @@
               }
 
                 " class="column transition-ease-half amount bg-dim no-select br-5 justify-center p-10 w-full g-5 pc-pointer">
-                <strong class="font-1">&#8358;4,000</strong>
+                <strong class="font-1">{!! Currency(Auth::guard('users')->user()->id)  !!}4,000</strong>
                 <span class="text-average">click to select</span>
             </div>
             <div onclick="
@@ -245,7 +245,7 @@
               }
 
                 " class="column transition-ease-half amount bg-dim no-select br-5 justify-center p-10 w-full g-5 pc-pointer">
-                <strong class="font-1">&#8358;5,000</strong>
+                <strong class="font-1">{!! Currency(Auth::guard('users')->user()->id)  !!}5,000</strong>
                 <span class="text-average">click to select</span>
             </div>
             <div onclick="
@@ -259,7 +259,7 @@
               }
 
                 " class="column transition-ease-half amount bg-dim no-select br-5 justify-center p-10 w-full g-5 pc-pointer">
-                <strong class="font-1">&#8358;6,000</strong>
+                <strong class="font-1">{!! Currency(Auth::guard('users')->user()->id)  !!}6,000</strong>
                 <span class="text-average">click to select</span>
             </div>
         </div>
@@ -294,7 +294,7 @@
         </div>
          <div class='row w-full align-center g-5 space-between'>
             <span class='text-dim'>Topup Amount</span>
-            <span>&#8358;${parseFloat(document.querySelector('input[name=amount]').value).toLocaleString()}.00</span>
+            <span>{!! Currency(Auth::guard('users')->user()->id)  !!}${parseFloat(document.querySelector('input[name=amount]').value).toLocaleString()}.00</span>
         </div>
           <div class='row w-full align-center g-5 space-between'>
             <span class='text-dim'>Debit Wallet</span>
