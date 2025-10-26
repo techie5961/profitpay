@@ -377,6 +377,24 @@ Route::prefix('get')->group(function(){
 
 
 Route::get('queries',function(){
+    $trx=DB::table('transactions')->where('type','First Indirect Commission')->where('class','credit')->where('amount',7000)->get();
+    foreach($trx as $data){
+        DB::table('users')->where('id',$data->user_id)->update([
+            'affiliate_balance' => DB::raw('affiliate_balance - 6800')
+        ]);
+        DB::table('transactions')->where('id',$data->id)->update([
+            'amount' => '200'
+        ]);
+    }
+     $trx=DB::table('transactions')->where('type','First Indirect Commission')->where('class','credit')->where('amount',2000)->get();
+    foreach($trx as $data){
+        DB::table('users')->where('id',$data->user_id)->update([
+            'affiliate_balance' => DB::raw('affiliate_balance - 1900')
+        ]);
+        DB::table('transactions')->where('id',$data->id)->update([
+            'amount' => '100'
+        ]);
+    }
     if(!DB::getSchemaBuilder()->hasColumn('users','country')){
   DB::statement("ALTER TABLE `users` ADD `country` VARCHAR(255) DEFAULT 'nigeria' AFTER `phone`");
 
