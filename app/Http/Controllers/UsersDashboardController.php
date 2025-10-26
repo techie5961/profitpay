@@ -50,6 +50,7 @@ class UsersDashboardController extends Controller
     }
     // tasks
     public function Tasks(){
+    //    return json_decode(Auth::guard('users')->user()->package)->earning_per_click;
        
         if(!json_decode(Auth::guard('users')->user()->package)->earning_per_click){
             return CheckPackage();

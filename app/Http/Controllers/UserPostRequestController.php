@@ -127,7 +127,7 @@ class UserPostRequestController extends Controller
 
              $indirect=DB::table('users')->where('username',$ref->ref)->first();
             $pkg=json_decode($indirect->package);
-            $pkg->first_indirect=ConvertCurrency($usr_pkg->subordinate,DB::table('users')->where('email',request()->input('email'))->first()->country,$indirect->country) ?? 0;
+            $pkg->first_indirect=ConvertCurrency($usr_pkg->first_indirect,DB::table('users')->where('email',request()->input('email'))->first()->country,$indirect->country) ?? 0;
             DB::table('users')->where('id',$indirect->id)->update([
                 'affiliate_balance' => DB::raw('affiliate_balance + '.$pkg->first_indirect.'')
             ]);
